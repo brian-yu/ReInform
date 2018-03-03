@@ -11,5 +11,12 @@
 
 `pip install xmltodict`
 
+3. Set env vars
 
+`export FLASK_APP=app.py`
 
+`export FLASK_DEBUG=1`
+
+4. run flask
+
+`flask run`
