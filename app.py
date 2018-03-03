@@ -20,3 +20,8 @@ def getLegislators(state):
 
 	o = xmltodict.parse(r.text)['response']['legislator']
 	return json.dumps(o) # '{"e": {"a": ["text", "text"]}}'
+
+@app.route("/id/<state>")
+def candidContrib(cid, cycle):
+	url = "https://www.opensecrets.org/api/?method=candContrib&cid" + cid + "cycle=2018&apikey=" + OPEN_SECRETS_KEY+ "&output=json"
+	return json.dumps(requests.get(url))
