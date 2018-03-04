@@ -8,16 +8,16 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
-
+	<link rel="icon" type="image/png" sizes="32x32" href="/static/image/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/static/image/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/static/image/icons/favicon-16x16.png">
+	<title>ReInform</title>
 
 	<link href='/static/style.css' rel='stylesheet'/>
 
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
 </head>
 <body>
-	<!-- <nav class="navbar navbar-light bg-light">
-  		<span class="navbar-brand mb-0 h1">ReInform</span>
-	</nav> -->
 	<div id='map'>
 	</div>
 	<h1 id="brand">ReInform</h1>
@@ -39,6 +39,13 @@
 	  <!-- Body for State View -->
 	  <div v-else-if="view === 'state'" id="sidebar-body" class="scrollbar style-1">
 	  	<h4>Congressmen</h4>
+	  	<div id="loading" class="spinner" v-if="items.length == 0">
+			  <div class="rect1"></div>
+			  <div class="rect2"></div>
+			  <div class="rect3"></div>
+			  <div class="rect4"></div>
+			  <div class="rect5"></div>
+			</div>
 	  	<ul>
 		  <li v-for="item in items">
 		  	<a href="#" v-on:click="renderCongressman(item['@attributes'])">
@@ -67,7 +74,23 @@
 			    	{{bill.latest_major_action_date}}: {{bill.short_title}}
 				</a>
 			  </li>
-		</ul>
+			</ul>
+	  	</div>
+	  	<div id="funding">
+	  		<h5>2018 Cycle Funding</h5>
+	  		<!-- <img id="loading" v-if="bills.length == 0" src="/static/image/loading.gif" /> -->
+			<div id="loading" class="spinner" v-if="orgs.length == 0">
+			  <div class="rect1"></div>
+			  <div class="rect2"></div>
+			  <div class="rect3"></div>
+			  <div class="rect4"></div>
+			  <div class="rect5"></div>
+			</div>
+	  		<ul>
+			  <li v-for="org in orgs">
+			  	${{org['@attributes'].total}} - {{org['@attributes'].org_name}}
+			  </li>
+			</ul>
 	  	</div>
 	  	<div id="views">
 	  		<h5>Viewpoints</h5>

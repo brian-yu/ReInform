@@ -7,35 +7,47 @@ from requests import get
 from requests.exceptions import RequestException
 from contextlib import closing
 from bs4 import BeautifulSoup
+from random import randint
 import re
 
 
 app = Flask(__name__)
 # CORS(app)
 
+KEYS = ["1be2eb6f066a3890a06795c7e26af9ff", "c2a05d472f97d739f609febc55da71d8"]
 
-OPEN_SECRETS_KEY = "63febc563042d321586952a08fa56e87";
+def getKey():
+	key = KEYS[randint(0, len(KEYS)-1)]
+	print(key)
+	return key
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 
 @app.route("/state/<state>")
 def getLegislators(state):
-	url = "http://www.opensecrets.org/api/?method=getLegislators&id=" + state + "&apikey=" + OPEN_SECRETS_KEY + "&output=json"
+	url = "http://www.opensecrets.org/api/?method=getLegislators&id=" + state + "&apikey=" + getKey() + "&output=json"
 	r = requests.get(url)
 
 	# o = xmltodict.parse(r.text)['response']['legislator']
 	# return json.dumps(o) # '{"e": {"a": ["text", "text"]}}'
 	return r.text
 
+
+@app.route("/funding/<cid>")
+def funding(cid):
+	url = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2018&apikey=" + getKey()+ "&output=json"
+	r = requests.get(url)
+	return r.text
+
 #function to get the candidate funding accross four years
 @app.route("/contrib/<cid>")
 def candidContrib(cid):
 #get our url data across the four seperate years
-	url2012 = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2012&apikey=" + OPEN_SECRETS_KEY+ "&output=xml"
-	url2014 = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2014&apikey=" + OPEN_SECRETS_KEY+ "&output=xml"
-	url2016 = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2016&apikey=" + OPEN_SECRETS_KEY+ "&output=xml"
-	url2018 = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2018&apikey=" + OPEN_SECRETS_KEY+ "&output=xml"
+	url2012 = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2012&apikey=" + getKey()+ "&output=xml"
+	url2014 = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2014&apikey=" + getKey()+ "&output=xml"
+	url2016 = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2016&apikey=" + getKey()+ "&output=xml"
+	url2018 = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2018&apikey=" + getKey()+ "&output=xml"
 #get our url requests
 	funding = dict()
 	r1 = requests.get(url2012)
@@ -269,7 +281,7 @@ def candidViews(name):
 # 
 @app.route("/id/<cid>")
 def getLegislatorFromId(cid):
-	url = "http://www.opensecrets.org/api/?method=getLegislators&id=" + cid + "&apikey=" + OPEN_SECRETS_KEY + "&output=json"
+	url = "http://www.opensecrets.org/api/?method=getLegislators&id=" + cid + "&apikey=" + getKey() + "&output=json"
 	r = requests.get(url)
 
 	# o = xmltodict.parse(r.text)['response']['legislator']
