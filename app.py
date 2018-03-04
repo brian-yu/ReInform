@@ -83,8 +83,10 @@ def candidContrib(cid):
 				check = key
 		ans[check] = max
 		del funding[check]
-		
-	answer = json.dumps(ans)
+	link = dict()
+	for key in ans:
+		link["https://en.wikipedia.org/wiki/"+key] = ans[key]	
+	answer = json.dumps(link)
 	return answer
 
 
