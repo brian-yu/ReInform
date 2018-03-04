@@ -37,59 +37,224 @@ def candidContrib(cid):
 	url2016 = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2016&apikey=" + OPEN_SECRETS_KEY+ "&output=xml"
 	url2018 = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2018&apikey=" + OPEN_SECRETS_KEY+ "&output=xml"
 #get our url requests
-	r1 = requests.get(url2012)
-	r2 = requests.get(url2014)
-	r3 = requests.get(url2016)
-	r4 = requests.get(url2018)
-
-#Create our dictionaries by parsing the xml
-	o1 = xmltodict.parse(r1.text)['response']
-	o2 = xmltodict.parse(r2.text)['response']
-	o3 = xmltodict.parse(r3.text)['response']
-	o4 = xmltodict.parse(r4.text)['response']
-
-	# o1 = json.dumps(o1)
-
-
 	funding = dict()
-	length = len(o1['contributors'])
-	for x in range(0, length):
-		funding[str(o1['contributors']['contributor'][x]['@org_name'])] = int(o1['contributors']['contributor'][x]['@total'])
-	length2 = len(o2['contributors'])
+	r1 = requests.get(url2012)
+	if r1.status_code != 404:
 
-	for x in range(0, length2):
-		if o2['contributors']["contributor"][x]['@org_name'] in funding.keys():
-			funding[str(o2['contributors']['contributor'][x]['@org_name'])] = funding.get(o2['contributors']["contributor"][x]['@org_name']) + int(o2['contributors']['contributor'][x]['@total'])
-		else:
-			funding[str(o2['contributors']['contributor'][x]['@org_name'])] = int(o1['contributors']['contributor'][x]['@total'])
-	length3 = len(o3['contributors'])
-	for x in range(0, length3):
-		if o3['contributors']["contributor"][x]['@org_name'] in funding.keys():
-			funding[str(o3['contributors']['contributor'][x]['@org_name'])] = funding.get(o3['contributors']["contributor"][x]['@org_name']) + int(o3['contributors']['contributor'][x]['@total'])
-		else:
-			funding[str(o3['contributors']['contributor'][x]['@org_name'])] = int(o3['contributors']['contributor'][x]['@total'])
-	length4 = len(o4['contributors'])
-	for x in range(0, length3):
-		if o4['contributors']["contributor"][x]['@org_name'] in funding.keys():
-			funding[str(o4['contributors']['contributor'][x]['@org_name'])] = funding.get(o4['contributors']["contributor"][x]['@org_name']) + int(o4['contributors']['contributor'][x]['@total'])
-		else:
+
+		r2 = requests.get(url2014)
+		r3 = requests.get(url2016)
+		r4 = requests.get(url2018)
+
+		o1 = xmltodict.parse(r1.text)['response']
+		o2 = xmltodict.parse(r2.text)['response']
+		o3 = xmltodict.parse(r3.text)['response']
+		o4 = xmltodict.parse(r4.text)['response']
+
+		length = len(o1['contributors'])
+		for x in range(0, length):
+			funding[str(o1['contributors']['contributor'][x]['@org_name'])] = int(o1['contributors']['contributor'][x]['@total'])
+		length2 = len(o2['contributors'])
+
+		for x in range(0, length2):
+			if o2['contributors']["contributor"][x]['@org_name'] in funding.keys():
+				funding[str(o2['contributors']['contributor'][x]['@org_name'])] = funding.get(o2['contributors']["contributor"][x]['@org_name']) + int(o2['contributors']['contributor'][x]['@total'])
+			else:
+				funding[str(o2['contributors']['contributor'][x]['@org_name'])] = int(o1['contributors']['contributor'][x]['@total'])
+		length3 = len(o3['contributors'])
+		for x in range(0, length3):
+			if o3['contributors']["contributor"][x]['@org_name'] in funding.keys():
+				funding[str(o3['contributors']['contributor'][x]['@org_name'])] = funding.get(o3['contributors']["contributor"][x]['@org_name']) + int(o3['contributors']['contributor'][x]['@total'])
+			else:
+				funding[str(o3['contributors']['contributor'][x]['@org_name'])] = int(o3['contributors']['contributor'][x]['@total'])
+		length4 = len(o4['contributors'])
+		for x in range(0, length3):
+			if o4['contributors']["contributor"][x]['@org_name'] in funding.keys():
+				funding[str(o4['contributors']['contributor'][x]['@org_name'])] = funding.get(o4['contributors']["contributor"][x]['@org_name']) + int(o4['contributors']['contributor'][x]['@total'])
+			else:
+				funding[str(o4['contributors']['contributor'][x]['@org_name'])] = int(o4['contributors']['contributor'][x]['@total'])
+		ans = dict()
+		for x in range(0, 5):
+			max = 0
+			for key in funding:
+				if funding[key] > max:
+					max = funding[key]
+					check = key
+			ans[check] = max
+			del funding[check]
+		link = dict()
+		for key in ans:
+			link["https://en.wikipedia.org/wiki/"+key] = ans[key]	
+		funding = dict()
+		length = len(o4['contributors'])
+		for x in range(0, length):
+			funding[str(o1['contributors']['contributor'][x]['@org_name'])] = int(o1['contributors']['contributor'][x]['@total'])
+
+		answer = json.dumps(funding)
+		return answer			
+
+	r2 = requests.get(url2014)
+	if r2.status_code != 404:
+		r3 = requests.get(url2016)
+		r4 = requests.get(url2018)
+
+		o2 = xmltodict.parse(r2.text)['response']
+		o3 = xmltodict.parse(r3.text)['response']
+		o4 = xmltodict.parse(r4.text)['response']
+
+		length2 = len(o2['contributors'])
+		for x in range(0, length2):
+			funding[str(o2['contributors']['contributor'][x]['@org_name'])] = int(o2['contributors']["contributor"][x]['@total'])
+		length3 = len(o3['contributors'])
+		for x in range(0, length3):
+			if o3['contributors']["contributor"][x]['@org_name'] in funding.keys():
+				funding[str(o3['contributors']['contributor'][x]['@org_name'])] = funding.get(o3['contributors']["contributor"][x]['@org_name']) + int(o3['contributors']['contributor'][x]['@total'])
+			else:
+				funding[str(o3['contributors']['contributor'][x]['@org_name'])] = int(o3['contributors']['contributor'][x]['@total'])
+		length4 = len(o4['contributors'])
+		for x in range(0, length3):
+			if o4['contributors']["contributor"][x]['@org_name'] in funding.keys():
+				funding[str(o4['contributors']['contributor'][x]['@org_name'])] = funding.get(o4['contributors']["contributor"][x]['@org_name']) + int(o4['contributors']['contributor'][x]['@total'])
+			else:
+				funding[str(o4['contributors']['contributor'][x]['@org_name'])] = int(o4['contributors']['contributor'][x]['@total'])
+		ans = dict()
+		for x in range(0, 5):
+			max = 0
+			for key in funding:
+				if funding[key] > max:
+					max = funding[key]
+					check = key
+			ans[check] = max
+			del funding[check]
+		link = dict()
+		for key in ans:
+			link["https://en.wikipedia.org/wiki/"+key] = ans[key]	
+		funding = dict()
+		length = len(o4['contributors'])
+		for x in range(0, length):
 			funding[str(o4['contributors']['contributor'][x]['@org_name'])] = int(o4['contributors']['contributor'][x]['@total'])
+
+		answer = json.dumps(funding)
+		return answer		
+		
+	r3 = requests.get(url2016)
+	if r3.status_code != 404:
+		r4 = requests.get(url2018)
+
+		o3 = xmltodict.parse(r3.text)['response']
+		o4 = xmltodict.parse(r4.text)['response']
+
+		length3 = len(o3['contributors'])
+		for x in range(0, length3):
+			funding[str(o3['contributors']['contributor'][x]['@org_name'])] = int(o3['contributors']["contributor"][x]['@total'])
+		length4 = len(o4['contributors'])
+		for x in range(0, length3):
+			if o4['contributors']["contributor"][x]['@org_name'] in funding.keys():
+				funding[str(o4['contributors']['contributor'][x]['@org_name'])] = funding.get(o4['contributors']["contributor"][x]['@org_name']) + int(o4['contributors']['contributor'][x]['@total'])
+			else:
+				funding[str(o4['contributors']['contributor'][x]['@org_name'])] = int(o4['contributors']['contributor'][x]['@total'])
+		ans = dict()
+		for x in range(0, 5):
+			max = 0
+			for key in funding:
+				if funding[key] > max:
+					max = funding[key]
+					check = key
+			ans[check] = max
+			del funding[check]
+		link = dict()
+		for key in ans:
+			link["https://en.wikipedia.org/wiki/"+key] = ans[key]	
+		funding = dict()
+		length = len(o4['contributors'])
+		for x in range(0, length):
+			funding[str(o4['contributors']['contributor'][x]['@org_name'])] = int(o4['contributors']['contributor'][x]['@total'])
+
+		answer = json.dumps(funding)
+		return answer		
+	r4 = requests.get(url2018)
+	if r4.status_code != 404:
+		o4 = xmltodict.parse(r4.text)['response']
+
+		length4 = len(o4['contributors'])
+		for x in range(0, length3):
+			funding[str(o4['contributors']['contributor'][x]['@org_name'])] = int(o4['contributors']["contributor"][x]['@total'])
+		ans = dict()
+		for x in range(0, 5):
+			max = 0
+			for key in funding:
+				if funding[key] > max:
+					max = funding[key]
+					check = key
+			ans[check] = max
+			del funding[check]
+		link = dict()
+		for key in ans:
+			link["https://en.wikipedia.org/wiki/"+key] = ans[key]	
+		funding = dict()
+		length = len(o4['contributors'])
+		for x in range(0, length):
+			funding[str(o4['contributors']['contributor'][x]['@org_name'])] = int(o4['contributors']['contributor'][x]['@total'])
+
+		answer = json.dumps(funding)
+		return answer	
+	else:
+		return 'error'
+
+
+# #Create our dictionaries by parsing the xml
+# 	o1 = xmltodict.parse(r1.text)['response']
+# 	o2 = xmltodict.parse(r2.text)['response']
+# 	o3 = xmltodict.parse(r3.text)['response']
+# 	o4 = xmltodict.parse(r4.text)['response']
+
+# 	# o1 = json.dumps(o1)
+
+
 	
-	#funding = sorted(funding.values())
-	ans = dict()
-	for x in range(0, 5):
-		max = 0
-		for key in funding:
-			if funding[key] > max:
-				max = funding[key]
-				check = key
-		ans[check] = max
-		del funding[check]
-	link = dict()
-	for key in ans:
-		link["https://en.wikipedia.org/wiki/"+key] = ans[key]	
-	answer = json.dumps(link)
-	return answer
+# 	length = len(o1['contributors'])
+# 	for x in range(0, length):
+# 		funding[str(o1['contributors']['contributor'][x]['@org_name'])] = int(o1['contributors']['contributor'][x]['@total'])
+# 	length2 = len(o2['contributors'])
+
+# 	for x in range(0, length2):
+# 		if o2['contributors']["contributor"][x]['@org_name'] in funding.keys():
+# 			funding[str(o2['contributors']['contributor'][x]['@org_name'])] = funding.get(o2['contributors']["contributor"][x]['@org_name']) + int(o2['contributors']['contributor'][x]['@total'])
+# 		else:
+# 			funding[str(o2['contributors']['contributor'][x]['@org_name'])] = int(o1['contributors']['contributor'][x]['@total'])
+# 	length3 = len(o3['contributors'])
+# 	for x in range(0, length3):
+# 		if o3['contributors']["contributor"][x]['@org_name'] in funding.keys():
+# 			funding[str(o3['contributors']['contributor'][x]['@org_name'])] = funding.get(o3['contributors']["contributor"][x]['@org_name']) + int(o3['contributors']['contributor'][x]['@total'])
+# 		else:
+# 			funding[str(o3['contributors']['contributor'][x]['@org_name'])] = int(o3['contributors']['contributor'][x]['@total'])
+# 	length4 = len(o4['contributors'])
+# 	for x in range(0, length3):
+# 		if o4['contributors']["contributor"][x]['@org_name'] in funding.keys():
+# 			funding[str(o4['contributors']['contributor'][x]['@org_name'])] = funding.get(o4['contributors']["contributor"][x]['@org_name']) + int(o4['contributors']['contributor'][x]['@total'])
+# 		else:
+# 			funding[str(o4['contributors']['contributor'][x]['@org_name'])] = int(o4['contributors']['contributor'][x]['@total'])
+	
+# 	#funding = sorted(funding.values())
+# 	ans = dict()
+# 	for x in range(0, 5):
+# 		max = 0
+# 		for key in funding:
+# 			if funding[key] > max:
+# 				max = funding[key]
+# 				check = key
+# 		ans[check] = max
+# 		del funding[check]
+# 	link = dict()
+# 	for key in ans:
+# 		link["https://en.wikipedia.org/wiki/"+key] = ans[key]	
+# 	funding = dict()
+# 	length = len(o4['contributors'])
+# 	for x in range(0, length):
+# 		funding[str(o1['contributors']['contributor'][x]['@org_name'])] = int(o1['contributors']['contributor'][x]['@total'])
+
+# 	answer = json.dumps(funding)
+# 	return answer
 
 #function to get the candidate funding accross four years
 @app.route("/views/<name>")
