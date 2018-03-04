@@ -9,6 +9,7 @@ from contextlib import closing
 from bs4 import BeautifulSoup
 import re
 
+
 app = Flask(__name__)
 # CORS(app)
 
@@ -37,6 +38,7 @@ def candidContrib(cid):
 	url2018 = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2018&apikey=" + OPEN_SECRETS_KEY+ "&output=xml"
 #get our url requests
 	r1 = requests.get(url2012)
+	if (r1)
 	r2 = requests.get(url2014)
 	r3 = requests.get(url2016)
 	r4 = requests.get(url2018)
@@ -49,10 +51,6 @@ def candidContrib(cid):
 
 	# o1 = json.dumps(o1)
 
-
-	import pprint
-
-	pp = pprint.PrettyPrinter(indent=4)
 
 	funding = dict()
 	length = len(o1['contributors'])
@@ -159,3 +157,14 @@ def get_politician_views(name):
             preJSON.append(issueElement)
         json_data = json.dumps(preJSON)
     return json_data
+
+@app.route("/pid/<bid>")
+def bigbills(bid):
+	headers = {
+    'X-API-Key': 'WmcCMKjGFtJmQyQuEvkVxvV666hs75JFky5bJqJG',
+	}
+
+	response = requests.get('https://api.propublica.org/congress/v1/members/'+bid+'/bills/introduced.json', headers=headers)
+
+
+	return response.text
