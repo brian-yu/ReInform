@@ -73,3 +73,7 @@ body {
 #sidebar-body {
 	padding: 20px;
 }
+
+#sidebar h5 {
+	text-align: center;
+}
