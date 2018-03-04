@@ -76,6 +76,13 @@ var sidebar = new Vue({
                 sidebar.renderCongressman(response.data.response.legislator['@attributes']);
             }
         });
+
+        axios.get(/views/ + item.first_name + '-' + item.last_name).then(function(res) {
+            if (sidebar.view == "congress") {
+                sidebar.views = res.data;
+                console.log(sidebar.views);
+            }
+        });
     },
     renderState(name, abbrev) {
         sidebar.title = name;

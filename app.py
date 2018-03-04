@@ -261,12 +261,12 @@ def candidContrib(cid):
 def candidViews(name):
     name = name.replace('-',' ')
     response = get_politician_views(name)
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    response.headers.add('Access-Control-Allow-Methods', 'POST')
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+    # response.headers.add('Access-Control-Allow-Origin', '*')
+    # response.headers.add('Access-Control-Allow-Methods', 'POST')
+    # response.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization')
     return response
 
-
+# 
 @app.route("/id/<cid>")
 def getLegislatorFromId(cid):
 	url = "http://www.opensecrets.org/api/?method=getLegislators&id=" + cid + "&apikey=" + OPEN_SECRETS_KEY + "&output=json"
@@ -331,7 +331,9 @@ def get_politician_views(name):
             issueElement['views'] = views
             preJSON.append(issueElement)
         json_data = json.dumps(preJSON)
-    return json_data
+        return json_data
+    else:
+        return json.dumps("[{'issueName': 'No relevant views', 'issueViews': []}]")
 
 @app.route("/bills/<bid>")
 def bigbills(bid):
