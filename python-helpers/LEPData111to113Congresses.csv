@@ -1,0 +1,552 @@
+﻿thomas_name,first_name,last_name,ss_bills,ss_aic,ss_abc,ss_pass,ss_law,s_bills,s_aic,s_abc,s_pass,s_law,c_bills,c_aic,c_abc,c_pass,les
+"Adams, Alma",Alma,Adams,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Aderholt, Robert",Robert,Aderholt,2,2,2,0,0,3,0,0,0,0,0,0,0,0,0.908495426
+"Alexander, Rodney",Rodney,Alexander,1,1,1,0,0,5,0,0,0,0,0,0,0,0,0.507558048
+"Amash, Justin",Justin,Amash,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0.091389112
+"Amodei, Mark",Mark,Amodei,0,0,0,0,0,17,11,7,4,1,0,0,0,0,3.128457308
+"Andrews, Robert",Robert,Andrews,1,0,0,0,0,4,0,0,0,0,0,0,0,0,0.091389112
+"Bachmann, Michele",Michele,Bachmann,2,0,1,1,0,8,0,0,0,0,1,1,1,1,0.836119056
+"Bachus, Spencer",Spencer,Bachus,1,1,1,0,0,4,2,2,1,0,0,0,0,0,1.038942099
+"Barber, Ron",Ron,Barber,1,0,0,0,0,11,1,0,0,0,2,0,0,0,0.306935996
+"Barletta, Lou",Lou,Barletta,1,1,1,1,1,11,2,2,1,0,0,0,0,0,2.381305218
+"Barr, Andy",Andy,Barr,0,0,0,0,0,15,3,4,3,0,0,0,0,0,1.364548564
+"Barrow, John",John,Barrow,0,0,0,0,0,12,0,0,0,0,0,0,0,0,0.182778224
+"Barton, Joe",Joe,Barton,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0.076157592
+"Bass, Karen",Karen,Bass,0,0,0,0,0,12,0,1,1,0,0,0,0,0,0.426091492
+"Beatty, Joyce",Joyce,Beatty,0,0,0,0,0,11,0,1,1,0,1,0,0,0,0.413906276
+"Becerra, Xavier",Xavier,Becerra,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0.030463038
+"Benishek, Dan",Dan,Benishek,0,0,0,0,0,14,5,4,2,1,1,1,1,1,2.048213482
+"Bentivolio, Kerry",Kerry,Bentivolio,0,0,0,0,0,13,1,1,1,0,0,0,0,0,0.544156671
+"Bera, Ami",Ami,Bera,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0.076157592
+"Bilirakis, Gus",Gus,Bilirakis,0,0,0,0,0,25,4,3,2,0,0,0,0,0,1.376384139
+"Bishop, Timothy",Timothy,Bishop,0,0,0,0,0,18,0,0,0,0,2,0,0,0,0.280259937
+"Bishop, Sanford",Sanford,Bishop,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0.045694556
+"Bishop, Rob",Rob,Bishop,0,0,0,0,0,15,11,9,3,1,0,0,0,0,3.147586107
+"Black, Diane",Diane,Black,1,0,1,1,1,26,2,2,1,0,0,0,0,0,2.404110909
+"Blackburn, Marsha",Marsha,Blackburn,1,0,1,1,0,27,0,0,0,0,0,0,0,0,0.928340614
+"Blumenauer, Earl",Earl,Blumenauer,1,0,1,1,1,22,1,2,2,2,0,0,0,0,3.330415487
+"Boehner, John",John,Boehner,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0.030463038
+"Bonamici, Suzanne",Suzanne,Bonamici,0,0,0,0,0,13,2,3,1,0,0,0,0,0,0.84226042
+"Bonner, Jo",Jo,Bonner,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0.030463038
+"Bordallo, Madeleine",Madeleine,Bordallo,0,0,0,0,0,8,4,4,0,0,0,0,0,0,0.923726976
+"Boustany, Charles",Charles,Boustany,0,0,0,0,0,22,1,4,3,0,0,0,0,0,1.265501976
+"Brady, Robert",Robert,Brady,0,0,0,0,0,4,0,0,0,0,1,0,0,0,0.063972384
+"Brady, Kevin",Kevin,Brady,1,1,1,1,0,15,0,0,0,0,0,0,0,0,0.951229632
+"Braley, Bruce",Bruce,Braley,0,0,0,0,0,29,0,0,0,0,0,0,0,0,0.441714048
+"Brat, Dave",Dave,Brat,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Bridenstine, Jim",Jim,Bridenstine,0,0,0,0,0,4,1,1,1,0,0,0,0,0,0.407072991
+"Brooks, Mo",Mo,Brooks,0,0,0,0,0,7,1,1,0,0,0,0,0,0,0.307089329
+"Brooks, Susan",Susan,Brooks,0,0,0,0,0,6,1,2,2,1,0,0,0,0,1.153042436
+"Broun, Paul",Paul,Broun,1,1,1,1,0,12,0,1,1,0,0,0,0,0,1.148848414
+"Brown, Corrine",Corrine,Brown,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0.015231519
+"Brownley, Julia",Julia,Brownley,0,0,0,0,0,16,1,0,0,0,0,0,0,0,0.346537948
+"Buchanan, Vern",Vern,Buchanan,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0.106620632
+"Bucshon, Larry",Larry,Bucshon,0,0,0,0,0,11,2,4,3,1,0,0,0,0,1.672981977
+"Burgess, Michael",Michael,Burgess,2,1,2,1,0,29,2,2,2,1,0,0,0,0,2.554691076
+"Bustos, Cheri",Cheri,Bustos,0,0,0,0,0,9,0,0,0,0,1,0,0,0,0.140129969
+"Butterfield, G.",G.,Butterfield,0,0,0,0,0,8,1,1,1,1,1,1,1,1,1.012467861
+"Byrne, Bradley",Bradley,Byrne,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0.030463038
+"Calvert, Ken",Ken,Calvert,1,1,1,0,0,12,3,2,2,1,0,0,0,0,1.881499171
+"Camp, Dave",Dave,Camp,5,2,4,4,3,14,1,6,5,2,0,0,0,0,7.917976856
+"Campbell, John",John,Campbell,0,0,0,0,0,4,2,1,1,1,0,0,0,0,0.982099712
+"Cantor, Eric",Eric,Cantor,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Capito, Shelley",Shelley,Capito,0,0,0,0,0,14,3,4,1,0,0,0,0,0,1.057960629
+"Capps, Lois",Lois,Capps,1,1,1,0,0,25,2,2,2,0,1,0,1,1,1.650629759
+"Capuano, Michael",Michael,Capuano,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0.335093409
+"Cardenas, Tony",Tony,Cardenas,0,0,0,0,0,17,0,0,0,0,1,0,0,0,0.261982143
+"Carney, John",John,Carney,1,0,1,1,0,15,0,0,0,0,0,0,0,0,0.745562375
+"Carson, Andre",Andre,Carson,0,0,0,0,0,13,0,0,0,0,1,0,0,0,0.201056048
+"Carter, John",John,Carter,2,2,2,1,0,7,0,0,0,0,0,0,0,0,1.26077795
+"Cartwright, Matt",Matt,Cartwright,0,0,0,0,0,52,1,1,1,0,0,0,0,0,1.138185859
+"Cassidy, Bill",Bill,Cassidy,0,0,0,0,0,27,3,4,4,1,0,0,0,0,2.165198088
+"Castor, Kathy",Kathy,Castor,0,0,0,0,0,8,0,0,0,0,0,0,0,0,0.121852152
+"Castro, Joaquin",Joaquin,Castro,0,0,0,0,0,8,0,0,0,0,0,0,0,0,0.121852152
+"Chabot, Steve",Steve,Chabot,0,0,0,0,0,14,5,5,4,1,0,0,0,0,2.270490646
+"Chaffetz, Jason",Jason,Chaffetz,0,0,0,0,0,27,9,8,5,3,0,0,0,0,4.262804508
+"Christensen, Donna",Donna,Christensen,1,1,1,1,1,12,1,2,1,0,1,0,0,0,2.296749592
+"Chu, Judy",Judy,Chu,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0.137083665
+"Cicilline, David",David,Cicilline,0,0,0,0,0,16,2,2,0,0,1,0,0,0,0.647688031
+"Clark, Katherine",Katherine,Clark,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0.045694556
+"Clarke, Yvette",Yvette,Clarke,0,0,0,0,0,5,1,1,1,0,0,0,0,0,0.422304511
+"Clawson, Curt",Curt,Clawson,0,0,0,0,0,2,1,1,0,0,0,0,0,0,0.230931744
+"Clay, Wm.",Wm.,Clay,0,0,0,0,0,6,1,1,0,0,0,0,0,0,0.291857809
+"Cleaver, Emanuel",Emanuel,Cleaver,0,0,0,0,0,5,1,1,0,0,2,0,0,0,0.282718897
+"Clyburn, James",James,Clyburn,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0.030463038
+"Coble, Howard",Howard,Coble,1,0,1,1,1,5,3,2,1,1,0,0,0,0,2.65927577
+"Coffman, Mike",Mike,Coffman,1,0,1,1,1,18,6,5,4,2,0,0,0,0,4.367919445
+"Cohen, Steve",Steve,Cohen,0,0,0,0,0,35,0,0,0,0,0,0,0,0,0.533103168
+"Cole, Tom",Tom,Cole,1,1,1,1,0,9,2,2,0,0,0,0,0,0,1.26077795
+"Collins, Doug",Doug,Collins,0,0,0,0,0,13,2,2,1,0,0,0,0,0,0.74462539
+"Collins, Chris",Chris,Collins,0,0,0,0,0,6,1,1,0,0,1,1,1,1,0.458572119
+"Conaway, K.",K.,Conaway,0,0,0,0,0,3,1,1,0,0,0,0,0,0,0.246163264
+"Connolly, Gerald",Gerald,Connolly,0,0,0,0,0,24,1,1,0,0,1,1,1,1,0.732739449
+"Conyers, John",John,Conyers,0,0,0,0,0,33,0,0,0,0,0,0,0,0,0.502640128
+"Cook, Paul",Paul,Cook,0,0,0,0,0,12,4,2,1,0,1,1,1,1,1.101775408
+"Cooper, Jim",Jim,Cooper,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0.106620632
+"Costa, Jim",Jim,Costa,0,0,0,0,0,9,1,0,0,0,0,0,0,0,0.239917308
+"Cotton, Tom",Tom,Cotton,0,0,0,0,0,8,0,0,0,0,1,0,0,0,0.124898456
+"Courtney, Joe",Joe,Courtney,0,0,0,0,0,8,0,0,0,0,1,0,0,0,0.124898456
+"Cramer, Kevin",Kevin,Cramer,0,0,0,0,0,4,3,2,1,1,0,0,0,0,1.182568431
+"Crawford, Eric",Eric,Crawford,0,0,0,0,0,16,4,2,2,0,1,0,0,0,1.144711733
+"Crenshaw, Ander",Ander,Crenshaw,3,3,3,2,0,2,0,0,0,0,0,0,0,0,1.907377243
+"Crowley, Joseph",Joseph,Crowley,0,0,0,0,0,14,0,0,0,0,0,0,0,0,0.213241264
+"Cuellar, Henry",Henry,Cuellar,0,0,0,0,0,3,1,1,1,0,0,0,0,0,0.391841471
+"Culberson, John",John,Culberson,2,2,2,2,0,7,0,0,0,0,0,0,0,0,1.552134395
+"Cummings, Elijah",Elijah,Cummings,1,0,0,0,0,15,4,3,2,2,0,0,0,0,2.198918104
+"Daines, Steve",Steve,Daines,0,0,0,0,0,21,8,6,3,0,1,0,0,0,2.168422222
+"Davis, Danny",Danny,Davis,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0.106620632
+"Davis, Rodney",Rodney,Davis,0,0,0,0,0,11,0,1,1,0,3,1,2,2,0.726768136
+"Davis, Susan",Susan,Davis,0,0,0,0,0,21,0,0,0,0,1,0,0,0,0.322908193
+"DeFazio, Peter",Peter,DeFazio,0,0,0,0,0,26,3,1,1,0,0,0,0,0,0.947833657
+"DeGette, Diana",Diana,DeGette,0,0,0,0,0,12,0,0,0,0,0,0,0,0,0.182778224
+"DeLauro, Rosa",Rosa,DeLauro,0,0,0,0,0,37,0,0,0,0,0,0,0,0,0.563566208
+"DeSantis, Ron",Ron,DeSantis,1,0,1,1,0,8,2,2,1,0,0,0,0,0,1.185557365
+"DelBene, Suzan",Suzan,DelBene,0,0,0,0,0,11,2,2,0,0,0,0,0,0,0.568484128
+"Delaney, John",John,Delaney,1,0,0,0,0,7,1,1,1,0,0,0,0,0,0.483230591
+"Denham, Jeff",Jeff,Denham,0,0,0,0,0,15,3,3,3,2,0,0,0,0,2.211299658
+"Dent, Charles",Charles,Dent,0,0,0,0,0,9,1,0,0,0,0,0,0,0,0.239917308
+"DesJarlais, Scott",Scott,DesJarlais,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0.060926076
+"Deutch, Theodore",Theodore,Deutch,1,0,1,1,1,13,0,0,0,0,0,0,0,0,1.659485459
+"Diaz-Balart, Mario",Mario,Diaz-Balart,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0.030463038
+"Dingell, John",John,Dingell,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0.030463038
+"Doggett, Lloyd",Lloyd,Doggett,0,0,0,0,0,12,1,1,1,0,0,0,0,0,0.528925121
+"Doyle, Michael",Michael,Doyle,0,0,0,0,0,4,0,0,0,0,1,1,1,1,0.133201763
+"Duckworth, Tammy",Tammy,Duckworth,0,0,0,0,0,6,1,0,0,0,0,0,0,0,0.194222748
+"Duffy, Sean",Sean,Duffy,3,3,3,1,0,19,5,4,2,0,0,0,0,0,3.071021557
+"Duncan, Jeff",Jeff,Duncan,1,1,1,1,0,8,1,1,1,0,0,0,0,0,1.190755963
+"Duncan, John",John,Duncan,0,0,0,0,0,9,1,1,0,0,1,0,0,0,0.340598673
+"Edwards, Donna",Donna,Edwards,0,0,0,0,0,12,0,0,0,0,0,0,0,0,0.182778224
+"Ellison, Keith",Keith,Ellison,0,0,0,0,0,21,1,1,1,1,0,0,0,0,1.138201833
+"Ellmers, Renee",Renee,Ellmers,0,0,0,0,0,16,0,0,0,0,0,0,0,0,0.243704304
+"Emerson, Jo",Jo,Emerson,0,0,0,0,0,3,1,1,1,0,0,0,0,0,0.391841471
+"Engel, Eliot",Eliot,Engel,0,0,0,0,0,26,3,3,0,0,0,0,0,0,0.997425616
+"Enyart, William",William,Enyart,0,0,0,0,0,7,1,1,0,0,0,0,0,0,0.307089329
+"Eshoo, Anna",Anna,Eshoo,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0.091389112
+"Esty, Elizabeth",Elizabeth,Esty,0,0,0,0,0,15,1,1,1,1,0,0,0,0,1.046812773
+"Faleomavaega, Eni",Eni,Faleomavaega,0,0,0,0,0,6,0,2,2,0,0,0,0,0,0.578015685
+"Farenthold, Blake",Blake,Farenthold,0,0,0,0,0,13,3,3,2,1,0,0,0,0,1.562965393
+"Farr, Sam",Sam,Farr,0,0,0,0,0,4,1,0,0,0,1,0,1,1,0.309907287
+"Fattah, Chaka",Chaka,Fattah,0,0,0,0,0,15,0,0,0,0,2,0,1,1,0.377666652
+"Fincher, Stephen",Stephen,Fincher,0,0,0,0,0,16,4,3,1,0,0,0,0,0,1.093622208
+"Fitzpatrick, Michael",Michael,Fitzpatrick,0,0,0,0,0,30,2,3,1,0,0,0,0,0,1.101196289
+"Fleischmann, Charles",Charles,Fleischmann,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0.060926076
+"Fleming, John",John,Fleming,0,0,0,0,0,11,5,4,1,1,0,0,0,0,1.690126419
+"Flores, Bill",Bill,Flores,1,1,1,1,0,12,6,1,1,0,1,0,1,1,1.911997795
+"Forbes, J.",J.,Forbes,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0.152315184
+"Fortenberry, Jeff",Jeff,Fortenberry,0,0,0,0,0,11,1,1,1,0,0,0,0,0,0.513693631
+"Foster, Bill",Bill,Foster,0,0,0,0,0,14,0,0,0,0,0,0,0,0,0.213241264
+"Foxx, Virginia",Virginia,Foxx,2,2,2,2,1,7,3,3,2,1,0,0,0,0,3.861476183
+"Frankel, Lois",Lois,Frankel,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0.076157592
+"Franks, Trent",Trent,Franks,1,1,1,1,0,12,1,2,2,0,0,0,0,0,1.494995236
+"Frelinghuysen, Rodney",Rodney,Frelinghuysen,2,2,2,2,0,3,1,1,0,0,0,0,0,0,1.691676974
+"Fudge, Marcia",Marcia,Fudge,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0.137083665
+"Gabbard, Tulsi",Tulsi,Gabbard,0,0,0,0,0,10,0,1,1,1,0,0,0,0,0.867821515
+"Gallego, Pete",Pete,Gallego,0,0,0,0,0,8,0,0,0,0,0,0,0,0,0.121852152
+"Garamendi, John",John,Garamendi,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0.060926076
+"Garcia, Joe",Joe,Garcia,0,0,0,0,0,10,0,0,0,0,1,1,1,1,0.31902948
+"Gardner, Cory",Cory,Gardner,1,1,1,1,0,23,4,5,3,1,0,0,0,0,2.881819487
+"Garrett, Scott",Scott,Garrett,4,3,4,3,1,14,4,4,2,0,1,1,1,1,4.71713829
+"Gerlach, Jim",Jim,Gerlach,1,1,1,0,0,17,0,2,2,2,0,0,0,0,2.121348858
+"Gibbs, Bob",Bob,Gibbs,0,0,0,0,0,3,2,2,1,0,0,0,0,0,0.59231019
+"Gibson, Christopher",Christopher,Gibson,0,0,0,0,0,17,2,1,1,0,1,0,0,0,0.710962653
+"Gingrey, Phil",Phil,Gingrey,0,0,0,0,0,20,1,1,0,0,0,0,0,0,0.505099058
+"Gohmert, Louie",Louie,Gohmert,0,0,0,0,0,11,1,0,0,0,0,0,0,0,0.270380348
+"Goodlatte, Bob",Bob,Goodlatte,3,3,3,2,0,10,6,6,5,3,0,0,0,0,5.377011776
+"Gosar, Paul",Paul,Gosar,0,0,0,0,0,21,6,3,1,1,2,1,2,2,2.160502195
+"Gowdy, Trey",Trey,Gowdy,2,2,2,1,0,3,1,1,0,0,0,0,0,0,1.40032053
+"Granger, Kay",Kay,Granger,2,2,2,0,0,4,0,1,1,1,0,0,0,0,1.639233351
+"Graves, Sam",Sam,Graves,0,0,0,0,0,22,3,3,0,0,0,0,0,0,0.936499536
+"Graves, Tom",Tom,Graves,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0.076157592
+"Grayson, Alan",Alan,Grayson,0,0,0,0,0,92,1,0,0,0,1,1,1,0,1.547273397
+"Green, Al",Al,Green,0,0,0,0,0,16,0,1,1,0,0,0,0,0,0.487017572
+"Green, Gene",Gene,Green,0,0,0,0,0,14,0,0,0,0,1,0,0,0,0.216287568
+"Griffin, Tim",Tim,Griffin,1,0,1,1,0,20,0,0,0,0,2,1,1,1,0.897041976
+"Griffith, H.",H.,Griffith,1,0,0,0,0,13,0,0,0,0,0,0,0,0,0.228472784
+"Grijalva, Raul",Raul,Grijalva,0,0,0,0,0,34,2,1,1,1,0,0,0,0,1.43904531
+"Grimm, Michael",Michael,Grimm,1,1,1,1,0,21,3,4,3,2,1,0,0,0,3.126127005
+"Guthrie, Brett",Brett,Guthrie,1,1,1,1,0,9,2,2,1,1,0,0,0,0,1.878649235
+"Gutierrez, Luis",Luis,Gutierrez,0,0,0,0,0,2,0,0,0,0,2,0,0,0,0.036555644
+"Hahn, Janice",Janice,Hahn,0,0,0,0,0,17,0,0,0,0,3,0,1,1,0.411175996
+"Hall, Ralph",Ralph,Hall,0,0,0,0,0,10,3,2,2,2,1,1,1,1,2.058543205
+"Hanabusa, Colleen",Colleen,Hanabusa,0,0,0,0,0,9,0,0,0,0,2,0,0,0,0.143176273
+"Hanna, Richard",Richard,Hanna,0,0,0,0,0,9,2,3,1,1,0,0,0,0,1.253527403
+"Harper, Gregg",Gregg,Harper,0,0,0,0,0,13,1,2,1,1,1,0,0,0,1.117031097
+"Harris, Andy",Andy,Harris,0,0,0,0,0,12,1,0,0,0,0,0,0,0,0.285611868
+"Hartzler, Vicky",Vicky,Hartzler,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0.091389112
+"Hastings, Alcee",Alcee,Hastings,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0.198009744
+"Hastings, Doc",Doc,Hastings,3,2,3,3,0,16,15,14,4,2,0,0,0,0,6.642802238
+"Heck, Denny",Denny,Heck,0,0,0,0,0,8,0,1,1,1,0,0,0,0,0.837358475
+"Heck, Joseph",Joseph,Heck,0,0,0,0,0,14,3,5,5,2,1,1,1,0,2.725834846
+"Hensarling, Jeb",Jeb,Hensarling,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Herrera Beutler, Jaime",Jaime,Herrera Beutler,0,0,0,0,0,6,3,2,0,0,0,0,0,0,0.595160127
+"Higgins, Brian",Brian,Higgins,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0.137083665
+"Himes, James",James,Himes,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0.137083665
+"Hinojosa, Ruben",Ruben,Hinojosa,0,0,0,0,0,11,0,0,0,0,0,0,0,0,0.167546704
+"Holding, George",George,Holding,0,0,0,0,0,6,3,3,2,1,0,0,0,0,1.456344724
+"Holt, Rush",Rush,Holt,0,0,0,0,0,23,1,1,1,0,0,0,0,0,0.69647187
+"Honda, Michael",Michael,Honda,0,0,0,0,0,31,0,0,0,0,0,0,0,0,0.472177088
+"Horsford, Steven",Steven,Horsford,0,0,0,0,0,11,3,0,0,0,1,0,0,0,0.479093939
+"Hoyer, Steny",Steny,Hoyer,0,0,0,0,0,3,1,1,1,1,0,0,0,0,0.864034534
+"Hudson, Richard",Richard,Hudson,0,0,0,0,0,11,2,3,3,2,1,0,0,0,2.050586224
+"Huelskamp, Tim",Tim,Huelskamp,0,0,0,0,0,4,2,1,0,0,1,0,0,0,0.367274731
+"Huffman, Jared",Jared,Huffman,0,0,0,0,0,13,2,2,2,0,0,0,0,0,0.890303552
+"Huizenga, Bill",Bill,Huizenga,2,2,2,0,0,8,3,3,2,0,0,0,0,0,1.877415538
+"Hultgren, Randy",Randy,Hultgren,1,1,1,1,0,10,1,3,2,0,0,0,0,0,1.562167287
+"Hunter, Duncan",Duncan,Hunter,2,1,2,2,0,14,2,2,0,0,3,0,0,0,1.863164067
+"Hurt, Robert",Robert,Hurt,1,1,1,1,0,8,2,2,1,0,0,0,0,0,1.391224623
+"Israel, Steve",Steve,Israel,1,0,0,0,0,43,0,0,0,0,1,0,0,0,0.688464642
+"Issa, Darrell",Darrell,Issa,2,2,2,0,0,31,17,17,9,3,3,2,2,1,7.589090824
+"Jackson Lee, Sheila",Sheila,Jackson Lee,0,0,0,0,0,43,1,1,1,0,3,1,1,1,1.173909187
+"Jeffries, Hakeem",Hakeem,Jeffries,0,0,0,0,0,15,2,2,2,1,0,0,0,0,1.392959714
+"Jenkins, Lynn",Lynn,Jenkins,1,0,1,1,0,15,3,4,3,1,0,0,0,0,2.353831291
+"Johnson, Bill",Bill,Johnson,0,0,0,0,0,15,7,6,3,2,2,2,2,1,3.030955076
+"Johnson, Eddie",Eddie,Johnson,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0.152315184
+"Johnson, Henry",Henry,Johnson,0,0,0,0,0,13,2,2,1,0,1,0,0,0,0.747671664
+"Johnson, Sam",Sam,Johnson,0,0,0,0,0,18,0,2,2,2,1,0,1,1,1.851327658
+"Jolly, David",David,Jolly,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0.091389112
+"Jones, Walter",Walter,Jones,0,0,0,0,0,17,4,2,1,0,2,0,0,0,1.017311335
+"Jordan, Jim",Jim,Jordan,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0.076157592
+"Joyce, David",David,Joyce,0,0,0,0,0,4,0,1,1,0,0,0,0,0,0.304239362
+"Kaptur, Marcy",Marcy,Kaptur,0,0,0,0,0,20,1,0,0,0,0,0,0,0,0.407464027
+"Keating, William",William,Keating,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0.045694556
+"Kelly, Robin",Robin,Kelly,0,0,0,0,0,15,0,0,0,0,0,0,0,0,0.228472784
+"Kelly, Mike",Mike,Kelly,1,1,1,0,0,10,1,1,0,0,0,0,0,0,0.784184337
+"Kennedy, Joseph",Joseph,Kennedy,0,0,0,0,0,3,1,1,0,0,1,0,1,1,0.392310828
+"Kildee, Daniel",Daniel,Kildee,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0.152315184
+"Kilmer, Derek",Derek,Kilmer,0,0,0,0,0,20,1,2,2,2,0,0,0,0,1.838476777
+"Kind, Ron",Ron,Kind,0,0,0,0,0,22,1,1,0,0,3,0,0,0,0.54470104
+"King, Peter",Peter,King,0,0,0,0,0,27,0,0,0,0,2,0,0,0,0.417343616
+"King, Steve",Steve,King,0,0,0,0,0,11,1,0,0,0,0,0,0,0,0.270380348
+"Kingston, Jack",Jack,Kingston,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0.350324929
+"Kinzinger, Adam",Adam,Kinzinger,0,0,0,0,0,5,2,2,2,0,0,0,0,0,0.768451393
+"Kirkpatrick, Ann",Ann,Kirkpatrick,0,0,0,0,0,17,2,2,2,1,1,1,1,1,1.590137005
+"Kline, John",John,Kline,2,2,2,1,0,6,2,2,2,1,0,0,0,0,2.410033226
+"Kuster, Ann",Ann,Kuster,0,0,0,0,0,10,0,0,0,0,1,1,1,1,0.31902948
+"LaMalfa, Doug",Doug,LaMalfa,0,0,0,0,0,5,1,1,1,0,0,0,0,0,0.422304511
+"Labrador, Raul",Raul,Labrador,0,0,0,0,0,8,5,3,1,0,0,0,0,0,1.074603796
+"Lamborn, Doug",Doug,Lamborn,0,0,0,0,0,12,4,4,2,1,2,0,1,1,1.897396445
+"Lance, Leonard",Leonard,Lance,0,0,0,0,0,8,0,0,0,0,0,0,0,0,0.121852152
+"Langevin, James",James,Langevin,0,0,0,0,0,16,1,1,1,0,0,0,0,0,0.589851201
+"Lankford, James",James,Lankford,0,0,0,0,0,9,2,2,1,0,0,0,0,0,0.68369931
+"Larsen, Rick",Rick,Larsen,0,0,0,0,0,11,1,0,0,0,0,0,0,0,0.270380348
+"Larson, John",John,Larson,0,0,0,0,0,14,1,1,0,0,0,0,0,0,0.413709968
+"Latham, Tom",Tom,Latham,3,2,3,2,1,12,0,0,0,0,0,0,0,0,2.798411369
+"Latta, Robert",Robert,Latta,0,0,0,0,0,28,6,8,5,2,2,0,0,0,3.503434658
+"Lee, Barbara",Barbara,Lee,0,0,0,0,0,33,1,1,1,0,0,0,0,0,0.848787069
+"Levin, Sander",Sander,Levin,1,0,0,0,0,4,0,0,0,0,0,0,0,0,0.091389112
+"Lewis, John",John,Lewis,0,0,0,0,0,19,0,0,0,0,1,0,1,1,0.435546428
+"Lipinski, Daniel",Daniel,Lipinski,0,0,0,0,0,11,0,1,1,0,3,2,2,2,0.652896285
+"LoBiondo, Frank",Frank,LoBiondo,0,0,0,0,0,12,2,2,2,0,0,0,0,0,0.875072062
+"Loebsack, David",David,Loebsack,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0.137083665
+"Lofgren, Zoe",Zoe,Lofgren,0,0,0,0,0,16,0,0,0,0,1,0,0,0,0.246750608
+"Long, Billy",Billy,Long,0,0,0,0,0,4,1,1,1,0,0,0,0,0,0.407072991
+"Lowenthal, Alan",Alan,Lowenthal,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0.060926076
+"Lowey, Nita",Nita,Lowey,0,0,0,0,0,11,0,0,0,0,0,0,0,0,0.167546704
+"Lucas, Frank",Frank,Lucas,5,2,5,4,1,2,0,0,0,0,0,0,0,0,3.680275202
+"Luetkemeyer, Blaine",Blaine,Luetkemeyer,0,0,0,0,0,22,5,6,3,1,0,0,0,0,2.344299793
+"Lujan, Ben",Ben,Lujan,0,0,0,0,0,18,2,1,0,0,0,0,0,0,0.577469707
+"Lujan Grisham, Michelle",Michelle,Lujan Grisham,0,0,0,0,0,17,2,2,1,0,0,0,0,0,0.80555141
+"Lummis, Cynthia",Cynthia,Lummis,1,1,1,0,0,15,6,5,3,0,0,0,0,0,2.202085018
+"Lynch, Stephen",Stephen,Lynch,0,0,0,0,0,18,2,2,1,0,0,0,0,0,0.820782959
+"Maffei, Daniel",Daniel,Maffei,0,0,0,0,0,12,1,0,0,0,1,0,0,0,0.288658172
+"Maloney, Sean",Sean,Maloney,0,0,0,0,0,14,1,1,1,0,1,1,1,1,0.726102471
+"Maloney, Carolyn",Carolyn,Maloney,0,0,0,0,0,39,1,2,2,1,2,1,1,1,1.825443149
+"Marchant, Kenny",Kenny,Marchant,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0.091389112
+"Marino, Tom",Tom,Marino,0,0,0,0,0,13,4,2,2,0,0,0,0,0,1.095970869
+"Markey, Edward",Edward,Markey,0,0,0,0,0,25,1,0,0,0,1,0,0,0,0.486667931
+"Massie, Thomas",Thomas,Massie,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0.091389112
+"Matheson, Jim",Jim,Matheson,0,0,0,0,0,11,1,1,1,0,0,0,0,0,0.513693631
+"Matsui, Doris",Doris,Matsui,0,0,0,0,0,18,0,0,0,0,0,0,0,0,0.274167329
+"McAllister, Vance",Vance,McAllister,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0.076157592
+"McCarthy, Carolyn",Carolyn,McCarthy,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0.152315184
+"McCarthy, Kevin",Kevin,McCarthy,0,0,0,0,0,8,5,4,1,1,0,0,0,0,1.644431829
+"McCaul, Michael",Michael,McCaul,1,1,1,0,0,15,3,3,2,0,1,0,0,0,1.555682063
+"McClintock, Tom",Tom,McClintock,1,1,1,1,0,7,5,5,1,1,1,1,1,1,2.52186799
+"McCollum, Betty",Betty,McCollum,0,0,0,0,0,6,1,0,0,0,0,0,0,0,0.194222748
+"McDermott, Jim",Jim,McDermott,0,0,0,0,0,33,0,0,0,0,0,0,0,0,0.502640128
+"McGovern, James",James,McGovern,0,0,0,0,0,6,0,0,0,0,1,0,0,0,0.094435416
+"McHenry, Patrick",Patrick,McHenry,0,0,0,0,0,4,2,2,1,0,0,0,0,0,0.60754168
+"McIntyre, Mike",Mike,McIntyre,0,0,0,0,0,12,1,1,1,1,0,0,0,0,1.001118183
+"McKeon, Howard",Howard,McKeon,2,2,2,2,0,5,0,1,1,0,1,1,1,1,1.931698918
+"McKinley, David",David,McKinley,1,0,0,0,0,35,4,3,2,0,1,0,0,0,1.562208652
+"McMorris Rodgers, Cathy",Cathy,McMorris Rodgers,1,1,1,1,1,12,0,0,0,0,0,0,0,0,1.849921227
+"McNerney, Jerry",Jerry,McNerney,0,0,0,0,0,24,0,0,0,0,1,0,0,0,0.368602753
+"Meadows, Mark",Mark,Meadows,0,0,0,0,0,14,5,6,3,0,1,0,1,1,1.896402001
+"Meehan, Patrick",Patrick,Meehan,0,0,0,0,0,10,3,5,5,2,0,0,0,0,2.621768713
+"Meeks, Gregory",Gregory,Meeks,0,0,0,0,0,4,0,0,0,0,1,1,1,1,0.227640375
+"Meng, Grace",Grace,Meng,0,0,0,0,0,12,3,3,3,1,0,0,0,0,1.693412066
+"Messer, Luke",Luke,Messer,0,0,0,0,0,9,1,2,2,0,0,0,0,0,0.726543844
+"Mica, John",John,Mica,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0.030463038
+"Michaud, Michael",Michael,Michaud,0,0,0,0,0,22,5,3,1,0,0,0,0,0,1.287845016
+"Miller, Candice",Candice,Miller,0,0,0,0,0,10,1,2,2,1,0,0,0,0,1.213968396
+"Miller, Jeff",Jeff,Miller,1,1,1,1,0,23,14,10,7,1,2,0,2,2,5.273339272
+"Miller, George",George,Miller,0,0,0,0,0,26,1,2,2,0,1,0,0,0,0.988525987
+"Miller, Gary",Gary,Miller,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0.137083665
+"Moore, Gwen",Gwen,Moore,0,0,0,0,0,10,0,2,2,0,0,0,0,0,0.638941765
+"Moran, James",James,Moran,0,0,0,0,0,15,0,1,1,0,0,0,0,0,0.471786052
+"Mullin, Markwayne",Markwayne,Mullin,0,0,0,0,0,9,3,2,2,1,0,0,0,0,1.404404163
+"Mulvaney, Mick",Mick,Mulvaney,0,0,0,0,0,9,2,2,0,0,0,0,0,0,0.538021088
+"Murphy, Patrick",Patrick,Murphy,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0.350324929
+"Murphy, Tim",Tim,Murphy,1,1,0,0,0,7,0,0,0,0,0,0,0,0,0.342750937
+"Nadler, Jerrold",Jerrold,Nadler,0,0,0,0,0,20,0,0,0,0,0,0,0,0,0.304630369
+"Napolitano, Grace",Grace,Napolitano,0,0,0,0,0,4,1,0,0,0,0,0,0,0,0.163759708
+"Neal, Richard",Richard,Neal,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0.137083665
+"Negrete McLeod, Gloria","McLeod, Gloria",Negrete McLeod,0,0,0,0,0,8,1,0,0,0,0,0,0,0,0.224685788
+"Neugebauer, Randy",Randy,Neugebauer,4,4,4,0,0,10,2,2,2,0,0,0,0,0,2.570210695
+"Noem, Kristi",Kristi,Noem,0,0,0,0,0,16,1,2,2,1,0,0,0,0,1.305357575
+"Nolan, Richard",Richard,Nolan,0,0,0,0,0,13,4,4,3,3,1,0,0,0,2.856544733
+"Norcross, Donald",Donald,Norcross,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Norton, Eleanor",Eleanor,Norton,0,0,0,0,0,53,4,4,4,3,0,0,0,0,3.6084373
+"Nugent, Richard",Richard,Nugent,0,0,0,0,0,10,1,0,0,0,0,0,0,0,0.255148828
+"Nunes, Devin",Devin,Nunes,0,0,0,0,0,9,1,1,1,1,0,0,0,0,0.955423653
+"Nunnelee, Alan",Alan,Nunnelee,0,0,0,0,0,4,1,2,2,1,0,0,0,0,1.122579336
+"O'Rourke, Beto",Beto,O'Rourke,0,0,0,0,0,13,2,1,0,0,0,0,0,0,0.501312077
+"Olson, Pete",Pete,Olson,0,0,0,0,0,12,2,2,1,0,1,0,1,1,0.875541389
+"Owens, William",William,Owens,0,0,0,0,0,14,0,0,0,0,1,1,1,0,0.256381303
+"Palazzo, Steven",Steven,Palazzo,0,0,0,0,0,7,2,2,1,0,0,0,0,0,0.65323627
+"Pallone, Frank",Frank,Pallone,0,0,0,0,0,17,1,1,1,1,0,0,0,0,1.077275753
+"Pascrell, Bill",Bill,Pascrell,0,0,0,0,0,20,2,2,2,0,0,0,0,0,0.996924222
+"Pastor, Ed",Ed,Pastor,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0.015231519
+"Paulsen, Erik",Erik,Paulsen,2,1,1,0,0,22,1,2,2,0,0,0,0,0,1.386417031
+"Payne, Donald",Donald,Payne,0,0,0,0,0,11,1,1,1,0,1,1,1,1,0.680407941
+"Pearce, Stevan",Stevan,Pearce,0,0,0,0,0,17,5,3,1,0,1,0,0,0,1.21473372
+"Pelosi, Nancy",Nancy,Pelosi,0,0,0,0,0,7,0,0,0,0,1,0,0,0,0.109666936
+"Perlmutter, Ed",Ed,Perlmutter,1,0,0,0,0,6,0,1,1,1,0,0,0,0,0.837358475
+"Perry, Scott",Scott,Perry,0,0,0,0,0,7,1,1,1,0,0,0,0,0,0.452767551
+"Peters, Scott",Scott,Peters,0,0,0,0,0,25,0,1,1,0,2,1,1,1,0.793861866
+"Peters, Gary",Gary,Peters,0,0,0,0,0,18,0,0,0,0,0,0,0,0,0.274167329
+"Peterson, Collin",Collin,Peterson,0,0,0,0,0,1,0,0,0,0,1,1,1,1,0.181945816
+"Petri, Thomas",Thomas,Petri,0,0,0,0,0,16,1,1,1,0,1,0,0,0,0.592897534
+"Pierluisi, Pedro",Pedro,Pierluisi,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0.198009744
+"Pingree, Chellie",Chellie,Pingree,0,0,0,0,0,8,2,2,2,0,0,0,0,0,0.814145982
+"Pittenger, Robert",Robert,Pittenger,0,0,0,0,0,6,3,3,2,1,0,0,0,0,1.456344724
+"Pitts, Joseph",Joseph,Pitts,2,1,2,1,1,12,3,4,3,1,0,0,0,0,3.683923244
+"Pocan, Mark",Mark,Pocan,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0.198009744
+"Poe, Ted",Ted,Poe,1,0,0,0,0,36,1,1,1,0,0,0,0,0,0.924944639
+"Polis, Jared",Jared,Polis,1,0,0,0,0,24,2,2,2,1,1,0,0,0,1.563552737
+"Pompeo, Mike",Mike,Pompeo,0,0,0,0,0,9,2,2,2,1,0,0,0,0,1.301570535
+"Posey, Bill",Bill,Posey,0,0,0,0,0,24,1,1,0,0,2,1,2,2,0.878887057
+"Price, David",David,Price,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0.152315184
+"Price, Tom",Tom,Price,1,0,1,1,0,15,1,2,2,0,0,0,0,0,1.335022569
+"Quigley, Mike",Mike,Quigley,0,0,0,0,0,8,1,1,0,0,0,0,0,0,0.322320849
+"Radel, Trey",Trey,Radel,0,0,0,0,0,7,2,1,0,0,0,0,0,0,0.409922957
+"Rahall, Nick",Nick,Rahall,0,0,0,0,0,8,0,0,0,0,0,0,0,0,0.121852152
+"Rangel, Charles",Charles,Rangel,0,0,0,0,0,20,0,0,0,0,4,1,1,1,0.480483592
+"Reed, Tom",Tom,Reed,1,1,1,1,0,27,1,1,1,0,2,2,2,2,1.813583374
+"Reichert, David",David,Reichert,2,2,2,1,0,22,4,5,3,0,1,1,1,1,2.992509604
+"Renacci, James",James,Renacci,0,0,0,0,0,10,0,1,1,0,0,0,0,0,0.395628452
+"Ribble, Reid",Reid,Ribble,0,0,0,0,0,12,1,1,0,0,1,1,1,1,0.549961209
+"Rice, Tom",Tom,Rice,0,0,0,0,0,2,2,2,0,0,0,0,0,0,0.431400448
+"Richmond, Cedric",Cedric,Richmond,0,0,0,0,0,15,1,1,1,1,0,0,0,0,1.046812773
+"Rigell, E.",E.,Rigell,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0.045694556
+"Roby, Martha",Martha,Roby,0,0,0,0,0,4,1,1,1,0,0,0,0,0,0.407072991
+"Roe, David",David,Roe,2,2,2,1,0,11,3,2,2,1,0,0,0,0,2.589024544
+"Rogers, Harold",Harold,Rogers,4,0,4,4,3,2,1,2,2,1,0,0,0,0,5.99363327
+"Rogers, Mike",Mike,Rogers,0,0,0,0,0,3,1,0,0,0,0,0,0,0,0.148528188
+"Rogers, Mike",Mike,Rogers,2,2,2,1,1,9,1,2,2,1,0,0,0,0,3.297280312
+"Rohrabacher, Dana",Dana,Rohrabacher,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0.106620632
+"Rokita, Todd",Todd,Rokita,0,0,0,0,0,7,1,1,1,0,1,1,1,1,0.525043249
+"Rooney, Thomas",Thomas,Rooney,0,0,0,0,0,4,1,0,0,0,0,0,0,0,0.163759708
+"Ros-Lehtinen, Ileana",Ileana,Ros-Lehtinen,0,0,0,0,0,20,4,4,3,0,1,1,1,1,1.710254073
+"Roskam, Peter",Peter,Roskam,2,0,2,2,0,13,0,2,2,0,0,0,0,0,1.718815446
+"Ross, Dennis",Dennis,Ross,1,0,0,0,0,20,2,1,0,0,1,0,1,1,0.690104723
+"Rothfus, Keith",Keith,Rothfus,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0.091389112
+"Roybal-Allard, Lucille",Lucille,Roybal-Allard,0,0,0,0,0,14,1,1,1,1,1,0,0,0,1.034627557
+"Royce, Edward",Edward,Royce,1,1,1,1,0,29,9,12,11,4,0,0,0,0,6.752827168
+"Ruiz, Raul",Raul,Ruiz,0,0,0,0,0,16,2,1,1,0,0,0,0,0,0.692684829
+"Runyan, Jon",Jon,Runyan,0,0,0,0,0,8,5,2,2,0,1,0,0,0,1.125693202
+"Ruppersberger, C.",C.,Ruppersberger,0,0,0,0,0,2,0,0,0,0,1,0,0,0,0.03350934
+"Rush, Bobby",Bobby,Rush,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0.198009744
+"Ryan, Paul",Paul,Ryan,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0.045694556
+"Ryan, Tim",Tim,Ryan,0,0,0,0,0,11,0,0,0,0,4,1,1,1,0.343399912
+"Sablan, Gregorio",Gregorio,Sablan,0,0,0,0,0,17,4,4,2,0,0,0,0,0,1.35216701
+"Salmon, Matt",Matt,Salmon,2,1,1,1,0,28,0,0,0,0,0,0,0,0,1.179702401
+"Sanchez, Linda",Linda,Sanchez,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0.152315184
+"Sanchez, Loretta",Loretta,Sanchez,0,0,0,0,0,7,0,0,0,0,1,0,0,0,0.109666936
+"Sanford, Mark",Mark,Sanford,0,0,0,0,0,3,1,1,1,0,0,0,0,0,0.391841471
+"Sarbanes, John",John,Sarbanes,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0.106620632
+"Scalise, Steve",Steve,Scalise,0,0,0,0,0,8,2,2,2,0,0,0,0,0,0.814145982
+"Schakowsky, Janice",Janice,Schakowsky,0,0,0,0,0,24,0,0,0,0,0,0,0,0,0.365556449
+"Schiff, Adam",Adam,Schiff,0,0,0,0,0,14,0,0,0,0,0,0,0,0,0.213241264
+"Schneider, Bradley",Bradley,Schneider,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0.076157592
+"Schock, Aaron",Aaron,Schock,1,1,1,0,0,18,1,2,2,0,0,0,0,0,1.295027971
+"Schrader, Kurt",Kurt,Schrader,0,0,0,0,0,18,3,4,3,1,0,0,0,0,1.882436275
+"Schwartz, Allyson",Allyson,Schwartz,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0.198009744
+"Schweikert, David",David,Schweikert,0,0,0,0,0,11,1,1,1,0,0,0,0,0,0.513693631
+"Scott, Austin",Austin,Scott,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0.137083665
+"Scott, David",David,Scott,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+"Scott, Robert",Robert,Scott,0,0,0,0,0,11,1,1,1,1,0,0,0,0,0.985886693
+"Sensenbrenner, F.",F.,Sensenbrenner,1,1,1,1,0,23,4,3,2,0,0,0,0,0,2.068677902
+"Serrano, Jose",Jose,Serrano,0,0,0,0,0,16,0,0,0,0,0,0,0,0,0.243704304
+"Sessions, Pete",Pete,Sessions,0,0,0,0,0,5,0,1,1,0,0,0,0,0,0.319470882
+"Sewell, Terri",Terri,Sewell,0,0,0,0,0,3,0,0,0,0,1,0,1,1,0.191842124
+"Shea-Porter, Carol",Carol,Shea-Porter,0,0,0,0,0,17,0,0,0,0,0,0,0,0,0.258935839
+"Sherman, Brad",Brad,Sherman,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0.045694556
+"Shimkus, John",John,Shimkus,0,0,0,0,0,4,2,2,0,0,0,0,0,0,0.461863488
+"Shuster, Bill",Bill,Shuster,1,1,1,1,1,10,5,6,3,1,0,0,0,0,3.828664541
+"Simpson, Michael",Michael,Simpson,2,1,1,1,0,12,6,4,3,2,0,0,0,0,3.324960947
+"Sinema, Kyrsten",Kyrsten,Sinema,0,0,0,0,0,10,1,0,0,0,0,0,0,0,0.255148828
+"Sires, Albio",Albio,Sires,0,0,0,0,0,11,0,0,0,0,0,0,0,0,0.167546704
+"Slaughter, Louise",Louise,Slaughter,0,0,0,0,0,14,0,1,1,1,2,2,2,2,1.167737603
+"Smith, Christopher",Christopher,Smith,1,1,1,1,0,30,9,8,7,2,1,0,0,0,4.853465557
+"Smith, Adrian",Adrian,Smith,1,0,0,0,0,6,1,1,1,0,0,0,0,0,0.467999071
+"Smith, Adam",Adam,Smith,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0.137083665
+"Smith, Jason",Jason,Smith,0,0,0,0,0,3,3,2,0,0,0,0,0,0,0.549465597
+"Smith, Lamar",Lamar,Smith,2,1,2,1,1,7,2,3,2,0,0,0,0,0,2.789425611
+"Southerland, Steve",Steve,Southerland,0,0,0,0,0,9,3,1,1,0,0,0,0,0,0.688897848
+"Speier, Jackie",Jackie,Speier,0,0,0,0,0,22,1,1,1,0,0,0,0,0,0.68124032
+"Stewart, Chris",Chris,Stewart,0,0,0,0,0,7,4,1,1,0,1,0,0,0,0.764314771
+"Stivers, Steve",Steve,Stivers,0,0,0,0,0,17,3,3,1,0,5,2,2,2,1.348587632
+"Stockman, Steve",Steve,Stockman,0,0,0,0,0,44,0,0,0,0,2,1,1,1,0.839947462
+"Stutzman, Marlin",Marlin,Stutzman,0,0,0,0,0,9,1,1,0,0,0,0,0,0,0.337552369
+"Swalwell, Eric",Eric,Swalwell,0,0,0,0,0,7,0,3,2,1,1,1,1,1,1.329789639
+"Takano, Mark",Mark,Takano,0,0,0,0,0,12,4,0,0,0,0,0,0,0,0.594112754
+"Terry, Lee",Lee,Terry,2,1,2,2,0,14,2,4,4,1,0,0,0,0,3.104201078
+"Thompson, Bennie",Bennie,Thompson,0,0,0,0,0,10,1,1,1,1,2,1,1,1,1.045977116
+"Thompson, Glenn",Glenn,Thompson,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0.152315184
+"Thompson, Mike",Mike,Thompson,0,0,0,0,0,12,2,1,0,0,2,1,1,1,0.655841172
+"Thornberry, Mac",Mac,Thornberry,0,0,0,0,0,11,1,1,0,0,0,0,0,0,0.368015409
+"Tiberi, Patrick",Patrick,Tiberi,2,2,2,2,0,8,1,1,0,0,3,1,2,2,2.083742857
+"Tierney, John",John,Tierney,1,0,0,0,0,14,0,0,0,0,0,0,0,0,0.243704304
+"Tipton, Scott",Scott,Tipton,1,1,1,1,1,11,5,3,1,0,0,0,0,0,2.787441254
+"Titus, Dina",Dina,Titus,0,0,0,0,0,25,3,2,2,0,1,0,0,0,1.178961754
+"Tonko, Paul",Paul,Tonko,1,0,0,0,0,11,0,0,0,0,1,0,0,0,0.201056048
+"Tsongas, Niki",Niki,Tsongas,0,0,0,0,0,11,1,1,1,0,0,0,0,0,0.513693631
+"Turner, Michael",Michael,Turner,0,0,0,0,0,21,1,1,0,0,0,0,0,0,0.520330608
+"Upton, Fred",Fred,Upton,2,0,2,2,1,4,2,3,2,1,1,0,0,0,3.304659605
+"Valadao, David",David,Valadao,0,0,0,0,0,6,0,2,2,0,0,0,0,0,0.578015685
+"Van Hollen, Chris","Hollen, Chris",Van Hollen,0,0,0,0,0,16,0,0,0,0,0,0,0,0,0.243704304
+"Vargas, Juan",Juan,Vargas,0,0,0,0,0,5,1,1,0,0,0,0,0,0,0.276626289
+"Veasey, Marc",Marc,Veasey,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0.060926076
+"Vela, Filemon",Filemon,Vela,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0.045694556
+"Velazquez, Nydia",Nydia,Velazquez,1,0,0,0,0,13,3,3,1,0,0,0,0,0,0.975557089
+"Visclosky, Peter",Peter,Visclosky,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0.030463038
+"Wagner, Ann",Ann,Wagner,1,1,1,1,0,4,2,2,1,0,5,2,4,4,1.675752759
+"Walberg, Tim",Tim,Walberg,0,0,0,0,0,12,2,2,2,1,2,1,1,1,1.517025709
+"Walden, Greg",Greg,Walden,0,0,0,0,0,12,6,5,5,1,1,0,0,0,2.491585732
+"Walorski, Jackie",Jackie,Walorski,0,0,0,0,0,4,1,1,1,0,0,0,0,0,0.407072991
+"Walz, Timothy",Timothy,Walz,0,0,0,0,0,12,1,1,1,0,1,0,1,1,0.67507273
+"Wasserman Schultz, Debbie","Schultz, Debbie",Wasserman Schultz,0,0,0,0,0,6,1,3,3,1,0,0,0,0,1.396355629
+"Waters, Maxine",Maxine,Waters,0,0,0,0,0,14,0,0,0,0,0,0,0,0,0.213241264
+"Watt, Melvin",Melvin,Watt,0,0,0,0,0,21,0,0,0,0,0,0,0,0,0.319861889
+"Waxman, Henry",Henry,Waxman,0,0,0,0,0,7,0,0,0,0,1,0,0,0,0.109666936
+"Weber, Randy",Randy,Weber,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0.076157592
+"Webster, Daniel",Daniel,Webster,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0.045694556
+"Welch, Peter",Peter,Welch,0,0,0,0,0,25,1,1,1,0,1,1,1,1,0.799210548
+"Wenstrup, Brad",Brad,Wenstrup,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0.118065156
+"Westmoreland, Lynn",Lynn,Westmoreland,1,1,1,0,0,3,1,2,1,0,0,0,0,0,0.92087698
+"Whitfield, Ed",Ed,Whitfield,1,1,1,1,0,18,1,1,1,0,0,0,0,0,1.343071103
+"Williams, Roger",Roger,Williams,0,0,0,0,0,5,0,0,0,0,1,1,1,1,0.242871895
+"Wilson, Frederica",Frederica,Wilson,0,0,0,0,0,10,0,0,0,0,1,0,1,1,0.298462778
+"Wilson, Joe",Joe,Wilson,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0.076157592
+"Wittman, Robert",Robert,Wittman,0,0,0,0,0,10,3,3,1,1,0,0,0,0,1.371592522
+"Wolf, Frank",Frank,Wolf,2,2,2,1,1,8,1,2,2,0,0,0,0,0,2.8098557
+"Womack, Steve",Steve,Womack,1,0,0,0,0,7,1,1,1,0,0,0,0,0,0.483230591
+"Woodall, Rob",Rob,Woodall,0,0,0,0,0,3,1,1,1,0,0,0,0,0,0.391841471
+"Yarmuth, John",John,Yarmuth,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0.076157592
+"Yoder, Kevin",Kevin,Yoder,0,0,0,0,0,6,1,1,0,0,0,0,0,0,0.291857809
+"Yoho, Ted",Ted,Yoho,1,0,1,1,0,12,0,0,0,0,0,0,0,0,0.699867845
+"Young, C.",C.,Young,1,1,1,1,1,4,1,0,0,0,0,0,0,0,1.830902696
+"Young, Don",Don,Young,0,0,0,0,0,45,20,13,6,3,0,0,0,0,6.301995277
+"Young, Todd",Todd,Young,3,2,3,3,0,4,0,0,0,0,0,0,0,0,2.023529291
+,Lisa,Murkowski,1,0,1,1,0,73,40,14,3,1,2,1,0,0,2.763
+,Daniel,Sullivan,0,0,0,0,0,24,8,7,3,1,1,0,0,0,1.107
+,Jeff,Sessions,0,0,0,0,0,5,0,0,0,0,1,1,1,1,0.063
+,Richard,Shelby,1,1,1,0,0,4,0,2,0,0,0,0,0,0,0.235
+,John,Boozman,0,0,0,0,0,15,6,4,0,0,2,1,1,1,0.461
+,Tom,Cotton,0,0,0,0,0,19,1,1,1,1,0,0,0,0,0.465
+,Jeff,Flake,0,0,0,0,0,50,16,5,1,0,0,0,0,0,0.983
+,John,McCain,2,1,2,1,1,35,8,5,1,0,0,0,0,0,1.506
+,Barbara,Boxer,0,0,0,0,0,47,8,4,1,1,0,0,0,0,0.915
+,Diane,Feinstein,0,0,0,0,0,42,12,5,4,3,0,0,0,0,1.73
+,Michael,Bennet,0,0,0,0,0,26,5,2,0,0,0,0,0,0,0.35
+,Cory,Gardner,0,0,0,0,0,31,12,9,3,3,2,0,1,1,1.77
+,Richard,Blumenthal,0,0,0,0,0,60,7,1,0,0,0,0,0,0,0.557
+,Christopher,Murphy,0,0,0,0,0,29,1,1,0,0,0,0,0,0,0.228
+,Eleanor,Norton,0,0,0,0,0,48,4,4,2,1,0,0,0,0,2.122
+,Thomas,Carper,0,0,0,0,0,29,16,15,5,4,0,0,0,0,2.415
+,Christopher,Coons,1,1,0,0,0,27,5,0,0,0,0,0,0,0,0.343
+,Bill,Nelson,0,0,0,0,0,37,4,3,1,1,0,0,0,0,0.719
+,Marco,Rubio,0,0,0,0,0,53,9,7,2,2,0,0,0,0,1.381
+,Johnny,Isakson,0,0,0,0,0,27,9,8,3,1,1,0,0,0,1.187
+,David,Perdue,0,0,0,0,0,12,2,1,1,0,0,0,0,0,0.261
+,Mazie,Hirono,0,0,0,0,0,38,8,1,1,1,2,1,1,1,0.826
+,Brian,Schatz,0,0,0,0,0,29,6,4,2,1,0,0,0,0,0.866
+,Joni,Ernst,0,0,0,0,0,13,6,6,2,1,1,0,0,0,0.851
+,Chuck,Grassley,2,2,2,0,0,70,17,15,7,2,0,0,0,0,2.778
+,Mike,Crapo,0,0,0,0,0,26,5,3,0,0,1,0,0,0,0.389
+,James,Risch,0,0,0,0,0,15,9,5,0,0,0,0,0,0,0.501
+,Richard,Durbin,0,0,0,0,0,47,1,1,0,0,2,1,1,1,0.366
+,Mark,Kirk,0,0,0,0,0,66,9,7,2,1,1,0,0,0,1.267
+,Daniel,Coats,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0.074
+,Joe,Donnelly,0,0,0,0,0,15,2,0,0,0,0,0,0,0,0.074
+,Jerry,Moran,0,0,0,0,0,39,15,8,3,1,0,0,0,0,1.407
+,Pat,Roberts,0,0,0,0,0,28,0,4,0,0,0,0,0,0,0.309
+,Mitch,McConnell,0,0,0,0,0,8,1,3,1,1,0,0,0,0,0.478
+,Rand,Paul,0,0,0,0,0,54,2,2,0,0,0,0,0,0,0.433
+,Bill,Cassidy,1,0,0,0,0,37,7,3,1,0,1,1,1,1,0.69
+,David,Vitter,1,0,1,0,0,122,19,14,2,2,0,0,0,0,2.376
+,Edward,Markey,0,0,0,0,0,56,10,2,0,0,5,0,0,0,0.654
+,Elizabeth,Warren,0,0,0,0,0,26,1,1,1,0,0,0,0,0,0.316
+,Benjamin,Cardin,0,0,0,0,0,54,12,11,6,2,1,0,0,0,2.033
+,Barbara,Mikulski,0,0,0,0,0,12,2,1,0,0,0,0,0,0,0.157
+,Susan,Collins,0,0,0,0,0,33,4,5,2,1,0,0,0,0,0.876
+,Angus,King,0,0,0,0,0,24,7,1,0,0,0,0,0,0,0.352
+,Gary,Peters,0,0,0,0,0,23,5,3,1,1,2,0,1,1,0.733
+,Debbie,Stabenow,0,0,0,0,0,27,2,1,0,0,1,0,0,0,0.243
+,Al,Franken,0,0,0,0,0,40,10,3,2,1,0,0,0,0,0.993
+,Amy,Klobuchar,0,0,0,0,0,54,10,6,1,1,1,1,1,1,1.153
+,Roy,Blunt,0,0,0,0,0,34,8,10,4,2,1,1,1,1,1.642
+,Claire,McCaskill,0,0,0,0,0,19,3,1,1,1,1,0,0,0,0.518
+,Thad,Cochran,0,0,0,0,0,12,2,3,0,0,0,0,0,0,0.23
+,Roger,Wicker,1,1,1,1,1,18,6,8,5,2,1,1,1,0,2.197
+,Steve,Daines,0,0,0,0,0,33,6,3,0,0,0,0,0,0,0.453
+,Jon,Tester,0,0,0,0,0,56,23,7,3,1,1,1,1,1,1.742
+,Richard,Burr,1,0,1,1,0,32,12,10,3,2,0,0,0,0,1.85
+,Thom,Tillis,0,0,0,0,0,7,0,1,1,1,0,0,0,0,0.472
+,Heidi,Heitkamp,0,0,0,0,0,29,8,4,3,3,0,0,0,0,1.402
+,John,Hoeven,1,0,1,1,0,20,7,5,2,1,0,0,0,0,1.402
+,Deb,Fischer,0,0,0,0,0,33,11,9,5,3,0,0,0,0,1.897
+,Benjamin,Sasse,0,0,0,0,0,9,2,2,0,0,0,0,0,0,0.177
+,Kelly,Ayotte,0,0,0,0,0,39,4,4,1,1,0,0,0,0,0.768
+,Jeanne,Shaheen,0,0,0,0,0,67,18,9,0,0,0,0,0,0,0.768
+,Cory,Booker,0,0,0,0,0,35,6,4,2,1,2,1,1,1,0.974
+,Robert,Menendez,0,0,0,0,0,51,3,2,1,0,3,0,0,0,0.55
+,Martin,Heinrich,0,0,0,0,0,26,8,1,0,0,0,0,0,0,0.389
+,Tom,Udall,1,1,1,0,0,42,11,5,2,2,1,0,0,0,1.433
+,Dean,Heller,1,0,0,0,0,54,20,7,4,0,0,0,0,0,1.508
+,Harry,Reid,0,0,0,0,0,15,3,1,1,0,2,0,0,0,0.306
+,Kirsten,Gillibrand,0,0,0,0,0,34,3,1,0,0,3,1,1,1,0.344
+,Charles,Schumer,0,0,0,0,0,47,1,2,2,1,4,0,0,0,0.772
+,Sherrod,Brown,1,0,0,0,0,55,6,2,0,0,2,0,0,0,0.554
+,Rob,Portman,0,0,0,0,0,56,6,8,3,3,3,1,1,1,1.729
+,James,Inhofe,0,0,0,0,0,33,8,8,5,0,1,1,1,1,1.287
+,James,Lankford,0,0,0,0,0,18,7,7,1,0,0,0,0,0,0.647
+,Jeff,Merkley,0,0,0,0,0,29,3,0,0,0,0,0,0,0,0.241
+,Ron,Wyden,0,0,0,0,0,70,19,8,5,5,2,0,0,0,2.656
+,Robert,Casey,0,0,0,0,0,59,6,5,4,2,0,0,0,0,1.474
+,Pat,Toomey,0,0,0,0,0,34,7,5,3,1,1,1,0,0,1.069
+,Jack,Reed,0,0,0,0,0,35,1,0,0,0,1,0,0,0,0.226
+,Sheldon,Whitehouse,1,1,1,1,1,33,2,2,2,2,1,0,0,0,1.63
+,Lindsey,Graham,1,1,1,0,0,14,5,2,0,0,1,0,0,0,0.42
+,Tim,Scott,0,0,0,0,0,15,3,1,1,0,0,0,0,0,0.42
+,Mike,Rounds,0,0,0,0,0,23,2,0,0,0,0,0,0,0,0.182
+,John,Thune,0,0,0,0,0,58,27,23,8,3,0,0,0,0,3.284
+,Ted,Cruz,1,0,1,0,0,32,4,3,3,0,0,0,0,0,0.796
+,John,Cornyn,0,0,0,0,0,43,14,10,8,7,1,0,0,0,3.142
+,Lamar,Alexander,1,0,1,1,1,30,15,12,4,2,1,0,0,0,2.475
+,Bob,Corker,0,0,0,0,0,14,6,9,4,4,0,0,0,0,1.747
+,Orrin,Hatch,0,0,0,0,0,100,15,36,5,3,0,0,0,0,3.389
+,Mike,Lee,1,1,0,0,0,35,3,1,0,0,0,0,0,0,0.375
+,Tim,Kaine,0,0,0,0,0,16,4,3,0,0,0,0,0,0,0.305
+,Mark,Warner,0,0,0,0,0,22,4,1,0,0,1,0,0,0,0.266
+,Patrick,Leahy,0,0,0,0,0,25,4,2,2,1,1,0,0,0,0.719
+,Bernard,Sanders,0,0,0,0,0,29,1,0,0,0,0,0,0,0,0.191
+,Maria,Cantwell,0,0,0,0,0,39,16,9,1,1,0,0,0,0,1.26
+,Patty,Murray,0,0,0,0,0,42,8,3,1,0,0,0,0,0,0.66
+,Tammy,Baldwin,0,0,0,0,0,43,4,3,2,0,0,0,0,0,0.668
+,Ron,Johnson,2,1,1,1,1,35,17,15,4,4,2,1,1,1,3.181
+,Shelley Moore,Capito,0,0,0,0,0,15,4,2,0,0,0,0,0,0,0.262
+,Joe,Manchin,0,0,0,0,0,18,5,1,0,0,0,0,0,0,0.267
+,John,Barrasso,0,0,0,0,0,35,26,14,3,0,0,0,0,0,1.698
+,Michael,Enzi,0,0,0,0,0,22,5,2,0,0,0,0,0,0,0.327
