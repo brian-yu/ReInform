@@ -1,7 +1,13 @@
-/*body {
-	margin:0;
-	padding:0;
-}*/
+@font-face {
+  font-family: "Circular";
+  src: url("./fonts/circular-book.otf") format("opentype");
+}
+
+body {
+	/*margin:0;
+	padding:0;*/
+    font-family: "Circular";
+}
 #map {
 	position: absolute;
 	/*top: 0;*/
@@ -47,7 +53,8 @@
 	top: 20px;
 	left: 20px;
 	font-weight: 700;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Circular', sans-serif;
+    letter-spacing: 2px;
     /*font-size: 15vw;*/
 /*    text-shadow: 1px 1px #fff, 
                  2px 2px #fff;*/
