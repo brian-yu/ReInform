@@ -4,6 +4,11 @@ currentState = "";
 var initCenter = [-94.7, 37.830348];
 var initZoom = 3.75;
 
+var bounds = [
+    [-190.513578, 9.665363], // Southwest coordinates
+    [-42.241805, 71.717471]  // Northeast coordinates
+];
+
 $('#reset').hide();
 
 // function initSidebar() {
@@ -106,7 +111,8 @@ var map = new mapboxgl.Map({
 	container: 'map',
 	style: 'mapbox://styles/joannajia/cjec5ifih1rzl2ro3kw935rhm',
 	center: initCenter,
-    zoom: initZoom
+    zoom: initZoom,
+    maxBounds: bounds
 });
 
 function resetView() {
