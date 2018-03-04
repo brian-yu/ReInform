@@ -4,15 +4,12 @@ import requests
 import xmltodict, json
 from collections import OrderedDict
 
-app = Flask(__name__, static_url_path='')
+app = Flask(__name__)
 CORS(app)
 
 
 OPEN_SECRETS_KEY = "40411c191fd58f5709214a9184c9ca1d";
 
-@app.route("/")
-def index():
-	return app.send_static_file('index.html')
 
 @app.route("/state/<state>")
 def getLegislators(state):
@@ -87,3 +84,13 @@ def candidContrib(cid):
 		
 	answer = json.dumps(ans)
 	return answer
+
+
+@app.route('/')
+def root():
+  return app.send_static_file('index.html')
+
+@app.route('/<path:path>')
+def static_proxy(path):
+  # send_static_file will guess the correct MIME type
+  return app.send_static_file(path)

@@ -41,9 +41,6 @@ function resetListener(e) {
 	if (map.getZoom() != initZoom) {
     	$('#reset').fadeIn(200);
     }
-    // } else if (arraysEqual(map.getCenter(), initCenter) && map.getZoom() == initZoom) {
-    // 	$('#reset').hide();
-    // }
 }
 
 function stateView(name, abbrev) {
