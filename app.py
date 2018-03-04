@@ -29,7 +29,7 @@ def getLegislators(state):
 	return r.text
 
 #function to get the candidate funding accross four years
-@app.route("/id/<cid>")
+@app.route("/contrib/<cid>")
 def candidContrib(cid):
 #get our url data across the four seperate years
 	url2012 = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2012&apikey=" + OPEN_SECRETS_KEY+ "&output=xml"
@@ -101,6 +101,17 @@ def candidViews(name):
     response.headers.add('Access-Control-Allow-Methods', 'POST')
     response.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization')
     return response
+
+
+@app.route("/id/<cid>")
+def getLegislatorFromId(cid):
+	url = "http://www.opensecrets.org/api/?method=getLegislators&id=" + cid + "&apikey=" + OPEN_SECRETS_KEY + "&output=json"
+	r = requests.get(url)
+
+	# o = xmltodict.parse(r.text)['response']['legislator']
+	# return json.dumps(o) # '{"e": {"a": ["text", "text"]}}'
+	return r.text
+
 
 @app.route('/')
 def root():

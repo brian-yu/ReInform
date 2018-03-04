@@ -21,17 +21,25 @@ var sidebar = new Vue({
     bid: "",
     stateName: "",
     stateAbbrev: "",
+    cName: "",
+    party: "",
   },
   methods: {
     renderCongressman(item) {
-        o = item['@attributes']
-        console.log(o);
-        // console.log(id);
-        sidebar.title = o.firstlast;
+        console.log(item)
+        sidebar.title = item.firstlast;
         sidebar.view = "congress"
-        sidebar.bid = o.bioguide_id;
+        sidebar.bid = item.bioguide_id;
+        sidebar.cName = item.firstlast
+        sidebar.party = item.party[0] == "D" ? "Democratic" : "Republican";
     },
 
+    // renderCongressmanFromId(cid) {
+    //     axios.get('/id/' + cid)
+    //         .then(function (response) {
+    //         sidebar.renderCongressman(response.data.response.legislator['@attributes']);
+    //     });
+    // },
     renderState(name, abbrev) {
         sidebar.title = name;
         sidebar.view = "state";
@@ -41,10 +49,26 @@ var sidebar = new Vue({
             .then(function (response) {
             sidebar.items = response.data.response.legislator;
         });
+        map.flyTo({
+            center: centers[name],
+            zoom: 6,
+        });
+    },
+
+    renderCountry() {
+        resetView();
     },
 
   }
 })
+
+// function renderLegislatorFromId(cid) {
+//     axios.get('/id/' + cid)
+//         .then(function (response) {
+//         console.log(response.data)
+
+//     });
+// }
 
 var map = new mapboxgl.Map({
 	container: 'map',
@@ -165,11 +189,13 @@ map.on('load', function () {
     });
 
     map.on('click', 'legislators', function (e) {
-        console.log(e.features[0].properties)
+        // console.log(e.features[0].properties)
+        e.features[0].properties.firstlast = e.features[0].properties.first_name + ' ' + e.features[0].properties.last_name
+        e.features[0].properties.cid = e.features[0].properties.opensecrets_id
         map.flyTo({
             center: e.features[0].geometry.coordinates,
             zoom: 10,
         });
-        sidebar.renderCongressman(e.features[0].properties.first_name + ' ' + e.features[0].properties.last_name, e.features[0].properties.opensecrets_id);
+        sidebar.renderCongressman(e.features[0].properties)
     });
 });
