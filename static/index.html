@@ -21,7 +21,7 @@
 	<div id='map'>
 	</div>
 	<h1 id="brand">AccountaBill</h1>
-	<button type="button" class="btn btn-primary" id="reset" onclick="resetView()">Reset View</button>
+	<button type="button" class="btn btn-light" id="reset" onclick="resetView()"><i class="fa fa-home"></i></button>
 
 	<div id="sidebar">
 	  <!-- <h2 v-if="view === 'country'" id="sidebar-title">United States</h2> -->
@@ -32,7 +32,7 @@
 	  	<p>In the 2018 cycle, members of congress have accepted <b>$12,204,235</b> of funding so far.</p>
 	  	<p>In the 2016 cycle, they accepted <b>$30,914,976</b> in funding.</p>
 	  	<h5>Our Mission</h5>
-	  	<p>We built <b>AccountaBill</b> to help voters learn more about their congressmen and to <b>increase political transparency</b>.</p>
+	  	<p>We built <b>AccountaBill</b> to help voters learn more about their congressmen, <b>increase political transparency</b>, and give people the <b>power of information</b>.</p>
 	  	<h5>How to Use</h5>
 	  	<p>To get started learning about your Congressman's voting history and funding sources, <b>click on your state</b> on the map.</p>
 	  </div>
@@ -41,7 +41,7 @@
 	  	<h4>Congressmen</h4>
 	  	<ul>
 		  <li v-for="item in items">
-		  	<a v-on:click="renderCongressman(item)">
+		  	<a v-on:click="renderCongressman(item['@attributes'])">
 		    	{{ item['@attributes'].firstlast }}
 			</a>
 		  </li>
@@ -50,8 +50,30 @@
 	  <!-- Body for Congressman view -->
 	  <div v-else-if="view === 'congress'" id="sidebar-body">
 	  	<img :src="'https://theunitedstates.io/images/congress/225x275/' + bid + '.jpg'" alt="/static/image/default_profile.jpg">
-	  	<a id="goBackToState" v-on:click="renderState(stateName, stateAbbrev)"><i class="fa fa-arrow-left"></i> Back to {{stateName}}</a>
+	  	<p>{{cName}} is a <span v-bind:style="{ color: partyColor }">{{party}}</span> congressman from {{stateName}}.</p>
+	  	<div id="bills">
+	  		<h5>Recent Bills</h5>
+	  		<!-- <img id="loading" v-if="bills.length == 0" src="/static/image/loading.gif" /> -->
+			<div id="loading" class="spinner" v-if="bills.length == 0">
+			  <div class="rect1"></div>
+			  <div class="rect2"></div>
+			  <div class="rect3"></div>
+			  <div class="rect4"></div>
+			  <div class="rect5"></div>
+			</div>
+	  		<ul>
+			  <li v-for="bill in bills">
+			  	<a v-bind:href="bill.govtrack_url" target="_blank">
+			    	{{bill.latest_major_action_date}}: {{bill.short_title}}
+				</a>
+			  </li>
+		</ul>
+	  	</div>
 	  </div>
+	  <button v-if="view === 'congress'" id="goBackToState" type="button" class="btn btn-primary" v-on:click="renderState(stateName, stateAbbrev)"><i class="fa fa-arrow-left"></i> Back to {{stateName}}</button>
+	  <!-- <a v-if="view === 'congress'" id="goBackToState" v-on:click="renderState(stateName, stateAbbrev)"><i class="fa fa-arrow-left"></i> Back to {{stateName}}</a> -->
+	  <!-- <a v-if="view === 'state'" id="goBackToState" v-on:click="renderCountry()"><i class="fa fa-arrow-left"></i> Back to USA</a> -->
+	  <button v-if="view === 'state'" id="goBackToState" type="button" class="btn btn-primary" v-on:click="renderCountry()"><i class="fa fa-arrow-left"></i> Back to USA</button>
 	</div>
 
 </body>
