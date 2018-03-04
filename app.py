@@ -13,7 +13,7 @@ app = Flask(__name__)
 # CORS(app)
 
 
-OPEN_SECRETS_KEY = "63febc563042d321586952a08fa56e87";
+OPEN_SECRETS_KEY = "d1fd1a1f1860a50a0f4e67c04b4f2db1";
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
