@@ -85,14 +85,5 @@ def candidContrib(cid):
 		ans[check] = max
 		del funding[check]
 		
-
-	# 
-	# funding[str(o1['contributors']['contributor'][0]['@org_name'])] = str(o1['contributors']['contributor'][0]['@total'])
-	# funding[str(o1['contributors']['contributor'][1]['@org_name'])] = str(o1['contributors']['contributor'][1]['@total'])
-	# funding[str(o1['contributors']['contributor'][2]['@org_name'])] = str(o1['contributors']['contributor'][2]['@total'])
-	# funding[str(o1['contributors']['contributor'][3]['@org_name'])] = str(o1['contributors']['contributor'][3]['@total'])
-	# funding[str(o1['contributors']['contributor'][4]['@org_name'])] = str(o1['contributors']['contributor'][4]['@total'])
-	
 	answer = json.dumps(ans)
 	return answer
-	#['contributors']['contributor'][0]['@org_name']) + str()
