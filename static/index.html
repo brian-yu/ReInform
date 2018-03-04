@@ -59,9 +59,9 @@
 	  <div v-else-if="view === 'congress'" id="sidebar-body" class="scrollbar style-1">
 	  	<img :src="'https://theunitedstates.io/images/congress/225x275/' + bid + '.jpg'" alt="/static/image/default_profile.jpg">
 	  	<p>{{cName}} is a <span v-bind:style="{ color: partyColor }">{{party}}</span> congressman from {{stateName}}.</p>
-	  	<p >Legislative Effectiveness Score:</p>
-	  	<p v-if="les=='-1'">Not enough information</p>
-	  	<p v-else-if="les!=''">{{les}}</p>
+	  	<p style="margin-bottom: 0">Legislative Effectiveness Score:</p>
+	  	<p v-if="les=='-1'" align="center">Not enough information</p>
+	  	<h4 v-else-if="les!=''" align="center">{{les}}</h4>
 	  	<div id="social">
 	  		<a v-bind:href="phone"><i class="fa fa-phone-square" aria-hidden="true"></i></a>
 	  		<a v-bind:href="fb"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
