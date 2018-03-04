@@ -18,6 +18,27 @@ var sidebar = new Vue({
     body: 'Hello world.',
     view: "country",
     items: [],
+    bid: "",
+  },
+  methods: {
+    renderCongressman(item) {
+        o = item['@attributes']
+        console.log(o);
+        // console.log(id);
+        sidebar.title = o.firstlast;
+        sidebar.view = "congress"
+        sidebar.bid = o.bioguide_id;
+    },
+
+    renderState(name, abbrev) {
+        sidebar.title = name;
+        sidebar.view = "state";
+        axios.get('/state/' + abbrev)
+            .then(function (response) {
+            sidebar.items = response.data.response.legislator;
+        });
+    },
+
   }
 })
 
@@ -32,26 +53,18 @@ function resetView() {
 	map.flyTo({
         center: initCenter,
         zoom: initZoom,
+        pitch: 0, // pitch in degrees
+        bearing: 0,
     });
 	$('#reset').fadeOut(200);
+	sidebar.view = "country";
+    sidebar.title = "United States";
 }
 
 function resetListener(e) {
 	if (map.getZoom() != initZoom) {
     	$('#reset').fadeIn(200);
     }
-    // } else if (arraysEqual(map.getCenter(), initCenter) && map.getZoom() == initZoom) {
-    // 	$('#reset').hide();
-    // }
-}
-
-function stateView(name, abbrev) {
-	sidebar.title = name;
-	sidebar.view = "state";
-	axios.get('http://localhost:5000/state/' + abbrev)
-  		.then(function (response) {
-    	sidebar.items = response.data.response.legislator;
-  	});
 }
 
 map.on('load', function () {
@@ -82,7 +95,6 @@ map.on('load', function () {
         },
         "filter": ["==", "name", ""]
     });
-
     // When the user moves their mouse over the states-fill layer, we'll update the filter in
     // the state-fills-hover layer to only show the matching state, thus making a hover effect.
     map.on("mousemove", "state-fills", function(e) {
@@ -124,9 +136,24 @@ map.on('load', function () {
 	        center: centers[e.features[0].properties.name],
 	        zoom: 6,
     	});
-    	stateView(e.features[0].properties.name, e.features[0].properties.code_hasc.substring(3));
+    	sidebar.renderState(e.features[0].properties.name, e.features[0].properties.code_hasc.substring(3));
     });
 
     map.on('zoomend', resetListener);
 
+
+    /***************************************CONGRESS BUBBLES**************************************/
+    map.addSource("legislators", {
+        "type": "geojson",
+        "data": "./python-helpers/legislators.geojson"
+    });
+
+    map.addLayer({
+        'id': 'legislators',
+        'type': 'circle',
+        'source': 'legislators',
+        'paint': {
+            'circle-color': ['get', 'color']
+        }
+    });
 });

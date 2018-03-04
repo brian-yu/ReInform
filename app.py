@@ -1,18 +1,17 @@
 from flask import Flask, request, render_template, url_for
-from flask_cors import CORS
+# from flask_cors import CORS
 import requests
 import xmltodict, json
 from collections import OrderedDict
 
-app = Flask(__name__, static_url_path='')
-CORS(app)
+app = Flask(__name__)
+# CORS(app)
 
 
 OPEN_SECRETS_KEY = "40411c191fd58f5709214a9184c9ca1d";
 
-@app.route("/")
-def index():
-	return app.send_static_file('index.html')
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+
 
 @app.route("/state/<state>")
 def getLegislators(state):
@@ -89,3 +88,13 @@ def candidContrib(cid):
 		link["https://en.wikipedia.org/wiki/"+key] = ans[key]	
 	answer = json.dumps(link)
 	return answer
+
+
+@app.route('/')
+def root():
+  return app.send_static_file('index.html')
+
+@app.route('/<path:path>')
+def static_proxy(path):
+  # send_static_file will guess the correct MIME type
+  return app.send_static_file(path)

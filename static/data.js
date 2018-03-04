@@ -52,7 +52,6 @@ var centers = {"Alaska": [-152.2782, 64.0685],
 "Hawaii": [-156.3737, 20.2927],
 }
 
-
 function arraysEqual(a, b) {
   if (a === b) return true;
   if (a == null || b == null) return false;
@@ -80,11 +79,3 @@ function coordsSimilar(a, b) {
   }
   return true;
 }
-
-$.getJSON("http://localhost:5000/state/va", function(data) {
-	console.log(data);
-});
-
-$.getJSON("http://localhost:5000/id/N00007360", function(data) {
-	console.log(data);
-});
