@@ -63,7 +63,7 @@ for i in range(0, len(data)):
     file.write(',"state": "' + str(data[i]['terms'][-1]['state']) + '"')
     file.write(',"party": "' + str(data[i]['terms'][-1]['party']) + '"')
     if data[i]['terms'][-1]['party'][0] == "D":
-        file.write(',"color": "#93B0D8"')
+        file.write(',"color": "#007bff"')
     else:
         file.write(',"color": "#E74C3C"')
     file.write(',"phone": "' + str(data[i]['terms'][-1]['phone']) + '"')
