@@ -24,12 +24,16 @@ var sidebar = new Vue({
   },
   methods: {
     renderCongressman(item) {
-        o = item['@attributes']
-        console.log(o);
-        // console.log(id);
-        sidebar.title = o.firstlast;
+        sidebar.title = item.firstlast;
         sidebar.view = "congress"
-        sidebar.bid = o.bioguide_id;
+        sidebar.bid = item.bioguide_id;
+    },
+
+    renderCongressmanFromId(cid) {
+        axios.get('/id/' + cid)
+            .then(function (response) {
+            sidebar.renderCongressman(response.data.response.legislator['@attributes']);
+        });
     },
 
     renderState(name, abbrev) {
@@ -41,10 +45,26 @@ var sidebar = new Vue({
             .then(function (response) {
             sidebar.items = response.data.response.legislator;
         });
+        map.flyTo({
+            center: centers[name],
+            zoom: 6,
+        });
+    },
+
+    renderCountry() {
+        resetView();
     },
 
   }
 })
+
+// function renderLegislatorFromId(cid) {
+//     axios.get('/id/' + cid)
+//         .then(function (response) {
+//         console.log(response.data)
+
+//     });
+// }
 
 var map = new mapboxgl.Map({
 	container: 'map',
@@ -170,6 +190,8 @@ map.on('load', function () {
             center: e.features[0].geometry.coordinates,
             zoom: 10,
         });
-        sidebar.renderCongressman(e.features[0].properties.first_name + ' ' + e.features[0].properties.last_name, e.features[0].properties.opensecrets_id);
+        // sidebar.renderCongressman(e.features[0].properties.first_name + ' ' + e.features[0].properties.last_name, e.features[0].properties.opensecrets_id);
+        // sidebar.renderCongressman(getLegislatorFromId(e.features[0].properties.opensecrets_id));
+        sidebar.renderCongressmanFromId(e.features[0].properties.opensecrets_id);
     });
 });
