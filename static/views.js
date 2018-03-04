@@ -35,6 +35,7 @@ function resetView() {
     });
 	$('#reset').fadeOut(200);
 	sidebar.view = "country";
+    map.setPaintProperty("state-fills-hover", 'fill-opacity', 0.3);
 }
 
 function resetListener(e) {
@@ -49,11 +50,18 @@ function stateView(name, abbrev) {
 	axios.get('http://localhost:5000/state/' + abbrev)
   		.then(function (response) {
     	sidebar.items = response.data.response.legislator;
+        console.log(response.data)
   	});
 }
 
 function congressView(name, id) {
-
+    sidebar.title = name;
+    sidebar.view = "congress";
+    axios.get('/views/' + name.replace(' ', '-'))
+        .then(function (response) {
+        print(response)
+        sidebar.items = response.data.response;
+    });
 }
 
 map.on('load', function () {
@@ -125,6 +133,7 @@ map.on('load', function () {
 	        center: centers[e.features[0].properties.name],
 	        zoom: 6,
     	});
+        map.setPaintProperty("state-fills-hover", 'fill-opacity', 0);
     	stateView(e.features[0].properties.name, e.features[0].properties.code_hasc.substring(3));
     });
 
@@ -134,7 +143,7 @@ map.on('load', function () {
     /***************************************CONGRESS BUBBLES**************************************/
     map.addSource("legislators", {
         "type": "geojson",
-        "data": "./python-helpers/legislators.geojson"
+        "data": "./legislators.geojson"
     });
 
     map.addLayer({
@@ -142,7 +151,17 @@ map.on('load', function () {
         'type': 'circle',
         'source': 'legislators',
         'paint': {
+            'circle-radius': 10,
             'circle-color': ['get', 'color']
         }
+    });
+
+    map.on('click', 'legislators', function (e) {
+        console.log(e.features[0].properties)
+        map.flyTo({
+            center: e.features[0].geometry.coordinates,
+            zoom: 10,
+        });
+        congressView(e.features[0].properties.first_name + ' ' + e.features[0].properties.last_name, e.features[0].properties.opensecrets_id);
     });
 });

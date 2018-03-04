@@ -43,6 +43,15 @@
 		  </li>
 		</ul>
 	  </div>
+	  <div v-else-if="view === 'congress'" id="sidebar-body">
+	  	<h4>Congressman</h4>
+	  	<ul v-for="item in items">
+	  		{{ item['@attributes'].issueName }}
+		  <li v-for="view in item['@attributes'].views">
+		    {{ view }}
+		  </li>
+		</ul>
+	  </div>
 	  <div v-else id="sidebar-body"> {{ body }} </div>
 	</div>
 
