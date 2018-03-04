@@ -67,14 +67,14 @@ body {
 #sidebar-title {
 	padding-top: 30px;
 	text-align: center;
-	background-color: #ff4757;
+	background-color: #e74c3c;
 	color: #fff;
 	height: 12%;
 }
 
 #sidebar-body {
-	border-top: 4px solid #fff;
-	background-color: #0984e3;
+	border-top: 1px solid #fff;
+	background-color: #2980b9;
 	padding: 20px;
 	color: #fff;
 	height: 100%
@@ -84,7 +84,10 @@ body {
 	display: block;
     margin: 0 auto;
     border-radius: 50%;
+    border:6px solid #fff;
 }
+
+#sidebar-body ul
 
 #sidebar h5 {
 	text-align: center;
