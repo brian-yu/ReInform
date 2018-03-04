@@ -53,6 +53,13 @@ var sidebar = new Vue({
             }
         });
 
+        axios.get('/contrib/' + item.cid).then(function(res) {
+            if (sidebar.view == "congress") {
+                sidebar.orgs = res.data;
+                console.log(sidebar.orgs);
+            }
+        });
+
     },
 
     renderCongressmanFromId(item) {
