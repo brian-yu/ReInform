@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiYnJpYW55dSIsImEiOiJjajVycTJ0cTMwemt0MzNwbGQxN3JvbWF5In0.YddKaK6iFrT0IG1JVU8mUQ';
+mapboxgl.accessToken = 'pk.eyJ1Ijoiam9hbm5hamlhIiwiYSI6ImNqZWJyeXk0dDFncWUzM28xOXQzNnkyZ2sifQ.1Bb_AA5tFy8jR_bQgLzAPA';
 currentState = "";
 
 var initCenter = [-95.486052, 37.830348];
@@ -8,7 +8,7 @@ $('#reset').fadeOut(0);
 
 var map = new mapboxgl.Map({
 	container: 'map',
-	style: 'mapbox://styles/mapbox/streets-v10',
+	style: 'mapbox://styles/joannajia/cjec5ifih1rzl2ro3kw935rhm',
 	center: initCenter,
     zoom: initZoom
 });
