@@ -1,10 +1,10 @@
 mapboxgl.accessToken = 'pk.eyJ1Ijoiam9hbm5hamlhIiwiYSI6ImNqZWJyeXk0dDFncWUzM28xOXQzNnkyZ2sifQ.1Bb_AA5tFy8jR_bQgLzAPA';
 currentState = "";
 
-var initCenter = [-95.486052, 37.830348];
-var initZoom = 3.75;
+var initCenter = [-88.486052, 37.830348];
+var initZoom = 3.50;
 
-$('#reset').fadeOut(0);
+$('#reset').hide();
 
 var map = new mapboxgl.Map({
 	container: 'map',
@@ -22,11 +22,12 @@ function resetView() {
 }
 
 function resetListener(e) {
-	if (!arraysEqual(map.getCenter(), initCenter) && map.getZoom() != initZoom) {
+	if (!coordsSimilar(map.getCenter(), initCenter) && map.getZoom() != initZoom) {
     	$('#reset').fadeIn(200);
-    } else {
-    	$('#reset').fadeOut(0);
     }
+    // } else if (arraysEqual(map.getCenter(), initCenter) && map.getZoom() == initZoom) {
+    // 	$('#reset').hide();
+    // }
 }
 
 function setSidebar(title, body) {
@@ -84,6 +85,11 @@ map.on('load', function () {
         // console.log(e.features[0].properties)
         // $("#sidebar-title").text(e.features[0].properties.name)
         // stateView(e.features[0].properties.name, e.features[0].properties.code_hasc)
+        map.on('zoomend', function() {
+    	if (coordsSimilar(map.getCenter(), initCenter)) {
+    		$("#reset").hide();
+    	}
+    })
     });
 
     // Reset the state-fills-hover layer's filter when the mouse leaves the layer.
@@ -115,5 +121,6 @@ map.on('load', function () {
     	});
     });
 
-    map.on('moveend', resetListener);
+    map.on('zoomend', resetListener);
+
 });
