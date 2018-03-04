@@ -34,7 +34,7 @@ var sidebar = new Vue({
     party: "",
     bills: [],
     views: [],
-    les: "",
+    les: "-1",
     cYear: "",
     orgs: [],
     phone: "",
