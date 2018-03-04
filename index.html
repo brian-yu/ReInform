@@ -24,7 +24,16 @@
 	  <h2 v-if="view === 'country'" id="sidebar-title">United States</h2>
 	  <h2 v-else-if="view === 'state'" id="sidebar-title">{{ title }}</h2>
 	  <div v-if="view === 'country'" id="sidebar-body">
-	  	There are 535 congressmen in the United States.
+<!-- 	  	<ul>
+	  		<li>There are 535 congressmen in the United States.</li>
+	  	</ul> -->
+	  	<p>There are 535 congressmen in the United States.</p>
+	  	<p>In the 2018 cycle, members of congress have accepted <b>$12,204,235</b> of funding so far.</p>
+	  	<p>In the 2016 cycle, they accepted <b>$30,914,976</b> in funding.</p>
+	  	<h5>Our Mission</h5>
+	  	<p>We built <b>AccountaBill</b> to help voters learn more about their congressmen and to <b>increase political transparency</b>.</p>
+	  	<h5>How to Use</h5>
+	  	<p>To get started learning about your Congressman's voting history and funding sources, <b>click on your state</b> on the map.</p>
 	  </div>
 	  <div v-else-if="view === 'state'" id="sidebar-body">
 	  	<h4>Congressmen</h4>

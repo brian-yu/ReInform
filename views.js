@@ -34,6 +34,7 @@ function resetView() {
         zoom: initZoom,
     });
 	$('#reset').fadeOut(200);
+	sidebar.view = "country";
 }
 
 function resetListener(e) {
@@ -52,6 +53,10 @@ function stateView(name, abbrev) {
   		.then(function (response) {
     	sidebar.items = response.data.response.legislator;
   	});
+}
+
+function congressView(name, id) {
+
 }
 
 map.on('load', function () {
