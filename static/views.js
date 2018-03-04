@@ -18,6 +18,31 @@ var sidebar = new Vue({
     body: 'Hello world.',
     view: "country",
     items: [],
+    bid: "",
+    stateName: "",
+    stateAbbrev: "",
+  },
+  methods: {
+    renderCongressman(item) {
+        o = item['@attributes']
+        console.log(o);
+        // console.log(id);
+        sidebar.title = o.firstlast;
+        sidebar.view = "congress"
+        sidebar.bid = o.bioguide_id;
+    },
+
+    renderState(name, abbrev) {
+        sidebar.title = name;
+        sidebar.view = "state";
+        sidebar.stateName = name;
+        sidebar.stateAbbrev = abbrev;
+        axios.get('/state/' + abbrev)
+            .then(function (response) {
+            sidebar.items = response.data.response.legislator;
+        });
+    },
+
   }
 })
 
@@ -32,36 +57,19 @@ function resetView() {
 	map.flyTo({
         center: initCenter,
         zoom: initZoom,
+        pitch: 0, // pitch in degrees
+        bearing: 0,
     });
 	$('#reset').fadeOut(200);
 	sidebar.view = "country";
     map.setPaintProperty("state-fills-hover", 'fill-opacity', 0.3);
+    sidebar.title = "United States";
 }
 
 function resetListener(e) {
 	if (map.getZoom() != initZoom) {
     	$('#reset').fadeIn(200);
     }
-}
-
-function stateView(name, abbrev) {
-	sidebar.title = name;
-	sidebar.view = "state";
-	axios.get('http://localhost:5000/state/' + abbrev)
-  		.then(function (response) {
-    	sidebar.items = response.data.response.legislator;
-        console.log(response.data)
-  	});
-}
-
-function congressView(name, id) {
-    sidebar.title = name;
-    sidebar.view = "congress";
-    axios.get('/views/' + name.replace(' ', '-'))
-        .then(function (response) {
-        print(response)
-        sidebar.items = response.data.response;
-    });
 }
 
 map.on('load', function () {
@@ -134,7 +142,7 @@ map.on('load', function () {
 	        zoom: 6,
     	});
         map.setPaintProperty("state-fills-hover", 'fill-opacity', 0);
-    	stateView(e.features[0].properties.name, e.features[0].properties.code_hasc.substring(3));
+    	sidebar.renderState(e.features[0].properties.name, e.features[0].properties.code_hasc.substring(3));
     });
 
     map.on('zoomend', resetListener);

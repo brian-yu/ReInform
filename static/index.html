@@ -6,6 +6,9 @@
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
 
 	<link href='/static/style.css' rel='stylesheet'/>
 
@@ -21,12 +24,10 @@
 	<button type="button" class="btn btn-primary" id="reset" onclick="resetView()">Reset View</button>
 
 	<div id="sidebar">
-	  <h2 v-if="view === 'country'" id="sidebar-title">United States</h2>
-	  <h2 v-else-if="view === 'state'" id="sidebar-title">{{ title }}</h2>
+	  <!-- <h2 v-if="view === 'country'" id="sidebar-title">United States</h2> -->
+	  <h2 id="sidebar-title">{{ title }}</h2>
+	  <!-- Body for Country View -->
 	  <div v-if="view === 'country'" id="sidebar-body">
-<!-- 	  	<ul>
-	  		<li>There are 535 congressmen in the United States.</li>
-	  	</ul> -->
 	  	<p>There are 535 congressmen in the United States.</p>
 	  	<p>In the 2018 cycle, members of congress have accepted <b>$12,204,235</b> of funding so far.</p>
 	  	<p>In the 2016 cycle, they accepted <b>$30,914,976</b> in funding.</p>
@@ -35,24 +36,22 @@
 	  	<h5>How to Use</h5>
 	  	<p>To get started learning about your Congressman's voting history and funding sources, <b>click on your state</b> on the map.</p>
 	  </div>
+	  <!-- Body for State View -->
 	  <div v-else-if="view === 'state'" id="sidebar-body">
 	  	<h4>Congressmen</h4>
 	  	<ul>
 		  <li v-for="item in items">
-		    {{ item['@attributes'].firstlast }}
+		  	<a v-on:click="renderCongressman(item)">
+		    	{{ item['@attributes'].firstlast }}
+			</a>
 		  </li>
 		</ul>
 	  </div>
+	  <!-- Body for Congressman view -->
 	  <div v-else-if="view === 'congress'" id="sidebar-body">
-	  	<h4>Congressman</h4>
-	  	<ul v-for="item in items">
-	  		{{ item['@attributes'].issueName }}
-		  <li v-for="view in item['@attributes'].views">
-		    {{ view }}
-		  </li>
-		</ul>
+	  	<img :src="'https://theunitedstates.io/images/congress/225x275/' + bid + '.jpg'" alt="/static/image/default_profile.jpg">
+	  	<a id="goBackToState" v-on:click="renderState(stateName, stateAbbrev)"><i class="fa fa-arrow-left"></i> Back to {{stateName}}</a>
 	  </div>
-	  <div v-else id="sidebar-body"> {{ body }} </div>
 	</div>
 
 </body>

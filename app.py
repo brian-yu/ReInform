@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, url_for
-from flask_cors import CORS
+# from flask_cors import CORS
 import requests
 import xmltodict, json
 from collections import OrderedDict
@@ -10,10 +10,12 @@ from bs4 import BeautifulSoup
 import re
 
 app = Flask(__name__)
-CORS(app)
+# CORS(app)
 
 
 OPEN_SECRETS_KEY = "40411c191fd58f5709214a9184c9ca1d";
+
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 
 @app.route("/state/<state>")
@@ -86,8 +88,10 @@ def candidContrib(cid):
 				check = key
 		ans[check] = max
 		del funding[check]
-		
-	answer = json.dumps(ans)
+	link = dict()
+	for key in ans:
+		link["https://en.wikipedia.org/wiki/"+key] = ans[key]	
+	answer = json.dumps(link)
 	return answer
 
 #function to get the candidate funding accross four years
