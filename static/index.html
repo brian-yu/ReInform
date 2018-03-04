@@ -6,7 +6,8 @@
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<!-- <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script> -->
+	<script src="https://use.fontawesome.com/5e1be37b3a.js"></script>
 
 	<link rel="icon" type="image/png" sizes="32x32" href="/static/image/icons/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="/static/image/icons/favicon-96x96.png">
@@ -58,6 +59,12 @@
 	  <div v-else-if="view === 'congress'" id="sidebar-body" class="scrollbar style-1">
 	  	<img :src="'https://theunitedstates.io/images/congress/225x275/' + bid + '.jpg'" alt="/static/image/default_profile.jpg">
 	  	<p>{{cName}} is a <span v-bind:style="{ color: partyColor }">{{party}}</span> congressman from {{stateName}}.</p>
+	  	<div id="social">
+	  		<a v-bind:href="phone"><i class="fa fa-phone-square" aria-hidden="true"></i></a>
+	  		<a v-bind:href="fb"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+	  		<a v-bind:href="twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+	  		<a v-bind:href="website"><i class="fa fa-link"></i></a>
+	  	</div>
 	  	<div id="bills">
 	  		<h5>Recent Bills</h5>
 	  		<!-- <img id="loading" v-if="bills.length == 0" src="/static/image/loading.gif" /> -->

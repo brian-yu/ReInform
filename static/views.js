@@ -31,6 +31,10 @@ var sidebar = new Vue({
     bills: [],
     cYear: "",
     orgs: [],
+    phone: "",
+    fb: "",
+    twitter: "",
+    website: "",
   },
   methods: {
 
@@ -47,6 +51,10 @@ var sidebar = new Vue({
 
     renderCongressman(item) {
         console.log(item)
+        sidebar.phone = "tel:+1-" + item.phone;
+        sidebar.fb = "https://facebook.com/" + item.facebook_id;
+        sidebar.twitter = "https://twitter.com/" + item.twitter_id;
+        sidebar.website = item.website;
         sidebar.renderCongressmanShallow(item);
         var currBid = sidebar.bid;
         axios({
