@@ -47,19 +47,20 @@ var sidebar = new Vue({
     renderCongressman(item) {
         console.log(item)
         sidebar.renderCongressmanShallow(item);
+        var currBid = sidebar.bid;
         axios({
             url: 'https://api.propublica.org/congress/v1/members/'+item.bioguide_id+'/bills/introduced.json',
             method: "get",
             headers: {'X-API-Key': 'WmcCMKjGFtJmQyQuEvkVxvV666hs75JFky5bJqJG'},
         }).then(function(res) {
-            if (sidebar.view == "congress") {
+            if (sidebar.view == "congress" && sidebar.bid === currBid) {
                 sidebar.bills = res.data.results[0].bills;
                 console.log(sidebar.bills);
             }
         });
 
         axios.get('/contrib/' + item.cid).then(function(res) {
-            if (sidebar.view == "congress") {
+            if (sidebar.view == "congress" && sidebar.bid === currBid) {
                 sidebar.orgs = res.data;
                 console.log(sidebar.orgs);
             }
@@ -69,9 +70,10 @@ var sidebar = new Vue({
 
     renderCongressmanFromId(item) {
         sidebar.renderCongressmanShallow(item);
+        var currBid = sidebar.bid;
         axios.get('/id/' + item.cid)
             .then(function (response) {
-            if (sidebar.view == "congress") {
+            if (sidebar.view == "congress" && currBid === sidebar.bid) {
                 console.log(response.data);
                 sidebar.renderCongressman(response.data.response.legislator['@attributes']);
             }
@@ -126,6 +128,7 @@ function resetView() {
 	sidebar.view = "country";
     map.setPaintProperty("state-fills-hover", 'fill-opacity', 0.3);
     sidebar.title = "United States";
+    sidebar.items = [];
 }
 
 function resetListener(e) {
@@ -199,6 +202,9 @@ map.on('load', function () {
         console.log(e.features[0].properties.name + " " + e.features[0].properties.code_hasc)
         // console.log(centers[e.features[0].properties.name])
         console.log(e.features[0].properties)
+        if (e.features[0].properties.name !== sidebar.stateName) {
+            sidebar.items = [];
+        }
         map.flyTo({
 	        center: centers[e.features[0].properties.name],
 	        zoom: 6,
