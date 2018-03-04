@@ -23,23 +23,48 @@ var sidebar = new Vue({
     stateAbbrev: "",
     cName: "",
     party: "",
+    bills: [],
+    cYear: "",
   },
   methods: {
-    renderCongressman(item) {
-        console.log(item)
+
+    renderCongressmanShallow(item) {
+        sidebar.bills = [];
         sidebar.title = item.firstlast;
         sidebar.view = "congress"
         sidebar.bid = item.bioguide_id;
         sidebar.cName = item.firstlast
         sidebar.party = item.party[0] == "D" ? "Democratic" : "Republican";
+        sidebar.partyColor = item.party[0] == "D" ? "#317cf6" : "#e74c3c";
+        sidebar.cYear = item.first_elected;
     },
 
-    // renderCongressmanFromId(cid) {
-    //     axios.get('/id/' + cid)
-    //         .then(function (response) {
-    //         sidebar.renderCongressman(response.data.response.legislator['@attributes']);
-    //     });
-    // },
+    renderCongressman(item) {
+        console.log(item)
+        sidebar.renderCongressmanShallow(item);
+        axios({
+            url: 'https://api.propublica.org/congress/v1/members/'+item.bioguide_id+'/bills/introduced.json',
+            method: "get",
+            headers: {'X-API-Key': 'WmcCMKjGFtJmQyQuEvkVxvV666hs75JFky5bJqJG'},
+        }).then(function(res) {
+            if (sidebar.view == "congress") {
+                sidebar.bills = res.data.results[0].bills;
+                console.log(sidebar.bills);
+            }
+        });
+
+    },
+
+    renderCongressmanFromId(item) {
+        sidebar.renderCongressmanShallow(item);
+        axios.get('/id/' + item.cid)
+            .then(function (response) {
+            if (sidebar.view == "congress") {
+                console.log(response.data);
+                sidebar.renderCongressman(response.data.response.legislator['@attributes']);
+            }
+        });
+    },
     renderState(name, abbrev) {
         sidebar.title = name;
         sidebar.view = "state";
@@ -196,6 +221,7 @@ map.on('load', function () {
             center: e.features[0].geometry.coordinates,
             zoom: 10,
         });
-        sidebar.renderCongressman(e.features[0].properties)
+        // sidebar.renderCongressman(e.features[0].properties)
+        sidebar.renderCongressmanFromId(e.features[0].properties)
     });
 });
