@@ -82,7 +82,6 @@ map.on('load', function () {
         },
         "filter": ["==", "name", ""]
     });
-
     // When the user moves their mouse over the states-fill layer, we'll update the filter in
     // the state-fills-hover layer to only show the matching state, thus making a hover effect.
     map.on("mousemove", "state-fills", function(e) {
@@ -129,4 +128,19 @@ map.on('load', function () {
 
     map.on('zoomend', resetListener);
 
+
+    /***************************************CONGRESS BUBBLES**************************************/
+    map.addSource("legislators", {
+        "type": "geojson",
+        "data": "./python-helpers/legislators.geojson"
+    });
+
+    map.addLayer({
+        'id': 'legislators',
+        'type': 'circle',
+        'source': 'legislators',
+        'paint': {
+            'circle-color': ['get', 'color']
+        }
+    });
 });
