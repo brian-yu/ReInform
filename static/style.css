@@ -29,25 +29,6 @@ body {
 	background-color: #0984e3;
 }
 
-
-#sidebar {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 20%; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    right: 0;
-    /*background-color: #fff; /* Black */*/
-	border: 0px solid;
-    background-color: rgba(255, 255, 255, 1.0);
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 40px;
-}
-
-#sidebar-title {
-	text-align: center;
-}
-
 #title {
 	position: absolute;
 	top: 20px;
@@ -69,9 +50,34 @@ body {
 	/*visibility: hidden;*/
 }
 
+#sidebar {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 20%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    /*background-color: #fff; /* Black */*/
+	border: 0px solid;
+    background-color: rgba(255, 255, 255, 1.0);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    /*padding-top: 40px;*/
+}
+
+#sidebar-title {
+	padding-top: 30px;
+	text-align: center;
+	background-color: #ff4757;
+	color: #fff;
+	height: 12%;
+}
 
 #sidebar-body {
+	border-top: 4px solid #fff;
+	background-color: #0984e3;
 	padding: 20px;
+	color: #fff;
+	height: 100%
 }
 
 #sidebar-body img {
