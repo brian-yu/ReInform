@@ -50,9 +50,9 @@ def candidContrib(cid):
 	# o1 = json.dumps(o1)
 
 
-	import pprint
+	# import pprint
 
-	pp = pprint.PrettyPrinter(indent=4)
+	# pp = pprint.PrettyPrinter(indent=4)
 
 	funding = dict()
 	length = len(o1['contributors'])
