@@ -121,11 +121,6 @@ map.on('load', function () {
     	});
     });
 
-<<<<<<< HEAD
     map.on('zoomend', resetListener);
 
 });
-=======
-    map.on('moveend', resetListener);
-});
->>>>>>> fed3a8e083b59fbd54db5b8172f0543c582702dc
