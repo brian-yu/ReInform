@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template, url_for
-# from flask_cors import CORS
 import requests
 import xmltodict, json
 from collections import OrderedDict
@@ -14,7 +13,7 @@ import re
 app = Flask(__name__)
 # CORS(app)
 
-KEYS = ["1be2eb6f066a3890a06795c7e26af9ff", "c2a05d472f97d739f609febc55da71d8"]
+KEYS = ["1be2eb6f066a3890a06795c7e26af9ff", "c2a05d472f97d739f609febc55da71d8", "9888eab3ea2196c55f9408a2454e911b", "b7b4a651e7cbdd0e043020347099bba5", "e4d1df811c89a97cace751f38fdc3aa9", "a7073f1b6d5b25609c24c882ad879441"]
 
 def getKey():
 	key = KEYS[randint(0, len(KEYS)-1)]
@@ -41,6 +40,7 @@ def funding(cid):
 	return r.text
 
 #function to get the candidate funding accross four years
+'''
 @app.route("/contrib/<cid>")
 def candidContrib(cid):
 #get our url data across the four seperate years
@@ -213,7 +213,7 @@ def candidContrib(cid):
 	else:
 		return 'error'
 
-
+'''
 # #Create our dictionaries by parsing the xml
 # 	o1 = xmltodict.parse(r1.text)['response']
 # 	o2 = xmltodict.parse(r2.text)['response']
