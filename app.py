@@ -14,7 +14,7 @@ app = Flask(__name__)
 # CORS(app)
 
 
-OPEN_SECRETS_KEY = "d1fd1a1f1860a50a0f4e67c04b4f2db1";
+OPEN_SECRETS_KEY = "63febc563042d321586952a08fa56e87";
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
@@ -38,7 +38,6 @@ def candidContrib(cid):
 	url2018 = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2018&apikey=" + OPEN_SECRETS_KEY+ "&output=xml"
 #get our url requests
 	r1 = requests.get(url2012)
-	if (r1)
 	r2 = requests.get(url2014)
 	r3 = requests.get(url2016)
 	r4 = requests.get(url2018)
@@ -169,7 +168,7 @@ def get_politician_views(name):
         json_data = json.dumps(preJSON)
     return json_data
 
-@app.route("/pid/<bid>")
+@app.route("/bills/<bid>")
 def bigbills(bid):
 	headers = {
     'X-API-Key': 'WmcCMKjGFtJmQyQuEvkVxvV666hs75JFky5bJqJG',
