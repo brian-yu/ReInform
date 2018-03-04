@@ -6,7 +6,7 @@
 	position: absolute;
 	/*top: 0;*/
 	/*bottom: 0;*/
-	width: 100%;
+	width: 80%;
 	height: 100%;
 }
 
@@ -32,7 +32,7 @@
     top: 0; /* Stay at the top */
     right: 0;
     /*background-color: #fff; /* Black */*/
-		border: 0px solid;
+	border: 0px solid;
     background-color: rgba(255, 255, 255, 1.0);
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
@@ -48,4 +48,19 @@
 	left: 20px;
 	z-index: 1;
 	/*visibility: hidden;*/
+}
+
+#brand {
+    font-weight: 700;
+    font-size: 15vw;
+    text-shadow: 1px 1px #B8CBD4, 
+                 2px 2px #B8CBD4, 
+                 3px 3px #B8CBD4,
+                 4px 4px #B8CBD4, 
+                 5px 5px #B8CBD4, 
+                 6px 6px #B8CBD4,
+                 7px 7px #B8CBD4, 
+                 8px 8px #B8CBD4, 
+                 9px 9px #B8CBD4,
+                 10px 10px #B8CBD4;
 }

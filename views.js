@@ -1,8 +1,8 @@
 mapboxgl.accessToken = 'pk.eyJ1Ijoiam9hbm5hamlhIiwiYSI6ImNqZWJyeXk0dDFncWUzM28xOXQzNnkyZ2sifQ.1Bb_AA5tFy8jR_bQgLzAPA';
 currentState = "";
 
-var initCenter = [-88.486052, 37.830348];
-var initZoom = 3.50;
+var initCenter = [-94.7, 37.830348];
+var initZoom = 3.75;
 
 $('#reset').hide();
 
@@ -22,7 +22,7 @@ function resetView() {
 }
 
 function resetListener(e) {
-	if (!coordsSimilar(map.getCenter(), initCenter) && map.getZoom() != initZoom) {
+	if (map.getZoom() != initZoom) {
     	$('#reset').fadeIn(200);
     }
     // } else if (arraysEqual(map.getCenter(), initCenter) && map.getZoom() == initZoom) {
