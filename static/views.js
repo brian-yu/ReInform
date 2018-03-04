@@ -19,6 +19,8 @@ var sidebar = new Vue({
     view: "country",
     items: [],
     bid: "",
+    stateName: "",
+    stateAbbrev: "",
   },
   methods: {
     renderCongressman(item) {
@@ -33,6 +35,8 @@ var sidebar = new Vue({
     renderState(name, abbrev) {
         sidebar.title = name;
         sidebar.view = "state";
+        sidebar.stateName = name;
+        sidebar.stateAbbrev = abbrev;
         axios.get('/state/' + abbrev)
             .then(function (response) {
             sidebar.items = response.data.response.legislator;

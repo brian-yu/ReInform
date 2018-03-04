@@ -6,6 +6,9 @@
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
 
 	<link href='/static/style.css' rel='stylesheet'/>
 
@@ -46,7 +49,8 @@
 	  </div>
 	  <!-- Body for Congressman view -->
 	  <div v-else-if="view === 'congress'" id="sidebar-body">
-	  	<img :src="'https://theunitedstates.io/images/congress/225x275/' + bid + '.jpg'" alt="../image/default_profile.jpg">
+	  	<img :src="'https://theunitedstates.io/images/congress/225x275/' + bid + '.jpg'" alt="/static/image/default_profile.jpg">
+	  	<a id="goBackToState" v-on:click="renderState(stateName, stateAbbrev)"><i class="fa fa-arrow-left"></i> Back to {{stateName}}</a>
 	  </div>
 	</div>
 
