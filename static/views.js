@@ -30,6 +30,7 @@ var sidebar = new Vue({
     party: "",
     bills: [],
     views: [],
+    les: "",
     cYear: "",
     orgs: [],
     phone: "",
@@ -264,6 +265,7 @@ map.on('load', function () {
             zoom: 10,
         });
         // sidebar.renderCongressman(e.features[0].properties)
-        sidebar.renderCongressmanFromId(e.features[0].properties)
+        sidebar.renderCongressmanFromId(e.features[0].properties);
+        sidebar.les = e.features[0].properties.les;
     });
 });
