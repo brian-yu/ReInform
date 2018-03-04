@@ -15,11 +15,12 @@ def index():
 
 @app.route("/state/<state>")
 def getLegislators(state):
-	url = "http://www.opensecrets.org/api/?method=getLegislators&id=" + state + "&apikey=" + OPEN_SECRETS_KEY
+	url = "http://www.opensecrets.org/api/?method=getLegislators&id=" + state + "&apikey=" + OPEN_SECRETS_KEY + "&output=json"
 	r = requests.get(url)
 
-	o = xmltodict.parse(r.text)['response']['legislator']
-	return json.dumps(o) # '{"e": {"a": ["text", "text"]}}'
+	# o = xmltodict.parse(r.text)['response']['legislator']
+	# return json.dumps(o) # '{"e": {"a": ["text", "text"]}}'
+	return r.text
 
 @app.route("/id/<state>")
 def candidContrib(cid, cycle):

@@ -6,6 +6,21 @@ var initZoom = 3.75;
 
 $('#reset').hide();
 
+// function initSidebar() {
+// 	$("#sidebar-title").text("State Search");
+// 	$("#sidebar-body").text("Welcome to AccountaBill!")
+// }
+
+var sidebar = new Vue({
+  el: '#sidebar',
+  data: {
+    title: 'Welcome!',
+    body: 'Hello world.',
+    view: "country",
+    items: [],
+  }
+})
+
 var map = new mapboxgl.Map({
 	container: 'map',
 	style: 'mapbox://styles/joannajia/cjec5ifih1rzl2ro3kw935rhm',
@@ -30,23 +45,13 @@ function resetListener(e) {
     // }
 }
 
-function setSidebar(title, body) {
-	$("#sidebar-title").text(title)
-	$("#sidebar-body").text(body)
-}
-
 function stateView(name, abbrev) {
-	if (name !== currentState) {
-		abbrev = abbrev.substring(3)
-		console.log(abbrev)
-		$.getJSON("http://localhost:5000/state/" + abbrev, function(data) {
-			// console.log(data);
-			setSidebar(name, data);
-			console.log(data);
-		});
-	// setSidebar(stateName, )
-		currentState = name;
-	}
+	sidebar.title = name;
+	sidebar.view = "state";
+	axios.get('http://localhost:5000/state/' + abbrev)
+  		.then(function (response) {
+    	sidebar.items = response.data.response.legislator;
+  	});
 }
 
 map.on('load', function () {
@@ -116,9 +121,10 @@ map.on('load', function () {
         // console.log(centers[e.features[0].properties.name])
         console.log(e.features[0].properties)
         map.flyTo({
-        center: centers[e.features[0].properties.name],
-        zoom: 6,
+	        center: centers[e.features[0].properties.name],
+	        zoom: 6,
     	});
+    	stateView(e.features[0].properties.name, e.features[0].properties.code_hasc.substring(3));
     });
 
     map.on('zoomend', resetListener);

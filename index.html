@@ -2,7 +2,8 @@
 <head>
 	<script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -19,9 +20,21 @@
 	<h1 id="title">AccountaBill</h1>
 	<button type="button" class="btn btn-primary" id="reset" onclick="resetView()">Reset View</button>
 
-	<div class="sidebar">
-	  <h2 id="sidebar-title">Search</h2>
-	  <div id="sidebar-body"></div>
+	<div id="sidebar">
+	  <h2 v-if="view === 'country'" id="sidebar-title">United States</h2>
+	  <h2 v-else-if="view === 'state'" id="sidebar-title">{{ title }}</h2>
+	  <div v-if="view === 'country'" id="sidebar-body">
+	  	There are 535 congressmen in the United States.
+	  </div>
+	  <div v-else-if="view === 'state'" id="sidebar-body">
+	  	<h4>Congressmen</h4>
+	  	<ul>
+		  <li v-for="item in items">
+		    {{ item['@attributes'].firstlast }}
+		  </li>
+		</ul>
+	  </div>
+	  <div v-else id="sidebar-body"> {{ body }} </div>
 	</div>
 
 </body>
