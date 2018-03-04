@@ -18,9 +18,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
 </head>
 <body>
-	<!-- <nav class="navbar navbar-light bg-light">
-  		<span class="navbar-brand mb-0 h1">ReInform</span>
-	</nav> -->
 	<div id='map'>
 	</div>
 	<h1 id="brand">ReInform</h1>
@@ -77,7 +74,23 @@
 			    	{{bill.latest_major_action_date}}: {{bill.short_title}}
 				</a>
 			  </li>
-		</ul>
+			</ul>
+	  	</div>
+	  	<div id="funding">
+	  		<h5>2018 Cycle Funding</h5>
+	  		<!-- <img id="loading" v-if="bills.length == 0" src="/static/image/loading.gif" /> -->
+			<div id="loading" class="spinner" v-if="orgs.length == 0">
+			  <div class="rect1"></div>
+			  <div class="rect2"></div>
+			  <div class="rect3"></div>
+			  <div class="rect4"></div>
+			  <div class="rect5"></div>
+			</div>
+	  		<ul>
+			  <li v-for="org in orgs">
+			  	${{org['@attributes'].total}} - {{org['@attributes'].org_name}}
+			  </li>
+			</ul>
 	  	</div>
 	  </div>
 	  <button v-if="view === 'congress'" id="goBackToState" type="button" class="btn btn-primary" v-on:click="renderState(stateName, stateAbbrev)"><i class="fa fa-arrow-left"></i> Back to {{stateName}}</button>

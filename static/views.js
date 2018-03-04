@@ -30,6 +30,7 @@ var sidebar = new Vue({
     party: "",
     bills: [],
     cYear: "",
+    orgs: [],
   },
   methods: {
 
@@ -59,9 +60,9 @@ var sidebar = new Vue({
             }
         });
 
-        axios.get('/contrib/' + item.cid).then(function(res) {
+        axios.get('/funding/' + item.cid).then(function(res) {
             if (sidebar.view == "congress" && sidebar.bid === currBid) {
-                sidebar.orgs = res.data;
+                sidebar.orgs = res.data.response.contributors.contributor;
                 console.log(sidebar.orgs);
             }
         });
