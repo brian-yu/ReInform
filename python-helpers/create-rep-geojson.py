@@ -54,16 +54,19 @@ for i in range(0, len(data)):
         longAvg = longSum/count
         latAvg = latSum/count
         file.write(str(longAvg) + ',' + str(latAvg) +']},')
-    file.write('properties:{')
-    file.write('"bioguide_id": ' + data[i]['id']['bioguide'])
-    file.write(',"opensecrets_id": ' + data[i]['id']['opensecrets'])
-    file.write(',"fec_id": ' + str(data[i]['id']['fec']))
-    file.write(',"first_name": ' + data[i]['name']['first'])
-    file.write(',"last_name": ' + data[i]['name']['last'])
-    file.write(',"first_name": ' + data[i]['name']['first'])
-    file.write(',"state": ' + data[i]['terms'][-1]['state'])
-    file.write(',"party": ' + data[i]['terms'][-1]['party'])
-    file.write(',"phone": ' + data[i]['terms'][-1]['phone'])
+    file.write('"properties":{')
+    file.write('"bioguide_id": "' + str(data[i]['id']['bioguide']) + '"')
+    file.write(',"opensecrets_id": "' + str(data[i]['id']['opensecrets']) + '"')
+    #file.write(',"fec_id": ' + str(data[i]['id']['fec']))
+    file.write(',"first_name": "' + str(data[i]['name']['first']) + '"')
+    file.write(',"last_name": "' + str(data[i]['name']['last']) + '"')
+    file.write(',"state": "' + str(data[i]['terms'][-1]['state']) + '"')
+    file.write(',"party": "' + str(data[i]['terms'][-1]['party']) + '"')
+    if data[i]['terms'][-1]['party'][0] == "D":
+        file.write(',"color": "#00AFF3"')
+    else:
+        file.write(',"color": "#E7000A"')
+    file.write(',"phone": "' + str(data[i]['terms'][-1]['phone']) + '"')
     file.write("} }")
     if(i<len(data)-1):
         file.write(',')
