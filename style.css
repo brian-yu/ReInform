@@ -35,11 +35,23 @@
 	border: 0px solid;
     background-color: rgba(255, 255, 255, 1.0);
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 #sidebar-title {
 	text-align: center;
+}
+
+#title {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	font-weight: 700;
+	font-family: 'Montserrat', sans-serif;
+    /*font-size: 15vw;*/
+/*    text-shadow: 1px 1px #fff, 
+                 2px 2px #fff;*/
+    /*text-shadow: 1px 1px #fff;*/
 }
 
 #reset {
@@ -48,19 +60,4 @@
 	left: 20px;
 	z-index: 1;
 	/*visibility: hidden;*/
-}
-
-#brand {
-    font-weight: 700;
-    font-size: 15vw;
-    text-shadow: 1px 1px #B8CBD4, 
-                 2px 2px #B8CBD4, 
-                 3px 3px #B8CBD4,
-                 4px 4px #B8CBD4, 
-                 5px 5px #B8CBD4, 
-                 6px 6px #B8CBD4,
-                 7px 7px #B8CBD4, 
-                 8px 8px #B8CBD4, 
-                 9px 9px #B8CBD4,
-                 10px 10px #B8CBD4;
 }
