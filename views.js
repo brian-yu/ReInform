@@ -21,6 +21,14 @@ function resetView() {
 	$('#reset').fadeOut(200);
 }
 
+function resetListener(e) {
+	if (!arraysEqual(map.getCenter(), initCenter) && map.getZoom() != initZoom) {
+    	$('#reset').fadeIn(200);
+    } else {
+    	$('#reset').fadeOut(0);
+    }
+}
+
 function setSidebar(title, body) {
 	$("#sidebar-title").text(title)
 	$("#sidebar-body").text(body)
@@ -107,9 +115,5 @@ map.on('load', function () {
     	});
     });
 
-    map.on('moveend', function(e) {
-    	if (map.getCenter() !== initCenter && map.getZoom() != initZoom) {
-    		$('#reset').fadeIn(200);
-    	}
-    });
+    map.on('moveend', resetListener);
 });
