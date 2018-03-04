@@ -1,8 +1,8 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiYnJpYW55dSIsImEiOiJjajVycTJ0cTMwemt0MzNwbGQxN3JvbWF5In0.YddKaK6iFrT0IG1JVU8mUQ';
 currentState = "";
 
-var initCenter = [-95.486052, 37.830348];
-var initZoom = 3.75;
+var initCenter = [-88.486052, 37.830348];
+var initZoom = 3.50;
 
 $('#reset').hide();
 
@@ -121,6 +121,11 @@ map.on('load', function () {
     	});
     });
 
+<<<<<<< HEAD
     map.on('zoomend', resetListener);
 
 });
+=======
+    map.on('moveend', resetListener);
+});
+>>>>>>> fed3a8e083b59fbd54db5b8172f0543c582702dc
