@@ -67,6 +67,20 @@ function arraysEqual(a, b) {
   return true;
 }
 
+function coordsSimilar(a, b) {
+  if (a === b) return true;
+  if (a == null || b == null) return false;
+  if (a.length != b.length) return false;
+
+  // If you don't care about the order of the elements inside
+  // the array, you should sort both arrays here.
+
+  for (var i = 0; i < a.length; ++i) {
+    if (Math.round(a[i]) > Math.round(b[i]) + 1 || Math.round(a[i]) < Math.round(b[i]) - 1) return false;
+  }
+  return true;
+}
+
 $.getJSON("http://localhost:5000/state/va", function(data) {
 	console.log(data);
 });
