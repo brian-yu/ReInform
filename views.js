@@ -1,30 +1,57 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiYnJpYW55dSIsImEiOiJjajVycTJ0cTMwemt0MzNwbGQxN3JvbWF5In0.YddKaK6iFrT0IG1JVU8mUQ';
+mapboxgl.accessToken = 'pk.eyJ1Ijoiam9hbm5hamlhIiwiYSI6ImNqZWJyeXk0dDFncWUzM28xOXQzNnkyZ2sifQ.1Bb_AA5tFy8jR_bQgLzAPA';
 currentState = "";
+
+var initCenter = [-94.7, 37.830348];
+var initZoom = 3.75;
+
+$('#reset').hide();
+
+// function initSidebar() {
+// 	$("#sidebar-title").text("State Search");
+// 	$("#sidebar-body").text("Welcome to AccountaBill!")
+// }
+
+var sidebar = new Vue({
+  el: '#sidebar',
+  data: {
+    title: 'Welcome!',
+    body: 'Hello world.',
+    view: "country",
+    items: [],
+  }
+})
 
 var map = new mapboxgl.Map({
 	container: 'map',
-	style: 'mapbox://styles/mapbox/streets-v10',
-	center: [-95.486052, 37.830348],
-    zoom: 3.75
+	style: 'mapbox://styles/joannajia/cjec5ifih1rzl2ro3kw935rhm',
+	center: initCenter,
+    zoom: initZoom
 });
 
-function setSidebar(title, body) {
-	$("#sidebar-title").text(title)
-	$("#sidebar-body").text(body)
+function resetView() {
+	map.flyTo({
+        center: initCenter,
+        zoom: initZoom,
+    });
+	$('#reset').fadeOut(200);
+}
+
+function resetListener(e) {
+	if (map.getZoom() != initZoom) {
+    	$('#reset').fadeIn(200);
+    }
+    // } else if (arraysEqual(map.getCenter(), initCenter) && map.getZoom() == initZoom) {
+    // 	$('#reset').hide();
+    // }
 }
 
 function stateView(name, abbrev) {
-	if (name !== currentState) {
-		abbrev = abbrev.substring(3)
-		console.log(abbrev)
-		$.getJSON("http://localhost:5000/state/" + abbrev, function(data) {
-			// console.log(data);
-			setSidebar(name, data);
-			console.log(data);
-		});
-	// setSidebar(stateName, )
-		currentState = name;
-	}
+	sidebar.title = name;
+	sidebar.view = "state";
+	axios.get('http://localhost:5000/state/' + abbrev)
+  		.then(function (response) {
+    	sidebar.items = response.data.response.legislator;
+  	});
 }
 
 map.on('load', function () {
@@ -43,17 +70,6 @@ map.on('load', function () {
             "fill-opacity": 0.0
         }
     });
-
-    // map.addLayer({
-    //     "id": "state-borders",
-    //     "type": "line",
-    //     "source": "states",
-    //     "layout": {},
-    //     "paint": {
-    //         "line-color": "#627BC1",
-    //         "line-width": 1
-    //     }
-    // });
 
     map.addLayer({
         "id": "state-fills-hover",
@@ -74,6 +90,11 @@ map.on('load', function () {
         // console.log(e.features[0].properties)
         // $("#sidebar-title").text(e.features[0].properties.name)
         // stateView(e.features[0].properties.name, e.features[0].properties.code_hasc)
+        map.on('zoomend', function() {
+    	if (coordsSimilar(map.getCenter(), initCenter)) {
+    		$("#reset").hide();
+    	}
+    })
     });
 
     // Reset the state-fills-hover layer's filter when the mouse leaves the layer.
@@ -97,5 +118,15 @@ map.on('load', function () {
         //     .setHTML(description)
         //     .addTo(map);
         console.log(e.features[0].properties.name + " " + e.features[0].properties.code_hasc)
+        // console.log(centers[e.features[0].properties.name])
+        console.log(e.features[0].properties)
+        map.flyTo({
+	        center: centers[e.features[0].properties.name],
+	        zoom: 6,
+    	});
+    	stateView(e.features[0].properties.name, e.features[0].properties.code_hasc.substring(3));
     });
+
+    map.on('zoomend', resetListener);
+
 });
