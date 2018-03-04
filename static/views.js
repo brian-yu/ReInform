@@ -9,6 +9,10 @@ var bounds = [
     [-42.241805, 71.717471]  // Northeast coordinates
 ];
 
+String.prototype.toProperCase = function () {
+    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
+
 $('#reset').hide();
 
 // function initSidebar() {
@@ -77,6 +81,23 @@ var sidebar = new Vue({
             }
         });
 
+        first = item.firstlast.split(" ")[0];
+        last = item.firstlast.split(" ").slice(-1)[0] 
+
+        // console.log(first);
+        // console.log(last);
+
+        if(first == 'Timothy' && last == 'Kaine'){
+            first = 'Tim';
+        }
+        axios.get(/views/ + first + '-' + last.toProperCase()).then(function(res) {
+            if (sidebar.view == "congress") {
+                sidebar.views = res.data;
+                console.log(sidebar.views);
+                
+            }
+        });
+
     },
 
     renderCongressmanFromId(item) {
@@ -90,15 +111,7 @@ var sidebar = new Vue({
             }
         });
 
-        if(item.first_name == 'Timothy' && item.last_name == 'Kaine'){
-            item.first_name = 'Tim'
-        }
-        axios.get(/views/ + item.first_name + '-' + item.last_name).then(function(res) {
-            if (sidebar.view == "congress") {
-                sidebar.views = res.data;
-                console.log(sidebar.views);
-            }
-        });
+        
     },
     renderState(name, abbrev) {
         sidebar.title = name;
