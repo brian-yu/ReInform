@@ -170,6 +170,6 @@ map.on('load', function () {
             center: e.features[0].geometry.coordinates,
             zoom: 10,
         });
-        congressView(e.features[0].properties.first_name + ' ' + e.features[0].properties.last_name, e.features[0].properties.opensecrets_id);
+        sidebar.renderCongressman(e.features[0].properties.first_name + ' ' + e.features[0].properties.last_name, e.features[0].properties.opensecrets_id);
     });
 });
