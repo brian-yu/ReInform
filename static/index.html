@@ -27,7 +27,7 @@
 	  <!-- <h2 v-if="view === 'country'" id="sidebar-title">United States</h2> -->
 	  <h2 id="sidebar-title">{{ title }}</h2>
 	  <!-- Body for Country View -->
-	  <div v-if="view === 'country'" id="sidebar-body">
+	  <div v-if="view === 'country'" id="sidebar-body" class="scrollbar style-1">
 	  	<p>There are 535 congressmen in the United States.</p>
 	  	<p>In the 2018 cycle, members of congress have accepted <b>$12,204,235</b> of funding so far.</p>
 	  	<p>In the 2016 cycle, they accepted <b>$30,914,976</b> in funding.</p>
@@ -37,7 +37,7 @@
 	  	<p>To get started learning about your Congressman's voting history and funding sources, <b>click on your state</b> on the map.</p>
 	  </div>
 	  <!-- Body for State View -->
-	  <div v-else-if="view === 'state'" id="sidebar-body">
+	  <div v-else-if="view === 'state'" id="sidebar-body" class="scrollbar style-1">
 	  	<h4>Congressmen</h4>
 	  	<ul>
 		  <li v-for="item in items">
@@ -48,7 +48,7 @@
 		</ul>
 	  </div>
 	  <!-- Body for Congressman view -->
-	  <div v-else-if="view === 'congress'" id="sidebar-body">
+	  <div v-else-if="view === 'congress'" id="sidebar-body" class="scrollbar style-1">
 	  	<img :src="'https://theunitedstates.io/images/congress/225x275/' + bid + '.jpg'" alt="/static/image/default_profile.jpg">
 	  	<p>{{cName}} is a <span v-bind:style="{ color: partyColor }">{{party}}</span> congressman from {{stateName}}.</p>
 	  	<div id="bills">

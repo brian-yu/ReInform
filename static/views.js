@@ -222,7 +222,9 @@ map.on('load', function () {
         'source': 'legislators',
         'paint': {
             'circle-radius': 10,
-            'circle-color': ['get', 'color']
+            'circle-color': ['get', 'color'],
+            'circle-stroke-color': '#ffffff',
+            'circle-stroke-width': 2
         }
     });
 
