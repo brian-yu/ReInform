@@ -1,5 +1,4 @@
-
-var centers = {"Alaska": [-152.2782, 64.0685],
+{"Alaska": [-152.2782, 64.0685],
 "North Dakota": [-100.4659, 47.4501],
 "Washington": [-120.4472, 47.3826],
 "Montana": [-109.6333, 47.0527],
@@ -7,7 +6,7 @@ var centers = {"Alaska": [-152.2782, 64.0685],
 "Maine": [-69.2428, 45.3695],
 "Wisconsin": [-89.9941, 44.6243],
 "South Dakota": [-100.2263, 44.4443],
-"Idaho": [-114.6130, 45.3509],
+"Idaho": [-114.6130, 44.3509],
 "Michigan": [-85.4102, 44.3467],
 "Vermont": [-72.6658, 44.0687],
 "Oregon": [-120.5583, 43.9336],
@@ -51,15 +50,3 @@ var centers = {"Alaska": [-152.2782, 64.0685],
 "Florida": [-82.4497, 28.6305],
 "Hawaii": [-156.3737, 20.2927],
 }
-
-var OPEN_SECRETS_KEY = "40411c191fd58f5709214a9184c9ca1d";
-
-function getLegislators(state, func) {
-	$.getJSON("http://www.opensecrets.org/api/?method=getLegislators&id=" + state + "&apikey=" + OPEN_SECRETS_KEY, function(data) {
-		func(data);
-	});
-}
-
-$.getJSON("http://localhost:5000/state/va", function(data) {
-	console.log(data);
-});
