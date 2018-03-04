@@ -29,6 +29,7 @@ var sidebar = new Vue({
     cName: "",
     party: "",
     bills: [],
+    views: [],
     cYear: "",
     orgs: [],
   },
@@ -36,6 +37,7 @@ var sidebar = new Vue({
 
     renderCongressmanShallow(item) {
         sidebar.bills = [];
+        sidebar.views = [];
         sidebar.title = item.firstlast;
         sidebar.view = "congress"
         sidebar.bid = item.bioguide_id;
@@ -80,6 +82,9 @@ var sidebar = new Vue({
             }
         });
 
+        if(item.first_name == 'Timothy' && item.last_name == 'Kaine'){
+            item.first_name = 'Tim'
+        }
         axios.get(/views/ + item.first_name + '-' + item.last_name).then(function(res) {
             if (sidebar.view == "congress") {
                 sidebar.views = res.data;

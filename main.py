@@ -345,7 +345,7 @@ def get_politician_views(name):
         json_data = json.dumps(preJSON)
         return json_data
     else:
-        return json.dumps("[{'issueName': 'No relevant views', 'issueViews': []}]")
+        return json.dumps([{'issueName': 'No relevant views', 'issueViews': []}])
 
 @app.route("/bills/<bid>")
 def bigbills(bid):
