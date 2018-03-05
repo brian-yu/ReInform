@@ -17,7 +17,7 @@ $('#reset').hide();
 
 $('#info').popover({
   trigger: 'click',
-  title: 'A word from the team',
+  title: '<span>A word from the team</span> <button type="button" id="close" class="close" onclick="$(\'#info\').popover(\'hide\');">&times;</button>',
   html: true,
   placement: 'right',
   offset: 5,
