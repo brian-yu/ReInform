@@ -15,6 +15,15 @@ String.prototype.toProperCase = function () {
 
 $('#reset').hide();
 
+$('#info').popover({
+  trigger: 'click',
+  title: 'A word from the team',
+  html: true,
+  placement: 'right',
+  offset: 5,
+  content: "Hey. We're <a target='blank' href='https://byu.io'>Brian</a>, <a target='blank' href='https://rashidlasker.github.io'>Rashid</a>, <a target='blank' href='https://github.com/tsingh2017'>Tarun</a>, <a target='blank' href='https://github.com/joannajia'>Joanna</a>, and <a target='blank' href='https://github.com/HarunFeraidon'>Harun</a> and we built ReInform to <b>reform the way we inform people about politics</b>.<br><br> All of our data is from non-partisan sources like <a href='https://www.opensecrets.org/'>OpenSecrets</a>, <a href='https://www.propublica.org/'>ProPublica</a>, and <a href='http://bioguide.congress.gov/biosearch/biosearch.asp'>Congressional BioGuide</a>.",
+})
+
 // function initSidebar() {
 // 	$("#sidebar-title").text("State Search");
 // 	$("#sidebar-body").text("Welcome to AccountaBill!")
