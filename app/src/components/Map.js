@@ -3,9 +3,6 @@ import mapboxgl from 'mapbox-gl';
 // import axios from 'axios';
 import $ from 'jquery';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-// import { faHome } from '@fortawesome/fontawesome-free-solid'
-import stateCenters from '../stateCenters';
-
 
 class Map extends Component {
 
@@ -16,13 +13,13 @@ class Map extends Component {
         [-190.513578, 9.665363], // Southwest coordinates
         [-42.241805, 71.717471]  // Northeast coordinates
       ],
-      centers: stateCenters,
     }
     console.log(props)
   }
 
   componentWillUpdate(nextProps, nextState) {
     if (this.state.map) {
+      // If center or zoom props change, then flyTo new position.
       this.state.map.flyTo({
         center: nextProps.center,
         zoom: nextProps.zoom,
@@ -30,6 +27,7 @@ class Map extends Component {
         bearing: 0,
       });
 
+      // Only fill on hover if not zoomed in
       if (nextProps.zoom < 4.5) {
         this.state.map.setPaintProperty("state-fills-hover", 'fill-opacity', 0.3);
       } else {
@@ -106,6 +104,15 @@ class Map extends Component {
       // map.on('moveend', () => {
       //   $('#reset').fadeIn(200);
       // });
+
+
+      // Update state on user interaction
+      map.on('dragend', () => {
+        this.props.onMapModification([map.getCenter().lng, map.getCenter().lat], map.getZoom());
+      });
+      map.on('zoomend', () => {
+        this.props.onMapModification([map.getCenter().lng, map.getCenter().lat], map.getZoom());
+      });
 
 
       /***************************************CONGRESS BUBBLES**************************************/

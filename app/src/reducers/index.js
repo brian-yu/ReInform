@@ -3,6 +3,7 @@ import {
   SELECT_CONGRESSMAN,
   SELECT_STATE,
   RESET,
+  MODIFY_MAP,
 } from '../actions'
 import stateCenters from '../stateCenters';
 
@@ -20,7 +21,7 @@ function reducer(state = initialState, action) {
       return Object.assign({}, state, {
         view: "congressman",
         currCid: action.cid,
-
+        // zoom: 10,
       });
     case SELECT_STATE:
       return Object.assign({}, state, {
@@ -31,6 +32,11 @@ function reducer(state = initialState, action) {
       });
     case RESET:
       return initialState;
+    case MODIFY_MAP:
+      return Object.assign({}, state, {
+        center: action.center,
+        zoom: action.zoom,
+      });
     default:
       return state
   }
