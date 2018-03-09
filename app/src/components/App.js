@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 // import '@fortawesome/fontawesome-free-solid'
 import './App.css';
 import Map from './Map';
+import MapContainer from '../containers/MapContainer';
 import Info from './Info';
 
 
@@ -22,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Map/>
+        <MapContainer/>
         <div id="brand">
           <h1 id="logo">ReInform</h1>
           <Info/>

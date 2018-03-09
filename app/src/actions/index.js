@@ -24,8 +24,8 @@ export function selectCongressman(cid) {
   return { type: SELECT_CONGRESSMAN, cid }
 }
  
-export function selectState(name) {
-  return { type: SELECT_STATE, name }
+export function selectState(stateName) {
+  return { type: SELECT_STATE, stateName }
 }
  
 export function reset() {
