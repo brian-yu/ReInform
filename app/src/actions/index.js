@@ -34,8 +34,8 @@ export function reset() {
 
 
 
-export const MODIFY_MAP = 'MODIFY_MAP'
+// export const MODIFY_MAP = 'MODIFY_MAP'
 
-export function modifyMap(center, zoom) {
-	return { type: MODIFY_MAP, center, zoom }
-}
+// export function modifyMap(center, zoom) {
+// 	return { type: MODIFY_MAP, center, zoom }
+// }

@@ -21,7 +21,7 @@ const unsubscribe = store.subscribe(() =>
   console.log(store.getState())
 )
 
-store.dispatch(selectCongressman('TESTEST'));
+// store.dispatch(selectCongressman('TESTEST'));
 
 unsubscribe();
 

@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Map from './Map';
 import MapContainer from '../containers/MapContainer';
+import SidebarContainer from '../containers/SidebarContainer';
 import Info from './Info';
 
 
@@ -28,6 +29,7 @@ class App extends Component {
           <h1 id="logo">ReInform</h1>
           <Info/>
         </div>
+        <SidebarContainer/>
       </div>
     );
   }

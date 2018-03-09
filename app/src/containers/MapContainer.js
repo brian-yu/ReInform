@@ -3,15 +3,18 @@ import { selectCongressman, selectState, reset, modifyMap } from '../actions'
 import Map from '../components/Map'
 
 const mapStateToProps = (state) => ({
-  center: state.center,
-  zoom: state.zoom,
+  view: state.view,
+  currState: state.currState,
+  currCid: state.currCid,
+  // center: state.center,
+  // zoom: state.zoom,
 })
 
 const mapDispatchToProps = {
   onCongressmanClick: selectCongressman,
   onStateClick: selectState,
   reset: reset,
-  onMapModification: modifyMap,
+  // onMapModification: modifyMap,
 }
 
 const MapContainer = connect(

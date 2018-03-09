@@ -3,6 +3,8 @@ import mapboxgl from 'mapbox-gl';
 // import axios from 'axios';
 import $ from 'jquery';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import stateCenters from '../stateCenters';
+
 
 class Map extends Component {
 
@@ -13,26 +15,87 @@ class Map extends Component {
         [-190.513578, 9.665363], // Southwest coordinates
         [-42.241805, 71.717471]  // Northeast coordinates
       ],
+      center: [-94.7, 37.830348],
+      zoom: 3.75,
     }
     console.log(props)
   }
 
-  componentWillUpdate(nextProps, nextState) {
-    if (this.state.map) {
-      // If center or zoom props change, then flyTo new position.
+  reset = () => {
+    if (this.props.view === "country") {
       this.state.map.flyTo({
-        center: nextProps.center,
-        zoom: nextProps.zoom,
+        center: this.state.center,
+        zoom: this.state.zoom,
         pitch: 0,
         bearing: 0,
       });
+    }
+    this.props.reset();
+  }
 
-      // Only fill on hover if not zoomed in
-      if (nextProps.zoom < 4.5) {
-        this.state.map.setPaintProperty("state-fills-hover", 'fill-opacity', 0.3);
-      } else {
-        this.state.map.setPaintProperty("state-fills-hover", 'fill-opacity', 0);
-      }
+  onStateClick = (name) => {
+    if (this.props.currState === name) {
+      this.state.map.flyTo({
+        center: stateCenters[name],
+        zoom: 6,
+        pitch: 0,
+        bearing: 0,
+      });
+    }
+    this.props.onStateClick(name);
+  }
+
+  onCongressmanClick = (cid) => {
+    // TODO - get coordinate from CID
+    if (this.props.currCid === cid) {
+      this.state.map.flyTo({
+        center: stateCenters[this.props.currState],
+        zoom: 10,
+        pitch: 0,
+        bearing: 0,
+      });
+    }
+    this.props.onCongressmanClick(cid);
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+
+    if (this.state.map) {
+      // If center or zoom props change, then flyTo new position.
+      // if (this.props.view != nextProps.view) {
+        console.log("PROPS: ", this.props);
+        console.log("NEXTPROPS: ", nextProps);
+        if (nextProps.view == "country") {
+          // View set to country
+          console.log("COUNTRY")
+          this.state.map.flyTo({
+            center: this.state.center,
+            zoom: this.state.zoom,
+            pitch: 0,
+            bearing: 0,
+          });
+          this.state.map.setPaintProperty("state-fills-hover", 'fill-opacity', 0.3);
+        } else if (nextProps.view == "state") {
+          // View set to state
+          this.state.map.flyTo({
+            center: stateCenters[nextProps.currState],
+            zoom: 6,
+            pitch: 0,
+            bearing: 0,
+          });
+          this.state.map.setPaintProperty("state-fills-hover", 'fill-opacity', 0);
+        } else if (nextProps.view == "congressman") {
+          // View set to Congressman
+          // TODO - get coordinate from CID, which is stored in
+          // nextProps.currCid
+          this.state.map.flyTo({
+            center: stateCenters[nextProps.currState],
+            zoom: 10,
+            pitch: 0,
+            bearing: 0,
+          });
+          this.state.map.setPaintProperty("state-fills-hover", 'fill-opacity', 0);
+        }
     }
   }
 
@@ -42,8 +105,8 @@ class Map extends Component {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/joannajia/cjec5ifih1rzl2ro3kw935rhm',
-      center: this.props.center,
-      zoom: this.props.zoom,
+      center: this.state.center,
+      zoom: this.state.zoom,
       maxBounds: this.state.bounds
     });
 
@@ -97,23 +160,15 @@ class Map extends Component {
 
       // Call SELECT_STATE action when state is clicked
       map.on('click', 'state-fills', (e) => {
-        this.props.onStateClick(e.features[0].properties.name);
+        // console.log("STATE CLICK")
+        // this.props.onStateClick(e.features[0].properties.name);
+        this.onStateClick(e.features[0].properties.name);
       });
 
       // TODO - Fade reset button in and out
       // map.on('moveend', () => {
       //   $('#reset').fadeIn(200);
       // });
-
-
-      // Update state on user interaction
-      map.on('dragend', () => {
-        this.props.onMapModification([map.getCenter().lng, map.getCenter().lat], map.getZoom());
-      });
-      map.on('zoomend', () => {
-        this.props.onMapModification([map.getCenter().lng, map.getCenter().lat], map.getZoom());
-      });
-
 
       /***************************************CONGRESS BUBBLES**************************************/
       map.addSource("legislators", {
@@ -134,14 +189,17 @@ class Map extends Component {
       });
 
       // TODO - Make it call a Redux action
-      map.on('click', 'legislators', function (e) {
-          console.log(e.features[0].properties)
-          e.features[0].properties.firstlast = e.features[0].properties.first_name + ' ' + e.features[0].properties.last_name
-          e.features[0].properties.cid = e.features[0].properties.opensecrets_id
-          map.flyTo({
-              center: e.features[0].geometry.coordinates,
-              zoom: 10,
-          });
+      map.on('click', 'legislators', (e) => {
+          // console.log(e.features[0].properties)
+          // e.features[0].properties.firstlast = e.features[0].properties.first_name + ' ' + e.features[0].properties.last_name
+          // e.features[0].properties.cid = e.features[0].properties.opensecrets_id
+          // map.flyTo({
+          //     center: e.features[0].geometry.coordinates,
+          //     zoom: 10,
+          // });
+          // console.log(this.props);
+          // console.log(e.features[0].properties.opensecrets_id);
+          this.props.onCongressmanClick(e.features[0].properties.opensecrets_id);
       });
     });
   }
@@ -150,7 +208,7 @@ class Map extends Component {
     return (
       <div>
         <div id="map"></div>
-        <button type="button" className="btn btn-light" id="reset" onClick={this.props.reset}><FontAwesomeIcon icon='home' /></button>
+        <button type="button" className="btn btn-light" id="reset" onClick={this.reset}><FontAwesomeIcon icon='home' /></button>
       </div>
     );
   }
