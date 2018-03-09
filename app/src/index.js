@@ -6,12 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import registerServiceWorker from './registerServiceWorker';
-import reducer from './reducers'
-import {
-  selectCongressman,
-  selectState,
-  reset,
-} from './actions'
+import reducer from './reducers';
 
 const store = createStore(reducer)
 

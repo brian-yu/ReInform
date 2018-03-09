@@ -2,13 +2,8 @@ import React, { Component } from 'react';
 
 class Country extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
-
       <div id="sidebar">
         <h2 id="sidebar-title">United States</h2>
         <div id="sidebar-body" className="scrollbar style-1">

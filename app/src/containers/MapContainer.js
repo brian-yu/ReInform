@@ -1,6 +1,6 @@
-import { connect } from 'react-redux'
-import { selectCongressman, selectState, reset, modifyMap } from '../actions'
-import Map from '../components/Map'
+import { connect } from 'react-redux';
+import { selectCongressman, selectState, reset } from '../actions';
+import Map from '../components/Map';
 
 const mapStateToProps = (state) => ({
   view: state.view,
@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
   currCid: state.currCid,
   // center: state.center,
   // zoom: state.zoom,
-})
+});
 
 const mapDispatchToProps = {
   onCongressmanClick: selectCongressman,
@@ -20,6 +20,6 @@ const mapDispatchToProps = {
 const MapContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Map)
+)(Map);
 
-export default MapContainer
+export default MapContainer;

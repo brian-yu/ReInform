@@ -7,9 +7,6 @@ class Congressman extends Component {
     super(props);
   }
 
-  componentDidMount() {
-  }
-
   render() {
     return (
       <div id="sidebar">

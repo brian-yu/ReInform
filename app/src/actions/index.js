@@ -31,11 +31,3 @@ export function selectState(stateName) {
 export function reset() {
   return { type: RESET }
 }
-
-
-
-// export const MODIFY_MAP = 'MODIFY_MAP'
-
-// export function modifyMap(center, zoom) {
-// 	return { type: MODIFY_MAP, center, zoom }
-// }

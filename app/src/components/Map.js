@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl';
 // import axios from 'axios';
-import $ from 'jquery';
+// import $ from 'jquery';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import stateCenters from '../stateCenters';
+import stateCenters from '../data/stateCenters';
 
 
 class Map extends Component {
@@ -65,7 +65,7 @@ class Map extends Component {
       // if (this.props.view != nextProps.view) {
         console.log("PROPS: ", this.props);
         console.log("NEXTPROPS: ", nextProps);
-        if (nextProps.view == "country") {
+        if (nextProps.view === "country") {
           // View set to country
           console.log("COUNTRY")
           this.state.map.flyTo({
@@ -75,7 +75,7 @@ class Map extends Component {
             bearing: 0,
           });
           this.state.map.setPaintProperty("state-fills-hover", 'fill-opacity', 0.3);
-        } else if (nextProps.view == "state") {
+        } else if (nextProps.view === "state") {
           // View set to state
           this.state.map.flyTo({
             center: stateCenters[nextProps.currState],
@@ -84,7 +84,7 @@ class Map extends Component {
             bearing: 0,
           });
           this.state.map.setPaintProperty("state-fills-hover", 'fill-opacity', 0);
-        } else if (nextProps.view == "congressman") {
+        } else if (nextProps.view === "congressman") {
           // View set to Congressman
           // TODO - get coordinate from CID, which is stored in
           // nextProps.currCid

@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
-// import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-// import '@fortawesome/fontawesome-free-solid'
 import './App.css';
-import Map from './Map';
 import MapContainer from '../containers/MapContainer';
 import SidebarContainer from '../containers/SidebarContainer';
 import Info from './Info';
