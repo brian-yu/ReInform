@@ -126,6 +126,7 @@ class Map extends Component {
           }
       });
 
+      // TODO - Make it call a Redux action
       map.on('click', 'legislators', function (e) {
           console.log(e.features[0].properties)
           e.features[0].properties.firstlast = e.features[0].properties.first_name + ' ' + e.features[0].properties.last_name
