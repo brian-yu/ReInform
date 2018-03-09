@@ -9,7 +9,7 @@ with open('LEPData111to113Congresses.csv') as csvfile:
         houseLES[row['first_name'] + ' ' + row['last_name']] = [row['ss_bills'],row['ss_aic'],row['ss_abc'],row['ss_pass'],row['ss_law'],row['s_bills'],row['s_aic'],row['s_abc'],row['s_pass'],row['s_law'],row['c_bills'],row['c_aic'],row['c_abc'],row['c_pass'],row['les']]
 
 data = json.load(open('legislators-current.json'))
-file = open("../static/legislators.geojson","w") 
+file = open("../../static/legislators.geojson","w") 
 
 file.write('{ "type": "FeatureCollection", "features": [' )
 

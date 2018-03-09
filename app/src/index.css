@@ -1,3 +1,5 @@
+/**************************************GENERAL**************************************/
+
 /*@font-face {
   font-family: "Circular";
   src: url("%PUBLIC_URL%/fonts/circular-book.otf") format("opentype");
@@ -8,6 +10,9 @@ body {
 	padding:0;*/
     font-family: "Circular";
 }
+
+/****************************************MAP****************************************/
+
 #map {
 	position: absolute;
 	/*top: 0;*/
@@ -20,31 +25,24 @@ body {
     display: none;
 }
 
-.navbar-brand {
-	/*font-family: 'Montserrat', sans-serif;*/
-	font-size: 2em;
-}
-
-.navbar {
-	background-color: #0984e3;
-}
+/**************************************MAP UI****************************************/
 
 #brand {
-	position: absolute;
-	top: 20px;
-	left: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 
 #info {
-	color: white;
-	margin-left: 5px;
+  color: white;
+  margin-left: 5px;
 }
 
 #logo {
-	cursor: pointer;
-	float: left;
-	font-weight: 700;
-	font-family: 'Circular', sans-serif;
+  cursor: pointer;
+  float: left;
+  font-weight: 700;
+  font-family: 'Circular', sans-serif;
     /*letter-spacing: 2px;*/
     /*font-size: 15vw;*/
 /*    text-shadow: 1px 1px #fff, 
@@ -59,12 +57,25 @@ body {
 }
 
 #reset {
-	position: absolute;
-	bottom: 20px;
-	left: 20px;
-	z-index: 1;
-	/*visibility: hidden;*/
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+  /*visibility: hidden;*/
 }
+
+/****************************************NAV****************************************/
+
+.navbar-brand {
+	/*font-family: 'Montserrat', sans-serif;*/
+	font-size: 2em;
+}
+
+.navbar {
+	background-color: #0984e3;
+}
+
+/**************************************SIDEBAR**************************************/
 
 #sidebar {
     height: 100%; /* Full-height: remove this if you want "auto" height */
@@ -172,8 +183,8 @@ body {
   background-color: #555;
 }
 
+/**************************************SPINNER**************************************/
 
-/*SPINNER*/
 .spinner {
   margin: 100px auto;
   width: 50px;
