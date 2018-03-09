@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux'
+// import { combineReducers } from 'redux'
 import {
   SELECT_CONGRESSMAN,
   SELECT_STATE,
@@ -20,7 +20,13 @@ function reducer(state = initialState, action) {
 
       });
     case SELECT_STATE:
+      return Object.assign({}, state, {
+        view: "congressman",
+        currCid: action.cid,
+
+      });
     case RESET:
+      return initialState;
     default:
       return state
   }
