@@ -14,12 +14,12 @@ class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      bounds: [
+      initBounds: [
         [-190.513578, 9.665363], // Southwest coordinates
         [-42.241805, 71.717471]  // Northeast coordinates
       ],
-      center: [-94.7, 37.830348],
-      zoom: 3.75,
+      initCenter: [-94.7, 37.830348],
+      initZoom: 3.75,
     }
   }
 
@@ -44,8 +44,8 @@ class Map extends Component {
   reset = () => {
     if (this.props.view === "country") {
       this.state.map.flyTo({
-        center: this.state.center,
-        zoom: this.state.zoom,
+        center: this.state.initCenter,
+        zoom: this.state.initZoom,
         pitch: 0,
         bearing: 0,
       });
@@ -91,8 +91,8 @@ class Map extends Component {
         if (nextProps.view === "country") {
           // View set to country
           this.state.map.flyTo({
-            center: this.state.center,
-            zoom: this.state.zoom,
+            center: this.state.initCenter,
+            zoom: this.state.initZoom,
             pitch: 0,
             bearing: 0,
           });
@@ -126,9 +126,9 @@ class Map extends Component {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/joannajia/cjec5ifih1rzl2ro3kw935rhm',
-      center: this.state.center,
-      zoom: this.state.zoom,
-      maxBounds: this.state.bounds
+      center: this.state.initCenter,
+      zoom: this.state.initZoom,
+      maxBounds: this.state.initBounds
     });
 
     // Adding map to state
@@ -187,11 +187,6 @@ class Map extends Component {
         this.onStateClick(e.features[0].properties.postal);
       });
 
-      // TODO - Fade reset button in and out
-      // map.on('moveend', () => {
-      //   $('#reset').fadeIn(200);
-      // });
-
       /***************************************CONGRESS BUBBLES**************************************/
       map.addSource("legislators", {
           "type": "geojson",
@@ -210,17 +205,8 @@ class Map extends Component {
           }
       });
 
-      // TODO - Make it call a Redux action
+      // Triggers when congressman button is clicked
       map.on('click', 'legislators', (e) => {
-          // console.log(e.features[0].properties)
-          // e.features[0].properties.firstlast = e.features[0].properties.first_name + ' ' + e.features[0].properties.last_name
-          // e.features[0].properties.cid = e.features[0].properties.opensecrets_id
-          // map.flyTo({
-          //     center: e.features[0].geometry.coordinates,
-          //     zoom: 10,
-          // });
-          // console.log(this.props);
-          // console.log(e.features[0].properties.opensecrets_id);
           this.props.onCongressmanClick(e.features[0].properties.opensecrets_id);
       });
     });
