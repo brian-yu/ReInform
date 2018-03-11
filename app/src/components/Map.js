@@ -6,6 +6,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import stateCenters from '../data/stateCenters';
 import stateNames from '../data/stateAbbrevs';
 import congressmenLocations from '../data/congressmenLocations';
+import legislators from '../data/legislators'
 import './Map.css'
 
 class Map extends Component {
@@ -19,6 +20,24 @@ class Map extends Component {
       ],
       center: [-94.7, 37.830348],
       zoom: 3.75,
+    }
+  }
+
+  NavButton = () => {
+    if (this.props.view === "country") {
+      return null
+    } else if (this.props.view === "state") {
+      return (
+        <button id="goBackToState" type="button" className="btn btn-primary" onClick={this.reset}>
+          <FontAwesomeIcon icon='arrow-left' /> Back to USA
+        </button>
+      )
+    } else if (this.props.view === "congressman") {
+      return (
+        <button id="goBackToState" type="button" className="btn btn-primary" onClick={() => this.onStateClick(this.props.selectedState)}>
+          <FontAwesomeIcon icon='arrow-left' /> Back to {stateNames[this.props.selectedState]}
+        </button>
+      )
     }
   }
 
@@ -69,10 +88,6 @@ class Map extends Component {
 
     if (this.state.map) {
       // If center or zoom props change, then flyTo new position.
-      // if (this.props.view != nextProps.view) {
-        // console.log("PROPS: ", this.props);
-        // console.log("NEXTPROPS: ", nextProps);
-        // console.log(stateNames[nextProps.selectedState])
         if (nextProps.view === "country") {
           // View set to country
           this.state.map.flyTo({
@@ -93,8 +108,6 @@ class Map extends Component {
           this.state.map.setPaintProperty("state-fills-hover", 'fill-opacity', 0);
         } else if (nextProps.view === "congressman") {
           // View set to Congressman
-          // TODO - get coordinate from CID, which is stored in
-          // nextProps.selectedCongressman
           this.state.map.flyTo({
             // center: stateCenters[stateNames[nextProps.selectedState]],
             center: congressmenLocations[nextProps.selectedCongressman],
@@ -182,7 +195,7 @@ class Map extends Component {
       /***************************************CONGRESS BUBBLES**************************************/
       map.addSource("legislators", {
           "type": "geojson",
-          "data": "./legislators.geojson"
+          "data": legislators
       });
 
       map.addLayer({
@@ -218,6 +231,7 @@ class Map extends Component {
       <div>
         <div id="map"></div>
         <button type="button" className="btn btn-light" id="reset" onClick={this.reset}><FontAwesomeIcon icon='home' /></button>
+        <this.NavButton/>
       </div>
     );
   }

@@ -1,4 +1,4 @@
-export const congressmenLocations = {
+const congressmenLocations = {
     "N00003535":[
         -82.26610151315002,
         39.3489335447107
