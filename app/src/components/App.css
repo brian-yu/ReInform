@@ -1,0 +1,23 @@
+#brand {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+#info {
+  color: white;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+#logo {
+  float: left;
+  font-weight: 700;
+  font-family: 'Circular', sans-serif;
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 5px;
+}
