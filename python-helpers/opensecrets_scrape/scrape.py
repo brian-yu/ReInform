@@ -1,5 +1,8 @@
 import requests
-import records
+import json
+# from google.cloud import datastore
+import pickle
+from random import randint
 
 KEYS = ["1be2eb6f066a3890a06795c7e26af9ff", "c2a05d472f97d739f609febc55da71d8", "9888eab3ea2196c55f9408a2454e911b", "b7b4a651e7cbdd0e043020347099bba5", "e4d1df811c89a97cace751f38fdc3aa9", "a7073f1b6d5b25609c24c882ad879441"]
 
@@ -17,7 +20,7 @@ states = {
     "CO": "Colorado",
     "CT": "Connecticut",
     "DE": "Delaware",
-    "DC": "District Of Columbia",
+    # "DC": "District Of Columbia",
     "FL": "Florida",
     "GA": "Georgia",
     "HI": "Hawaii",
@@ -64,4 +67,41 @@ states = {
 
 print(len(states))
 
-for state in 
+
+
+
+def test():
+    import pprint
+    pp = pprint.PrettyPrinter(indent=4)
+    r = requests.get("https://www.opensecrets.org/api/?method=getLegislators&id=va&apikey=1be2eb6f066a3890a06795c7e26af9ff&output=json")
+    cmen = json.loads(r.text)['response']['legislator']
+    # print(legislators)
+    congressmen = {}
+    for cman in cmen:
+        congressmen[cman['@attributes']['bioguide_id']] = cman['@attributes']
+    pp.pprint(congressmen)
+
+
+# test()
+data = {}
+
+noid = 1
+
+for abbrev in states:
+    state = states[abbrev]
+    print(state)
+    r = requests.get("https://www.opensecrets.org/api/?method=getLegislators&id=" + abbrev + "&apikey=" + getKey() + "&output=json")
+    cmen = json.loads(r.text)['response']['legislator']
+    congressmen = {}
+    for cman in cmen:
+        print("\t" + cman['@attributes']['firstlast'])
+        if cman['@attributes']['bioguide_id'] == "":
+            bid = noid
+            noid += 1
+            print(cman['@attributes'])
+        else:
+            bid = cman['@attributes']['bioguide_id']
+        congressmen[bid] = cman['@attributes']
+    data[state] = congressmen
+
+pickle.dump( data, open( "congressmenbystate.p", "wb" ) )

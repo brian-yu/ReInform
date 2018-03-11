@@ -1,11 +1,11 @@
 beautifulsoup4==4.6.0
 click==6.7
 Flask==0.12.2
+google-cloud-datastore==1.6.0
 gunicorn==19.7.1
 itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
-pymongo==3.6.1
 requests==2.14.2
 Werkzeug==0.12.2
 xmltodict==0.11.0
