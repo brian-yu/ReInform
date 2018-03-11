@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import stateAbbrevs from '../data/stateAbbrevs';
+import stateNames from '../data/stateAbbrevs';
 import LoadingAnimation from './LoadingAnimation';
 
 class State extends Component {
@@ -39,7 +38,7 @@ class State extends Component {
   render() {
     return (
       <div id="sidebar">
-        <h2 id="sidebar-title">{this.props.currState}</h2>
+        <h2 id="sidebar-title">{stateNames[this.props.selectedState]}</h2>
         <div id="sidebar-body" className="scrollbar style-1">
           <this.Legislators />
         </div>

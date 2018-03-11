@@ -4,6 +4,7 @@ import mapboxgl from 'mapbox-gl';
 // import $ from 'jquery';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import stateCenters from '../data/stateCenters';
+import stateNames from '../data/stateAbbrevs';
 
 
 class Map extends Component {
@@ -33,23 +34,23 @@ class Map extends Component {
     this.props.reset();
   }
 
-  onStateClick = (name) => {
-    if (this.props.currState === name) {
+  onStateClick = (abbrev) => {
+    if (this.props.selectedState === abbrev) {
       this.state.map.flyTo({
-        center: stateCenters[name],
+        center: stateCenters[stateNames[abbrev]],
         zoom: 6,
         pitch: 0,
         bearing: 0,
       });
     }
-    this.props.onStateClick(name);
+    this.props.onStateClick(abbrev);
   }
 
   onCongressmanClick = (cid) => {
     // TODO - get coordinate from CID
-    if (this.props.currCid === cid) {
+    if (this.props.selectedCongressman === cid) {
       this.state.map.flyTo({
-        center: stateCenters[this.props.currState],
+        center: stateCenters[stateNames[this.props.selectedState]],
         zoom: 10,
         pitch: 0,
         bearing: 0,
@@ -65,6 +66,7 @@ class Map extends Component {
       // if (this.props.view != nextProps.view) {
         console.log("PROPS: ", this.props);
         console.log("NEXTPROPS: ", nextProps);
+        console.log(stateNames[nextProps.selectedState])
         if (nextProps.view === "country") {
           // View set to country
           console.log("COUNTRY")
@@ -78,7 +80,7 @@ class Map extends Component {
         } else if (nextProps.view === "state") {
           // View set to state
           this.state.map.flyTo({
-            center: stateCenters[nextProps.currState],
+            center: stateCenters[stateNames[nextProps.selectedState]],
             zoom: 6,
             pitch: 0,
             bearing: 0,
@@ -87,9 +89,9 @@ class Map extends Component {
         } else if (nextProps.view === "congressman") {
           // View set to Congressman
           // TODO - get coordinate from CID, which is stored in
-          // nextProps.currCid
+          // nextProps.selectedCongressman
           this.state.map.flyTo({
-            center: stateCenters[nextProps.currState],
+            center: stateCenters[stateNames[nextProps.selectedState]],
             zoom: 10,
             pitch: 0,
             bearing: 0,
@@ -162,7 +164,8 @@ class Map extends Component {
       map.on('click', 'state-fills', (e) => {
         // console.log("STATE CLICK")
         // this.props.onStateClick(e.features[0].properties.name);
-        this.onStateClick(e.features[0].properties.name);
+        console.log(e.features[0].properties)
+        this.onStateClick(e.features[0].properties.postal);
       });
 
       // TODO - Fade reset button in and out

@@ -1,3 +1,5 @@
+import fetch from 'cross-fetch';
+
 /*
  * action types
  */
@@ -24,10 +26,65 @@ export function selectCongressman(cid) {
   return { type: SELECT_CONGRESSMAN, cid }
 }
  
-export function selectState(stateName) {
-  return { type: SELECT_STATE, stateName }
+export function selectState(stateAbbrev) {
+  return {
+  	type: SELECT_STATE,
+  	stateAbbrev
+  }
 }
  
 export function reset() {
   return { type: RESET }
+}
+
+
+export const REQUEST_STATE = 'REQUEST_STATE';
+export const RECEIVE_STATE = 'RECEIVE_STATE';
+export const INVALIDATE_STATE = 'INVALIDATE_STATE';
+
+export function invalidateState(stateAbbrev) {
+  return {
+    type: INVALIDATE_STATE,
+    stateAbbrev
+  }
+}
+
+
+export function requestState(stateAbbrev) {
+	return {
+    	type: REQUEST_STATE,
+    	stateAbbrev
+  	}
+}
+
+export function receiveState(stateAbbrev, json) {
+  return {
+    type: RECEIVE_STATE,
+    stateAbbrev,
+    data: json.data.children.map(child => child.data),
+    receivedAt: Date.now()
+  }
+}
+
+export function fetchState(stateAbbrev) {
+  // Thunk middleware knows how to handle functions.
+  // It passes the dispatch method as an argument to the function,
+  // thus making it able to dispatch actions itself.
+ 
+  return function (dispatch) {
+    // First dispatch: the app state is updated to inform
+    // that the API call is starting.
+ 
+    dispatch(requestState(stateAbbrev))
+ 
+    // The function called by the thunk middleware can return a value,
+    // that is passed on as the return value of the dispatch method.
+ 
+    // In this case, we return a promise to wait for.
+    // This is not required by thunk middleware, but it is convenient for us.
+
+    return fetch(`/state/${stateAbbrev}`)
+    	.then(response => response.json())
+    	.then(json => dispatch(receiveState(stateAbbrev, json)))
+  }
 }

@@ -6,19 +6,16 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import registerServiceWorker from './registerServiceWorker';
-import reducer from './reducers';
+import rootReducer from './reducers';
 
-const store = createStore(reducer)
+const store = createStore(rootReducer)
 
-console.log(store.getState());
 
-const unsubscribe = store.subscribe(() =>
-  console.log(store.getState())
-)
+// const unsubscribe = store.subscribe(() =>
+//   console.log(store.getState())
+// )
 
-// store.dispatch(selectCongressman('TESTEST'));
-
-unsubscribe();
+// unsubscribe();
 
 ReactDOM.render(
 	<Provider store={store}>

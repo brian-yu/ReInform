@@ -8,9 +8,9 @@ class Sidebar extends Component {
     if (this.props.view === "country") {
       return <Country/>
     } else if (this.props.view === "state") {
-      return <State currState={this.props.currState}/>
+      return <State selectedState={this.props.selectedState}/>
     } else if (this.props.view === "congressman") {
-      return <Congressman currCid={this.props.currCid}/>
+      return <Congressman selectedCongressman={this.props.selectedCongressman}/>
     }
   }
 }

@@ -4,8 +4,8 @@ import Map from '../components/Map';
 
 const mapStateToProps = (state) => ({
   view: state.view,
-  currState: state.currState,
-  currCid: state.currCid,
+  selectedState: state.selectedState,
+  selectedCongressman: state.selectedCongressman,
   // center: state.center,
   // zoom: state.zoom,
 });

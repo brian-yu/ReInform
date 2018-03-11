@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, url_for
+from flask import Flask, request, render_template, url_for, jsonify
 import requests
 import xmltodict, json
 from collections import OrderedDict
@@ -8,6 +8,7 @@ from contextlib import closing
 from bs4 import BeautifulSoup
 from random import randint
 import re
+import pickle
 
 ############################################### CONFIG ###############################################
 
@@ -34,14 +35,17 @@ def static_proxy(path):
   # send_static_file will guess the correct MIME type
   return app.send_static_file(path)
 
+congressmenByState = pickle.load( open( "./python-helpers/opensecrets_scrape/congressmenbystate.p", "rb" ) )
+
 @app.route("/state/<state>")
 def getLegislators(state):
-	url = "http://www.opensecrets.org/api/?method=getLegislators&id=" + state + "&apikey=" + getKey() + "&output=json"
-	r = requests.get(url)
+	# url = "http://www.opensecrets.org/api/?method=getLegislators&id=" + state + "&apikey=" + getKey() + "&output=json"
+	# r = requests.get(url)
 
 	# o = xmltodict.parse(r.text)['response']['legislator']
 	# return json.dumps(o) # '{"e": {"a": ["text", "text"]}}'
-	return r.text
+	# return r.text
+	return jsonify(congressmenByState[state])
 
 @app.route("/funding/<cid>")
 def funding(cid):

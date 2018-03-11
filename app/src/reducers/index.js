@@ -1,34 +1,96 @@
-// import { combineReducers } from 'redux'
+import { combineReducers } from 'redux'
 import {
   SELECT_CONGRESSMAN,
   SELECT_STATE,
   RESET,
+  INVALIDATE_STATE,
+  REQUEST_STATE,
+  RECEIVE_STATE,
 } from '../actions'
 
-const initialState = {
-  view: "country", //country, state, or congressman
-  currState: null,
-  currCid: null,
-}
- 
-function reducer(state = initialState, action) {
+function view(state = "country", action) {
   switch (action.type) {
     case SELECT_CONGRESSMAN:
-      console.log(action);
-      return Object.assign({}, state, {
-        view: "congressman",
-        currCid: action.cid,
-      });
+      return "congressman"
     case SELECT_STATE:
-      return Object.assign({}, state, {
-        view: "state",
-        currState: action.stateName,
-      });
+      return "state"
     case RESET:
-      return initialState;
+      return "country"
     default:
       return state
   }
 }
+
+function selectedState(state = null, action) {
+  switch (action.type) {
+    case SELECT_STATE:
+      return action.stateAbbrev
+    case RESET:
+      return null
+    default:
+      return state
+  }
+}
+
+function selectedCongressman(state = null, action) {
+  switch (action.type) {
+    case SELECT_CONGRESSMAN:
+      return action.cid
+    case RESET:
+      return null
+    default:
+      return state
+  }
+}
+
+function data(
+  state = {
+    isFetching: false,
+    didInvalidate: false,
+    data: {}
+  },
+  action
+) {
+  switch (action.type) {
+    case INVALIDATE_STATE:
+      return Object.assign({}, state, {
+        didInvalidate: true
+      })
+    case REQUEST_STATE:
+      return Object.assign({}, state, {
+        isFetching: true,
+        didInvalidate: false
+      })
+    case RECEIVE_STATE:
+      return Object.assign({}, state, {
+        isFetching: false,
+        didInvalidate: false,
+        data: action.data,
+        lastUpdated: action.receivedAt
+      })
+    default:
+      return state
+  }
+}
+
+function dataByState(state = {}, action) {
+  switch (action.type) {
+    case INVALIDATE_STATE:
+    case RECEIVE_STATE:
+    case REQUEST_STATE:
+      return Object.assign({}, state, {
+        [action.stateAbbrev]: data(state[action.stateAbbrev], action)
+      })
+    default:
+      return state
+  }
+}
+
+const rootReducer = combineReducers({
+  view,
+  selectedState,
+  selectedCongressman,
+  dataByState,
+})
  
-export default reducer;
+export default rootReducer
