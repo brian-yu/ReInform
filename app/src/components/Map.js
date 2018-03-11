@@ -5,6 +5,7 @@ import mapboxgl from 'mapbox-gl';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import stateCenters from '../data/stateCenters';
 import stateNames from '../data/stateAbbrevs';
+import congressmenLocations from '../data/congressmenLocations';
 import './Map.css'
 
 class Map extends Component {
@@ -54,7 +55,8 @@ class Map extends Component {
     // TODO - get coordinate from CID
     if (this.props.selectedCongressman === cid) {
       this.state.map.flyTo({
-        center: stateCenters[stateNames[this.props.selectedState]],
+        // center: stateCenters[stateNames[this.props.selectedState]],
+        center: congressmenLocations[this.props.selectedCongressman],
         zoom: 10,
         pitch: 0,
         bearing: 0,
@@ -94,7 +96,8 @@ class Map extends Component {
           // TODO - get coordinate from CID, which is stored in
           // nextProps.selectedCongressman
           this.state.map.flyTo({
-            center: stateCenters[stateNames[nextProps.selectedState]],
+            // center: stateCenters[stateNames[nextProps.selectedState]],
+            center: congressmenLocations[nextProps.selectedCongressman],
             zoom: 10,
             pitch: 0,
             bearing: 0,
