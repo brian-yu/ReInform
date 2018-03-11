@@ -62,7 +62,7 @@ export function requestState(stateAbbrev) {
 }
 
 export function receiveState(stateAbbrev, json) {
-	// console.log(json);
+	console.log(json);
   return {
     type: RECEIVE_STATE,
     stateAbbrev,

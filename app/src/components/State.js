@@ -5,7 +5,7 @@ import './State.css';
 
 class State extends Component {
 
-  Legislators = () => {
+  Legislators = (props) => {
     if (!this.props.dataByState[this.props.selectedState]) {
       return (
         <LoadingAnimation/>
@@ -15,14 +15,16 @@ class State extends Component {
         <LoadingAnimation/>
       );
     } else {
+      console.log(this.props.dataByState[this.props.selectedState])
+      console.log(this.props.chamber)
       const congressmen = this.props.dataByState[this.props.selectedState]
-        .data.map((congressman) => {
+        .data[props.chamber].map((congressman) => {
           // const pic_url = `https://theunitedstates.io/images/congress/225x275/${congressman.bioguide_id}.jpg`
           return (
-            <li key={congressman.cid}>
+            <li key={congressman.id}>
               {/*<img src={pic_url}/>*/}
-              <div onClick={() => this.props.onCongressmanClick(congressman.bioguide_id)}>
-                {congressman.firstlast} - <span className={congressman.party}>({congressman.party})</span>
+              <div onClick={() => this.props.onCongressmanClick(congressman.id)}>
+                {congressman.name} - <span className={congressman.party}>({congressman.party})</span>
               </div>
             </li>
           )
@@ -43,8 +45,10 @@ class State extends Component {
       <div id="sidebar">
         <h2 id="sidebar-title">{stateNames[this.props.selectedState]}</h2>
         <div id="sidebar-body" className="scrollbar style-1">
-          <h4>Congressmen</h4>
-          <this.Legislators />
+          <h4>Senators</h4>
+          <this.Legislators chamber="senate" />
+          <h4>Representatives</h4>
+          <this.Legislators chamber="house" />
         </div>
       </div>
     );
