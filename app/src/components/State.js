@@ -21,7 +21,7 @@ class State extends Component {
           return (
             <li key={congressman.cid}>
               {/*<img src={pic_url}/>*/}
-              <div onClick={() => this.props.onCongressmanClick(congressman.cid)}>
+              <div onClick={() => this.props.onCongressmanClick(congressman.bioguide_id)}>
                 {congressman.firstlast} - <span className={congressman.party}>({congressman.party})</span>
               </div>
             </li>

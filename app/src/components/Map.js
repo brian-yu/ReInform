@@ -70,9 +70,9 @@ class Map extends Component {
     this.props.fetchStateIfNeeded(abbrev);
   }
 
-  onCongressmanClick = (cid) => {
-    // TODO - get coordinate from CID
-    if (this.props.selectedCongressman === cid) {
+  onCongressmanClick = (bid) => {
+    // TODO - get coordinate from bioguide ID
+    if (this.props.selectedCongressman === bid) {
       this.state.map.flyTo({
         // center: stateCenters[stateNames[this.props.selectedState]],
         center: congressmenLocations[this.props.selectedCongressman],
@@ -81,7 +81,7 @@ class Map extends Component {
         bearing: 0,
       });
     }
-    this.props.onCongressmanClick(cid);
+    this.props.onCongressmanClick(bid);
   }
 
   componentWillUpdate(nextProps, nextState) {
@@ -207,7 +207,7 @@ class Map extends Component {
 
       // Triggers when congressman button is clicked
       map.on('click', 'legislators', (e) => {
-          this.props.onCongressmanClick(e.features[0].properties.opensecrets_id);
+          this.props.onCongressmanClick(e.features[0].properties.bioguide_id);
       });
     });
   }

@@ -22,8 +22,8 @@ export const VisibilityFilters = {
  * action creators
  */
  
-export function selectCongressman(cid) {
-  return { type: SELECT_CONGRESSMAN, cid }
+export function selectCongressman(bid) {
+  return { type: SELECT_CONGRESSMAN, bid }
 }
  
 export function selectState(stateAbbrev) {
@@ -62,7 +62,7 @@ export function requestState(stateAbbrev) {
 }
 
 export function receiveState(stateAbbrev, json) {
-	console.log(json);
+	// console.log(json);
   return {
     type: RECEIVE_STATE,
     stateAbbrev,

@@ -35,7 +35,7 @@ function selectedState(state = null, action) {
 function selectedCongressman(state = null, action) {
   switch (action.type) {
     case SELECT_CONGRESSMAN:
-      return action.cid
+      return action.bid
     case RESET:
       return null
     default:
