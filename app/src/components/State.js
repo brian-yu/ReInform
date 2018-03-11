@@ -19,17 +19,17 @@ class State extends Component {
         .data.map((congressman) => {
           // const pic_url = `https://theunitedstates.io/images/congress/225x275/${congressman.bioguide_id}.jpg`
           return (
-            <li key={congressman.cid} className="congressListElem">
+            <li key={congressman.cid}>
               {/*<img src={pic_url}/>*/}
-              <div>
-                {congressman.firstlast} - ({congressman.party})
+              <div onClick={() => this.props.onCongressmanClick(congressman.cid)}>
+                {congressman.firstlast} - <span className={congressman.party}>({congressman.party})</span>
               </div>
             </li>
           )
         }
       );
       return (
-        <ul>
+        <ul className="congressList">
           {congressmen}
         </ul>
       );

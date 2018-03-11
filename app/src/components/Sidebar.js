@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Congressman from './Congressman';
 import StateContainer from '../containers/StateContainer';
+import CongressmanContainer from '../containers/CongressmanContainer';
 import Country from './Country';
 import './Sidebar.css';
 
@@ -11,7 +12,7 @@ class Sidebar extends Component {
     } else if (this.props.view === "state") {
       return <StateContainer/>
     } else if (this.props.view === "congressman") {
-      return <Congressman/>
+      return <CongressmanContainer/>
     }
   }
 }

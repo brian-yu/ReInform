@@ -43,6 +43,10 @@ class Map extends Component {
       });
     }
     this.props.onStateClick(abbrev);
+    // Begin fetching State data here so that it can
+    // load while flyTo animation is occurring
+    // Redux docs recommend separating async fetching
+    // and UI actions, which seems kind of counterintuitive
     this.props.fetchStateIfNeeded(abbrev);
   }
 

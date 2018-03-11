@@ -1,22 +1,11 @@
-/**************************************GENERAL**************************************/
-
-/*@font-face {
-  font-family: "Circular";
-  src: url("%PUBLIC_URL%/fonts/circular-book.otf") format("opentype");
-}*/
-
 body {
-	/*margin:0;
-	padding:0;*/
-    font-family: "Circular";
+  font-family: "Circular";
 }
 
 /****************************************MAP****************************************/
 
 #map {
 	position: absolute;
-	/*top: 0;*/
-	/*bottom: 0;*/
 	width: 80%;
 	height: 100%;
 }

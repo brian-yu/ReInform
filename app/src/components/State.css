@@ -1,0 +1,13 @@
+.congressList .D {
+	color: #007bff;
+}
+
+.congressList .R {
+	color: #e74c3c;
+}
+
+.congressList li:hover {
+	/*background-color: #fff;*/
+	text-decoration: underline;
+	cursor: pointer;
+}

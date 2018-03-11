@@ -13,8 +13,6 @@ const mapDispatchToProps = {
   onCongressmanClick: selectCongressman,
 }
 
-
-
 const StateContainer = connect(
   mapStateToProps,
   mapDispatchToProps
