@@ -38,6 +38,10 @@ export function reset() {
 }
 
 
+/*
+* Async request/receieve/invalidate for state info
+*/
+
 export const REQUEST_STATE = 'REQUEST_STATE';
 export const RECEIVE_STATE = 'RECEIVE_STATE';
 export const INVALIDATE_STATE = 'INVALIDATE_STATE';

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Congressman from './Congressman';
 import StateContainer from '../containers/StateContainer';
 import CongressmanContainer from '../containers/CongressmanContainer';
 import Country from './Country';
