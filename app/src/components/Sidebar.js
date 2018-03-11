@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import Congressman from './Congressman';
-import State from './State';
+import StateContainer from '../containers/StateContainer';
 import Country from './Country';
+import './Sidebar.css';
 
 class Sidebar extends Component {
   render() {
     if (this.props.view === "country") {
       return <Country/>
     } else if (this.props.view === "state") {
-      return <State selectedState={this.props.selectedState}/>
+      return <StateContainer/>
     } else if (this.props.view === "congressman") {
-      return <Congressman selectedCongressman={this.props.selectedCongressman}/>
+      return <Congressman/>
     }
   }
 }

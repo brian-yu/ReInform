@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { selectCongressman, selectState, reset } from '../actions';
+import { selectCongressman, selectState, fetchStateIfNeeded, reset } from '../actions';
 import Map from '../components/Map';
 
 const mapStateToProps = (state) => ({
@@ -13,6 +13,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   onCongressmanClick: selectCongressman,
   onStateClick: selectState,
+  fetchStateIfNeeded: fetchStateIfNeeded,
   reset: reset,
   // onMapModification: modifyMap,
 }

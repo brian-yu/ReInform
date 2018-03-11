@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './LoadingAnimation.css';
 
 class LoadingAnimation extends Component {
   render() {

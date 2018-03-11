@@ -20,7 +20,6 @@ states = {
     "CO": "Colorado",
     "CT": "Connecticut",
     "DE": "Delaware",
-    # "DC": "District Of Columbia",
     "FL": "Florida",
     "GA": "Georgia",
     "HI": "Hawaii",
@@ -87,12 +86,11 @@ data = {}
 
 noid = 1
 
-for abbrev in states:
-    state = states[abbrev]
+for state in states:
     print(state)
-    r = requests.get("https://www.opensecrets.org/api/?method=getLegislators&id=" + abbrev + "&apikey=" + getKey() + "&output=json")
+    r = requests.get("https://www.opensecrets.org/api/?method=getLegislators&id=" + state + "&apikey=" + getKey() + "&output=json")
     cmen = json.loads(r.text)['response']['legislator']
-    congressmen = {}
+    congressmen = []
     for cman in cmen:
         print("\t" + cman['@attributes']['firstlast'])
         if cman['@attributes']['bioguide_id'] == "":
@@ -101,7 +99,7 @@ for abbrev in states:
             print(cman['@attributes'])
         else:
             bid = cman['@attributes']['bioguide_id']
-        congressmen[bid] = cman['@attributes']
+        congressmen.append(cman['@attributes'])
     data[state] = congressmen
 
 pickle.dump( data, open( "congressmenbystate.p", "wb" ) )

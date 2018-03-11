@@ -18,9 +18,9 @@ app = Flask(__name__)
 KEYS = ["1be2eb6f066a3890a06795c7e26af9ff", "c2a05d472f97d739f609febc55da71d8", "9888eab3ea2196c55f9408a2454e911b", "b7b4a651e7cbdd0e043020347099bba5", "e4d1df811c89a97cace751f38fdc3aa9", "a7073f1b6d5b25609c24c882ad879441"]
 
 def getKey():
-	key = KEYS[randint(0, len(KEYS)-1)]
-	print(key)
-	return key
+    key = KEYS[randint(0, len(KEYS)-1)]
+    print(key)
+    return key
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
@@ -39,19 +39,20 @@ congressmenByState = pickle.load( open( "./python-helpers/opensecrets_scrape/con
 
 @app.route("/state/<state>")
 def getLegislators(state):
-	# url = "http://www.opensecrets.org/api/?method=getLegislators&id=" + state + "&apikey=" + getKey() + "&output=json"
-	# r = requests.get(url)
+    state = state.upper()
+    # url = "http://www.opensecrets.org/api/?method=getLegislators&id=" + state + "&apikey=" + getKey() + "&output=json"
+    # r = requests.get(url)
 
-	# o = xmltodict.parse(r.text)['response']['legislator']
-	# return json.dumps(o) # '{"e": {"a": ["text", "text"]}}'
-	# return r.text
-	return jsonify(congressmenByState[state])
+    # o = xmltodict.parse(r.text)['response']['legislator']
+    # return json.dumps(o) # '{"e": {"a": ["text", "text"]}}'
+    # return r.text
+    return jsonify(congressmenByState[state])
 
 @app.route("/funding/<cid>")
 def funding(cid):
-	url = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2018&apikey=" + getKey()+ "&output=json"
-	r = requests.get(url)
-	return r.text
+    url = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2018&apikey=" + getKey()+ "&output=json"
+    r = requests.get(url)
+    return r.text
 
 @app.route("/views/<name>")
 def candidViews(name):
@@ -61,12 +62,12 @@ def candidViews(name):
 
 @app.route("/id/<cid>")
 def getLegislatorFromId(cid):
-	url = "http://www.opensecrets.org/api/?method=getLegislators&id=" + cid + "&apikey=" + getKey() + "&output=json"
-	r = requests.get(url)
+    url = "http://www.opensecrets.org/api/?method=getLegislators&id=" + cid + "&apikey=" + getKey() + "&output=json"
+    r = requests.get(url)
 
-	# o = xmltodict.parse(r.text)['response']['legislator']
-	# return json.dumps(o) # '{"e": {"a": ["text", "text"]}}'
-	return r.text
+    # o = xmltodict.parse(r.text)['response']['legislator']
+    # return json.dumps(o) # '{"e": {"a": ["text", "text"]}}'
+    return r.text
 
 @app.route("/bills/<bid>")
 def bigbills(bid):

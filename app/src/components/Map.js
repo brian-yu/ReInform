@@ -5,7 +5,7 @@ import mapboxgl from 'mapbox-gl';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import stateCenters from '../data/stateCenters';
 import stateNames from '../data/stateAbbrevs';
-
+import './Map.css'
 
 class Map extends Component {
 
@@ -19,7 +19,6 @@ class Map extends Component {
       center: [-94.7, 37.830348],
       zoom: 3.75,
     }
-    console.log(props)
   }
 
   reset = () => {
@@ -44,6 +43,7 @@ class Map extends Component {
       });
     }
     this.props.onStateClick(abbrev);
+    this.props.fetchStateIfNeeded(abbrev);
   }
 
   onCongressmanClick = (cid) => {
@@ -64,12 +64,11 @@ class Map extends Component {
     if (this.state.map) {
       // If center or zoom props change, then flyTo new position.
       // if (this.props.view != nextProps.view) {
-        console.log("PROPS: ", this.props);
-        console.log("NEXTPROPS: ", nextProps);
-        console.log(stateNames[nextProps.selectedState])
+        // console.log("PROPS: ", this.props);
+        // console.log("NEXTPROPS: ", nextProps);
+        // console.log(stateNames[nextProps.selectedState])
         if (nextProps.view === "country") {
           // View set to country
-          console.log("COUNTRY")
           this.state.map.flyTo({
             center: this.state.center,
             zoom: this.state.zoom,
@@ -164,7 +163,7 @@ class Map extends Component {
       map.on('click', 'state-fills', (e) => {
         // console.log("STATE CLICK")
         // this.props.onStateClick(e.features[0].properties.name);
-        console.log(e.features[0].properties)
+        // console.log(e.features[0].properties)
         this.onStateClick(e.features[0].properties.postal);
       });
 
