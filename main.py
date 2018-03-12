@@ -102,13 +102,24 @@ def get_politician_views(name):
 #   return app.send_static_file(path)
 
 # Serve React App
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def serve(path):
-    if(path == ""):
-        return send_from_directory('app/build', 'index.html')
-    else:
-        if (os.path.exists("app/build/" + path)):
-            return send_from_directory('app/build', path)
-        else:
-            return send_from_directory('app/build', 'index.html')
+
+# @app.route('/favicon.ico')
+# def favicon():
+#     return send_from_directory('app/build/favicon.ico')
+
+# @app.route('/<path:path>')
+# def serve(path):
+#     return send_from_directory('app/build', path)
+
+# @app.route('/')
+# def index():
+#     return send_from_directory('app/build', 'index.html')
+
+@app.route('/', methods=['GET'])
+def index():
+    return app.send_static_file('index.html')
+
+
+@app.route('/<path:path>', methods=['GET'])
+def any_root_path(path):
+    return app.send_static_file(path)

@@ -15,9 +15,8 @@ runtime_config:
 #   script: main.app
 
 handlers:
-- url: /static
-  static_dir: app/build/static
-  secure: always
-- url: /.*
+- url: /api
   script: main.app
+- url: /.*
+  static_dir: app/build
   secure: always
