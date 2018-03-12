@@ -1,7 +1,7 @@
 # Setup
 
-1. install python 3
-2. install deps
+1. install python 3 (anaconda recommended) and yarn (https://yarnpkg.com/en/docs/install)
+2. install python dependencies
 
 `pip install -r requirements.txt`
 
@@ -14,3 +14,15 @@
 4. run flask
 
 `flask run`
+
+5. Navigate to app/ directory
+
+`cd app`
+
+6. Download JS dependencies
+
+`yarn install`
+
+7. Run frontend dev server
+
+`yarn start`
