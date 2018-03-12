@@ -1,38 +1,3 @@
 body {
   font-family: "Circular";
 }
-
-/****************************************MAP****************************************/
-
-#map {
-	position: absolute;
-	width: 80%;
-	height: 100%;
-}
-
-.mapboxgl-ctrl-bottom-left, .mapboxgl-ctrl-bottom-right{
-    display: none;
-}
-
-/**************************************SIDEBAR**************************************/
-
-.portrait {
-	display: block;
-    margin: 0 auto;
-    border-radius: 50%;
-    border:6px solid #fff;
-    height: 200px;
-    margin-bottom: 10px;
-}
-
-#goBackToState {
-	/*position: absolute;*/
-	bottom: 20px;
-	position: fixed;
-	/*margin-left: 10px;*/
-	right:22%;
-}
-
-#social {
-	text-align: center;
-}

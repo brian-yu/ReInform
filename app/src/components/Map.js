@@ -81,7 +81,8 @@ class Map extends Component {
         bearing: 0,
       });
     }
-    this.props.onCongressmanClick(bid);
+    this.props.onCongressmanClick(bid)
+    this.props.fetchCongressmanIfNeeded(bid)
   }
 
   componentWillUpdate(nextProps, nextState) {
@@ -207,7 +208,7 @@ class Map extends Component {
 
       // Triggers when congressman button is clicked
       map.on('click', 'legislators', (e) => {
-          this.props.onCongressmanClick(e.features[0].properties.bioguide_id);
+          this.onCongressmanClick(e.features[0].properties.bioguide_id);
       });
     });
   }

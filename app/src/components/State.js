@@ -5,6 +5,11 @@ import './State.css';
 
 class State extends Component {
 
+  onCongressmanClick = (bid) => {
+    this.props.onCongressmanClick(bid)
+    this.props.fetchCongressmanIfNeeded(bid)
+  }
+
   Legislators = (props) => {
     if (!this.props.dataByState[this.props.selectedState]) {
       return (
@@ -23,7 +28,7 @@ class State extends Component {
           return (
             <li key={congressman.id}>
               {/*<img src={pic_url}/>*/}
-              <div onClick={() => this.props.onCongressmanClick(congressman.id)}>
+              <div onClick={() => this.onCongressmanClick(congressman.id)}>
                 {congressman.name} - <span className={congressman.party}>({congressman.party})</span>
               </div>
             </li>

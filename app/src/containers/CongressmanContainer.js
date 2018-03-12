@@ -5,8 +5,8 @@ const mapStateToProps = (state) => ({
   view: state.view,
   selectedState: state.selectedState,
   selectedCongressman: state.selectedCongressman,
+  dataByCongressman: state.dataByCongressman,
 })
-
 
 const CongressmanContainer = connect(
   mapStateToProps

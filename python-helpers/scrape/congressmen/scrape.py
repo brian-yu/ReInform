@@ -1,6 +1,14 @@
 import requests
 import json
 import pickle
+from random import randint
+
+KEYS = ["1be2eb6f066a3890a06795c7e26af9ff", "c2a05d472f97d739f609febc55da71d8", "9888eab3ea2196c55f9408a2454e911b", "b7b4a651e7cbdd0e043020347099bba5", "e4d1df811c89a97cace751f38fdc3aa9", "a7073f1b6d5b25609c24c882ad879441"]
+
+def getKey():
+    key = KEYS[randint(0, len(KEYS)-1)]
+    print(key)
+    return key
 
 states = {
     "AL": "Alabama",
@@ -56,29 +64,57 @@ states = {
 }
 
 
+cmenbystate = pickle.load(open("../state/propublica/congressmenbystate.p", "rb"))
+
+cmen_ids = []
+for state in cmenbystate:
+    for sen in cmenbystate[state]['senate']:
+        # print(sen)
+        cmen_ids.append(sen['id'])
+    for rep in cmenbystate[state]['house']:
+        cmen_ids.append(rep['id'])
+
 # GET https://api.propublica.org/congress/v1/members/{member-id}.json
+# GET https://api.propublica.org/congress/v1/members/{member-id}/bills/{type}.json
 
 headers = {
-	'X-API-Key': 'WmcCMKjGFtJmQyQuEvkVxvV666hs75JFky5bJqJG',
+    'X-API-Key': 'WmcCMKjGFtJmQyQuEvkVxvV666hs75JFky5bJqJG',
 }
-# response = requests.get('https://api.propublica.org/congress/v1/members/'+bid+'/bills/introduced.json', headers=headers)
 
+import pprint
+pp = pprint.PrettyPrinter(indent=2)
 
-def getState(state):
-	h = json.loads(requests.get('https://api.propublica.org/congress/v1/members/house/{}/current.json'.format(state), headers=headers).text)['results']
-	s = json.loads(requests.get('https://api.propublica.org/congress/v1/members/senate/{}/current.json'.format(state), headers=headers).text)['results']
+# print(cmen_ids[383])
+# pp.pprint(json.loads(requests.get('https://api.propublica.org/congress/v1/members/{}.json'.format(cmen_ids[383]), headers=headers).text)['results'][0])
 
-	state = {}
+def getCman(id):
+    info = json.loads(requests.get('https://api.propublica.org/congress/v1/members/{}.json'.format(id), headers=headers).text)['results'][0]
+    bills = json.loads(requests.get('https://api.propublica.org/congress/v1/members/{}/bills/introduced.json'.format(id), headers=headers).text)['results'][0]['bills']
 
-	state['house'] = h
-	state['senate'] = s
+    funding2018Req = requests.get("https://www.opensecrets.org/api/?method=candContrib&cid={}&cycle=2018&apikey={}&output=json".format(info['crp_id'], getKey()))
 
-	return state
+    if funding2018Req.status_code == 200:
+        funding2018 = json.loads(funding2018Req.text)['response']['contributors']['contributor']
+        funding2018 = [i['@attributes'] for i in funding2018]
+    else:
+        funding2018 = []
+
+    # import pprint
+    # pp = pprint.PrettyPrinter()
+
+    info['bills'] = bills
+    info['funding2018'] = funding2018
+
+    # pp.pprint(info)
+
+    return info
 
 data = {}
 
-for state in states:
-	print(state)
-	data[state] = getState(state)
+num = 0
+for cman_id in cmen_ids:
+    print(num)
+    data[cman_id] = getCman(cman_id)
+    num += 1
 
 pickle.dump( data, open( "congressmen.p", "wb" ) )

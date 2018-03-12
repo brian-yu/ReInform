@@ -1,0 +1,25 @@
+.portrait {
+	display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+#social {
+	text-align: center;
+}
+
+#sidebar .D {
+	color: #007bff;
+}
+
+#sidebar .R {
+	color: #e74c3c;
+}
+
+#les {
+	text-align: center;
+}
+

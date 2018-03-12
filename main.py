@@ -48,11 +48,14 @@ def getLegislators(state):
     # return r.text
     return jsonify(congressmenByState[state])
 
-@app.route("/funding/<cid>")
-def funding(cid):
-    url = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2018&apikey=" + getKey()+ "&output=json"
-    r = requests.get(url)
-    return r.text
+dataByCongressmen = pickle.load( open("./python-helpers/scrape/congressmen/congressmen.p", "rb") )
+
+@app.route("/congressman/<bid>")
+def funding(bid):
+    # url = "https://www.opensecrets.org/api/?method=candContrib&cid=" + cid + "&cycle=2018&apikey=" + getKey()+ "&output=json"
+    # r = requests.get(url)
+    # return r.text
+    return jsonify(dataByCongressmen[bid])
 
 @app.route("/views/<name>")
 def candidViews(name):

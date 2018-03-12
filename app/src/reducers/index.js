@@ -6,6 +6,9 @@ import {
   INVALIDATE_STATE,
   REQUEST_STATE,
   RECEIVE_STATE,
+  INVALIDATE_CONGRESSMAN,
+  REQUEST_CONGRESSMAN,
+  RECEIVE_CONGRESSMAN,
 } from '../actions'
 
 function view(state = "country", action) {
@@ -43,7 +46,7 @@ function selectedCongressman(state = null, action) {
   }
 }
 
-function data(
+function stateData(
   state = {
     isFetching: false,
     didInvalidate: false,
@@ -79,7 +82,50 @@ function dataByState(state = {}, action) {
     case RECEIVE_STATE:
     case REQUEST_STATE:
       return Object.assign({}, state, {
-        [action.stateAbbrev]: data(state[action.stateAbbrev], action)
+        [action.stateAbbrev]: stateData(state[action.stateAbbrev], action)
+      })
+    default:
+      return state
+  }
+}
+
+function congressmanData(
+  state = {
+    isFetching: false,
+    didInvalidate: false,
+    data: {}
+  },
+  action
+) {
+  switch (action.type) {
+    case INVALIDATE_CONGRESSMAN:
+      return Object.assign({}, state, {
+        didInvalidate: true
+      })
+    case REQUEST_CONGRESSMAN:
+      return Object.assign({}, state, {
+        isFetching: true,
+        didInvalidate: false
+      })
+    case RECEIVE_CONGRESSMAN:
+      return Object.assign({}, state, {
+        isFetching: false,
+        didInvalidate: false,
+        data: action.data,
+        lastUpdated: action.receivedAt
+      })
+    default:
+      return state
+  }
+}
+
+function dataByCongressman(state = {}, action) {
+  switch (action.type) {
+    case INVALIDATE_CONGRESSMAN:
+    case RECEIVE_CONGRESSMAN:
+    case REQUEST_CONGRESSMAN:
+      return Object.assign({}, state, {
+        [action.bid]: congressmanData(state[action.bid], action)
       })
     default:
       return state
@@ -91,6 +137,7 @@ const rootReducer = combineReducers({
   selectedState,
   selectedCongressman,
   dataByState,
+  dataByCongressman,
 })
  
 export default rootReducer

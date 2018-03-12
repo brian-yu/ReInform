@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import State from '../components/State'
-import {selectCongressman} from '../actions'
+import {selectCongressman, fetchCongressmanIfNeeded} from '../actions'
 
 const mapStateToProps = (state) => ({
   view: state.view,
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   onCongressmanClick: selectCongressman,
+  fetchCongressmanIfNeeded: fetchCongressmanIfNeeded,
 }
 
 const StateContainer = connect(
