@@ -26,18 +26,18 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 congressmenByState = pickle.load( open( "./python-helpers/scrape/state/propublica/congressmenbystate.p", "rb" ) )
 
-@app.route("/state/<state>")
+@app.route("/api/state/<state>")
 def getLegislators(state):
     state = state.upper()
     return jsonify(congressmenByState[state])
 
 dataByCongressmen = pickle.load( open("./python-helpers/scrape/congressmen/congressmen.p", "rb") )
 
-@app.route("/congressman/<bid>")
+@app.route("/api/congressman/<bid>")
 def congressman(bid):
     return jsonify(dataByCongressmen[bid])
 
-@app.route("/views/<name>")
+@app.route("/api/views/<name>")
 def candidViews(name):
     name = name.replace('-',' ')
     response = get_politician_views(name)
@@ -108,7 +108,7 @@ def serve(path):
     if(path == ""):
         return send_from_directory('app/build', 'index.html')
     else:
-        if(os.path.exists("app/build/" + path)):
+        if (os.path.exists("app/build/" + path)):
             return send_from_directory('app/build', path)
         else:
             return send_from_directory('app/build', 'index.html')

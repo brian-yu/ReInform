@@ -4,6 +4,7 @@ threadsafe: true
 # runtime: python
 env: flex
 entrypoint: gunicorn -b :$PORT main:app
+version: staging
 
 runtime_config:
     python_version: 3

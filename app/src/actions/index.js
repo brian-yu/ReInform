@@ -81,7 +81,7 @@ export function fetchState(stateAbbrev) {
 		// In this case, we return a promise to wait for.
 		// This is not required by thunk middleware, but it is convenient for us.
 
-		return fetch(`/state/${stateAbbrev}`)
+		return fetch(`/api/state/${stateAbbrev}`)
 			.then(response => response.json())
 			.then(json => dispatch(receiveState(stateAbbrev, json)))
 	}
@@ -160,7 +160,7 @@ export function fetchCongressman(bid) {
     // In this case, we return a promise to wait for.
     // This is not required by thunk middleware, but it is convenient for us.
 
-    return fetch(`/congressman/${bid}`)
+    return fetch(`/api/congressman/${bid}`)
       .then(response => response.json())
       .then(json => dispatch(receiveCongressman(bid, json)))
   }
