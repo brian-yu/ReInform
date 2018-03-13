@@ -1,4 +1,4 @@
-# Setup
+# Development Setup
 
 1. install python 3 (anaconda recommended) and yarn (https://yarnpkg.com/en/docs/install)
 2. install python dependencies
